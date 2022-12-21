@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Flexbox - Flex-Shrink">
+    <title>CSS - Flexbox - Flex-Shrink</title>
+    <style>
+        /* 
+            // Flexbox
+            // We can able to have complete control of the child elements using parent element
+        */
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: #f3f3f3;
+        }
+
+        .parent {
+            border: 5px solid red;
+            display: flex;
+        }
+
+        .box {
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: #f3f3f3;
+
+        }
+
+        .child-1 {
+            background: #581f18;
+
+        }
+
+        .child-2 {
+            background: #f0a202;
+            width: 300px;
+            /* flex-shrink: 1; (default)*/
+            flex-shrink: 1;
+        }
+
+        .child-3 {
+            background: #d95d39;
+            width: 200px;
+            flex-shrink: 2;
+        }
+
+        .child-4 {
+            background: #202c59;
+        }
+
+        .child-5 {
+            background: #51cb20;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- parent -->
+    <div class="parent">
+        <!-- child -->
+        <div class="box child-1">One</div>
+        <div class="box child-2">Two</div>
+        <div class="box child-3">Three</div>
+        <!-- <div class="box child-4">Four</div>
+        <div class="box child-5">Five</div> -->
+    </div>
+</body>
+
+</html>

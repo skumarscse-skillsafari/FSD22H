@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Grid - Grid-Template-Rows">
+    <title>CSS - Grid - Grid-Template-Rows</title>
+    <style>
+        /* 
+            Grid => Used to control the child elements of the container in both x-axis and y-axis at a same time
+            2-D way of controlling the child elements
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #222;
+        }
+
+        .container {
+            border: 5px solid red;
+            display: grid;
+            /* grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr; */
+            grid-template-columns: 200px auto 10rem;
+            grid-template-rows: auto 5rem;
+        }
+
+        .cell {
+            padding: 2rem;
+            background: #dedede;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid green;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cell">One</div>
+        <div class="cell">Two</div>
+        <div class="cell">Three</div>
+        <div class="cell">Four</div>
+        <div class="cell">Five</div>
+        <div class="cell">Six</div>
+    </div>
+</body>
+
+</html>
