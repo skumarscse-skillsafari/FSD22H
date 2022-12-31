@@ -1,6 +1,262 @@
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
-/* 
-    font-family: 'Poppins', sans-serif;
-*/
+/* font-family: "Poppins", sans-serif; */
+:root {
+  /* color variables */
+  --base-shade-1: #00a8fa;
+  --white-shade-1: #fff;
+  --white-shade-2: #d7e1f3;
+  --black-shade-1: #232323;
+  --black-shade-2: #676a8b;
+  --grad-color-1: 0, 180, 250;
+  --grad-color-2: 21, 120, 255;
+
+  /* font-size variable */
+  --base-font-size: 1.6rem;
+
+  /* heading variables */
+  --heading-font-size-1: 4rem;
+  --heading-font-size-2: 3.2rem;
+  --heading-font-size-3: 2rem;
+  --heading-font-size-4: 1.8rem;
+
+  /* border-radius variables */
+  --border-radius-1: 1rem;
+  --border-radius-2: 0.5rem;
+}
+
+/* Base Styles */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  /* while scrolling the screen we will get smoother behaviour */
+}
+
+/* Utility Classes */
+section,
+footer {
+  padding: 9rem 5rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.column {
+  width: 100%;
+}
+
+.section-desc {
+  text-align: center;
+  margin: 2rem 0 6rem 0;
+}
+
+h1 {
+  font-size: var(--heading-font-size-1);
+  color: var(--black-shade-1);
+  margin-bottom: 2rem;
+  word-spacing: 1rem;
+  line-height: 1.6;
+}
+
+h2 {
+  font-size: var(--heading-font-size-2);
+  color: var(--black-shade-1);
+  font-weight: 700;
+  text-align: center;
+}
+
+h3 {
+  font-size: var(--heading-font-size-3);
+  color: var(--black-shade-1);
+  font-weight: 700;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+h4 {
+  font-size: var(--heading-font-size-4);
+  color: var(--black-shade-2);
+  margin: 1.5rem 0;
+}
+
+p,
+button {
+  font-size: var(--base-font-size);
+  color: var(--black-shade-2);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.btn {
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius-2);
+  border: none;
+  margin: 2rem 0;
+}
+
+.primary-btn {
+  background-color: var(--base-shade-1);
+  color: var(--white-shade-1);
+}
+
+.secondary-btn {
+  border: 0.3rem solid var(--base-shade-1);
+  color: var(--base-shade-1);
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  padding: 3rem 5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  font-size: var(--heading-font-size-4);
+  text-decoration: none;
+}
+
+nav a#logo {
+  color: var(--base-shade-1);
+  font-weight: 700;
+}
+
+nav ul a {
+  color: var(--white-shade-2);
+}
+
+/* Side Menu */
+#ham-menu {
+  display: none;
+}
+
+nav ul.active {
+  left: 0;
+}
+
+/* Sticky Header */
+.sticky {
+  background-color: var(--white-shade-1);
+  box-shadow: 0.2rem 1.5rem rgba(0, 0, 0, 0.5);
+}
+
+.sticky nav ul a,
+.sticky nav a#logo,
+.sticky #ham-menu {
+  color: var(--black-shade-1);
+}
+
+/* Link Hover Effect */
+nav ul a:hover {
+  color: var(--black-shade-1);
+}
+
+.sticky nav ul a:hover {
+  color: var(--base-shade-1);
+}
+
+/* Hero */
+section.hero {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: center;
+}
+
+#header-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hero-content p {
+  text-align: justify;
+}
+
+.hero-img img {
+  display: block;
+  width: 100%;
+}
+
+.btn-container {
+  display: flex;
+  gap: 3rem;
+}
+
+/* Features */
+.features .row {
+  align-items: stretch;
+}
+
+.features .column {
+  padding: 6rem 2rem;
+  border-radius: var(--border-radius-1);
+}
+
+.features .column p {
+  text-align: center;
+}
+
+.features h3 {
+  margin: 3rem 0;
+}
+
+.features i {
+  display: block;
+  height: 6rem;
+  width: 6rem;
+  margin: 0 auto;
+  font-size: 3.5rem;
+  background-color: var(--base-shade-1);
+  color: var(--white-shade-1);
+  padding: 1.3rem 0;
+  text-align: center;
+  border-radius: var(--border-radius-2);
+}
+
+.features .column:hover {
+  background-color: var(--base-shade-1);
+}
+
+.features .column:hover h3 {
+  color: var(--white-shade-1);
+}
+
+.features .column:hover p {
+  color: var(--white-shade-2);
+}
+
+.features .column:hover i {
+  background-color: var(--white-shade-1);
+  color: var(--base-shade-1);
+}
