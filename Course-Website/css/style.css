@@ -260,3 +260,151 @@ section.hero {
   background-color: var(--white-shade-1);
   color: var(--base-shade-1);
 }
+
+/* Courses */
+.courses .row {
+  align-items: stretch;
+}
+
+.courses .column {
+  box-shadow: 0 0.5rem 2.4rem 0.6rem rgba(0, 0, 0, 0.6);
+  border-radius: var(--border-radius-1);
+  display: flex;
+  flex-direction: column;
+}
+
+.courses .column > *:not(img) {
+  padding: 0.2rem;
+}
+
+.courses .column img {
+  border-radius: var(--border-radius-1);
+  width: 100%;
+}
+
+.courses .column p {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.courses-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.courses-btn .btn:hover {
+  color: var(--white-shade-1);
+  background-color: var(--base-shade-1);
+}
+
+/* Testimonials */
+.testimonial {
+  background-image: linear-gradient(
+      45deg,
+      rgba(var(--grad-color-1), 0.8),
+      rgba(var(--grad-color-2), 0.8)
+    ),
+    url("../images/testimonial-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.testimonial h2,
+.testimonial .section-desc {
+  color: var(--white-shade-1);
+}
+
+.testimonial .row {
+  align-items: stretch;
+}
+
+.testimonial .column {
+  background-color: var(--white-shade-1);
+  padding: 4rem 3rem;
+  text-align: center;
+  border-radius: var(--border-radius-1);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-image {
+  height: 14rem;
+  width: 14rem;
+  margin: auto;
+  padding: 0.9rem;
+  border-radius: 50%;
+  background: linear-gradient(var(--white-shade-1) 50% var(--base-shade-1) 50%);
+}
+
+.testimonial-image img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.testimonial .column p {
+  margin: 4rem 0;
+  flex-grow: 1;
+}
+
+/* Download */
+.download-app .column:nth-child(1) {
+  display: flex;
+  justify-content: center;
+}
+
+.download-app .column:nth-child(2) {
+  padding: 0.2rem;
+}
+
+.download-app img {
+  display: block;
+  width: 45%;
+}
+
+.app-features {
+  border-bottom: 1.5px dashed rgba(var(--grad-color-1), 0.4);
+}
+
+.app-features:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.app-features div {
+  display: flex;
+  gap: 2rem;
+}
+
+.app-features p {
+  margin-bottom: 1.5rem;
+}
+
+.download-app .fa-solid {
+  display: inline-block;
+  background-color: var(--white-shade-2);
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--base-shade-1);
+}
+
+.download-app h3 {
+  display: inline-block;
+}
+
+.download-btns {
+  display: flex;
+}
+
+.download-btns a {
+  display: inline-block;
+  text-align: center;
+}
+
+.download-btns a img {
+  display: inline-block;
+  width: 70%;
+}
