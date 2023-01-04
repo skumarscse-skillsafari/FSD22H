@@ -408,3 +408,206 @@ section.hero {
   display: inline-block;
   width: 70%;
 }
+
+/* Footer */
+footer {
+  background-color: var(--black-shade-1);
+}
+
+footer h3 {
+  margin: 0;
+}
+
+footer h3,
+footer h4 {
+  color: var(--white-shade-1);
+  text-align: center;
+}
+
+footer .row {
+  margin-bottom: 6rem;
+}
+
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-bottom: 2px solid var(--white-shade-1);
+}
+
+.social-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.social-links .fa-brands {
+  display: inline-block;
+  background-color: var(--white-shade-2);
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--base-shade-1);
+}
+
+footer p {
+  text-align: center;
+}
+
+/* Scroll to Top and Bottom */
+#scroll-top {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  /* display: none; */
+  height: 5rem;
+  width: 5rem;
+  background-color: var(--base-shade-1);
+  color: var(--white-shade-1);
+  border: none;
+  font-size: var(--heading-font-size-3);
+  border-radius: var(--border-radius-2);
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 56.25%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  section,
+  footer {
+    padding: 7.5rem 5rem;
+  }
+  header {
+    padding: 2.2rem 5rem;
+  }
+  section.hero {
+    grid-template-columns: 1fr;
+    background: linear-gradient(
+      45deg,
+      rgb(var(--grad-color-1)),
+      rgb(var(--border-radius-2))
+    );
+  }
+  .hero-img {
+    grid-row: 1;
+  }
+
+  nav ul a,
+  nav a#logo {
+    color: var(--white-shade-1);
+  }
+
+  .hero-content h1,
+  .hero-content p {
+    text-align: center;
+  }
+
+  /* .hero-content h1 {
+    color: var(--white-shade-1);
+  }
+
+  .hero-content p {
+    color: var(--white-shade-2);
+  } */
+
+  .btn-container {
+    justify-content: center;
+  }
+
+  .download-app img {
+    width: 30%;
+  }
+
+  .app-features div {
+    justify-content: center;
+  }
+
+  .app-features p {
+    text-align: center;
+  }
+
+  .download-app a img {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+
+  header {
+    padding: 2rem 4rem;
+  }
+
+  #ham-menu {
+    display: block;
+    /* color: var(--white-shade-1); */
+  }
+
+  nav a#logo,
+  #ham-menu {
+    font-size: var(--heading-font-size-2);
+  }
+  nav ul {
+    background-color: var(--black-shade-1);
+    position: fixed;
+    left: -100vw;
+    top: 70.4px;
+    height: calc(100vh - 70.4px);
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s;
+    gap: 0;
+  }
+
+  nav ul a {
+    font-size: var(--heading-font-size-3);
+  }
+
+  .sticky nav ul a {
+    color: var(--white-shade-1);
+  }
+
+  nav ul a:hover {
+    color: var(--base-shade-1);
+  }
+
+  #scroll-top {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 46.87%;
+  }
+  header {
+    padding: 2rem 3rem;
+  }
+  section,
+  footer {
+    padding: 7.5rem 3rem;
+  }
+  .features .column {
+    padding: 4rem 2rem;
+  }
+
+  nav ul {
+    top: 65.18px;
+    height: calc(100vh - 65.18px);
+  }
+}
