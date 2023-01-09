@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Variables">
+    <title>JavaScript - Variables</title>
+</head>
+
+<body>
+    <h2>JavaScript - Variables</h2>
+
+
+    <script>
+        // Variables
+        // A variable is a "named storage" for data/information
+        // Ex: 1 + 2 => 3
+        // 1 and 2 are data or information
+        // Perform addition operation inorder to get the expected result
+        // numberOne = 1 and numberTwo = 2
+        // numberOne + numberTwo => 1 + 2 => 3
+
+        // Syntax
+        // let_Keyword<space>variableName = value;
+        // let numberOne = 1; // variable named "numberOne" holds the data "1"
+        // let numberTwo = 2; // variable named "numberTwo" holds the data "2"
+        // let result = numberOne + numberTwo; // result of summation of the variables "numberOne" and "numberTwo"
+        // console.log(result); // 3
+
+        // Ex:
+        // let username; // declaring a variable
+        // username = "SkillSafari"; // defining the variable i.e assigning a value to the variable
+        // console.log(username); // SkillSafari
+
+        // Declaring multiple variables
+        // Ex: 1
+        // let name = "SkillSafari";
+        // let age = 20;
+        // let designation = "Developer";
+        // console.log(name, age, designation);
+
+        // Ex: 2 
+        // let name,
+        //     age = 30,
+        //     designation;
+        // name = "SkillSafari";
+        // designation = "Developer";
+        // console.log(name, age, designation);
+
+        // Rules
+        // Variables should not starts with number. Ex: 123nameOne
+        // Variables should not be a keyword or reserved word. Ex: let, console, log, document
+        // Multi-word variable should follow camelCase notation. "-", "." are not allowed, except "_" .
+        // Ex: userName => firstword first letter should be in lowercase, rest of the words first letter should be in uppercase
+        // Ex: dateOfBirth, bloodGroup, workPlace, nameOfTheCity
+        // Naming the variable must have some related meaning based on the value assigned
+        // Ex: let age = 30, let userName = "SkillSafari"; // Recommended
+        // Ex: let a = 30, let xyz = "SkillSafari"; // Not Recommended
+
+        // How to change the value already assigned to a variable
+        let username = "SkillSafari";
+        console.log(username); // SkillSafari
+        // Syntax
+        // existingVarName = newValue;
+        username = "EduKeys"; // assigning newValue
+        console.log(username); // EduKeys
+
+        // Copy the value of one variable to another
+        let firstName = "SkillSafari";
+        let lastName = "EduKeys";
+        console.log(firstName, lastName); // SkillSafari EduKeys
+        let fullName = firstName + " " + lastName; // "SkillSafri" + "EduKeys";
+        console.log(fullName); // SkillSafari EduKeys
+
+        // const => constant
+        // let => value assigned to the variable declared using "let" keyword can be modified
+        // const => value assigned to the variable declared using "const" keyword can not be modified
+        const city = "Chennai";
+        console.log(city); // Chennai
+        // city = "Bangalore";
+        console.log(city); // Error 
+
+        // const variables are declared in UPPERCASE
+        const DOB = "01-02-2023";
+        console.log(DOB);
+        const COLOR_RED = "#F00";
+        console.log(COLOR_RED);
+    </script>
+</body>
+
+</html>
