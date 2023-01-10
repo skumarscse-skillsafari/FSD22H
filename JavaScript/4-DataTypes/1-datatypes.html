@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - DataTypes">
+    <title>JavaScript - DataTypes</title>
+</head>
+
+<body>
+    <h1>JavaScript - DataTypes</h1>
+
+
+    <script>
+        // DataTypes:
+        // 1. Primitive Datatypes. One variable can hold only one value
+        // 2. Non-primitive Datatypes. One variable can hold multiple values
+        // Primitive datatypes
+        // 1. Number
+        // 2. BigInt
+        // 3. String
+        // 4. Boolean
+        // 5. Null
+        // 6. Undefined
+        // Non-primitive datatypes
+        // 1. Objects
+        // 2. Symbols
+        // 3. Arrays
+
+        // Primitive DataTypes
+        // Declaring a variable
+        // 1. let Ex: let username = "SkillSafari"; let age = 30; let isAdmin = true;
+        // 2. const Ex: const DOB = "01-01-2020";
+
+        // JavaScript is a "dynamically typed" programming language
+
+        // Number
+        // 1. Whole number (0 - 9)
+        // 2. Decimal number (Ex: 12.5)
+        // 3. infinity, -infinity and NaN (Not a Number)
+        // Syntax
+        // let varName = value;
+        // value => whole number or decimal number
+        // let numberOne = 23; // value "23" is a type of whole number
+        // console.log(numberOne); // 23
+        // numberOne = 23.5; // value "23.5" is a type of decimal number
+        // console.log(numberOne); // 23.5
+
+        // numberOne = "One";
+        // console.log(numberOne); // One
+
+        // Infinity
+        // let number = 30 / 0;
+        // console.log(number); // Infinity
+
+        // // NaN => Not a Number
+        // let expression = "hello" / 90;
+        // console.log(expression); // NaN
+        // // Ex: "hello" * 20 => NaN
+        // // Ex: "hello" + "World" => helloWorld
+        // console.log(1 + "Hello"); // 1Hello
+
+        // // Defining a number
+        // // 1,000,000,000
+        // // let billion = 1,000,000,000;
+        // // Use "_" instead of "," inorder to make the bigger numbers as human readable
+        // // let billion = 1_000_000_000;
+        // // console.log(billion); // 1000000000
+
+        // // Use of "e"
+        // let billion = 1e9; // after "1" there should be nine "0"'s
+        // console.log(billion); // 1000000000
+
+        // let thousand = 1e3; // 1 * 1000 => 1000
+        // console.log(thousand); // 1000
+
+        // let newNumber = 1.6e7; // 1.6 * 10000000 => 16000000
+        // console.log(newNumber); // 16000000
+
+        // let anotherNumber = 12.3e4; // 12.3 * 10000 => 123000
+        // console.log(anotherNumber); // 123000
+
+        // let oneMoreNumber = 1.356e5; // 1.356 * 100000
+        // console.log(oneMoreNumber); // 135600
+
+        // let negativeNumber = 1e-6; // 1 / 1000000
+        // console.log(negativeNumber); // 0.000001
+
+        // toString(base)
+        // binary, octal, decimal, hexadecimal
+        // let numberOne = 254;
+        // // binary => base => 2
+        // console.log(numberOne.toString(2)); // 11111110
+
+        // Rounding
+        // 1. Math.floor()
+        // 2. Math.ceil()
+        // 3. Math.round()
+        // 4. Math.trunc()
+
+        // Math.floor()
+        // Round down the given decimal number
+        console.log(Math.floor(5.1)); // 5
+        console.log(Math.floor(-1.1)); // -2
+
+        // Math.ceil()
+        // Round up the given decimal number
+        console.log(Math.ceil(5.1)); // 6
+        console.log(Math.ceil(-1.1)); // -1
+
+        // Math.round()
+        // Rounds the decimal number to the nearby integer (whole number)
+        console.log(Math.round(5.4)); // 5 (breaking point is => .4 i.e <= .4 rounds down to the nearby integer)
+        console.log(Math.round(5.5)); // 6 (breaking point is => .5 i.e >= .5 rounds up to the nearby integer)
+        console.log(Math.round(5.9)); // 6
+
+        // Math.trunc()
+        // Removes anything next to the decimal point
+        console.log(Math.trunc(5.4)); // 5
+        console.log(Math.trunc(5.9)); // 5
+
+        // Other Math functions
+        // 1. Math.min()
+        // 2. Math.max()
+        // 3. Math.random()
+        // 4. Math.pow()
+
+
+    </script>
+</body>
+
+</html>
