@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="insertAdjacentHTML">
+    <title>insertAdjacentHTML</title>
+</head>
+
+<body>
+    <h1>insertAdjacentHTML</h1>
+
+    <ul id="list">
+        <li>CSS</li>
+    </ul>
+
+    <script>
+        // insertAdjacentHTML
+        // 1. beforebegin => add new element before the selected element (Sibling)
+        // 2. afterbegin => add a new element as a first child (child)
+        // 3. beforeend => add a new element as a last child (child)
+        // 4. afterend => add new element after the selected element (Sibling)
+
+        // append() => Add/Insert node(s) after the last chils of a parent
+        // prepend() => Add/Insert node(s) before the first child of a parent
+        // after() => Add/Insert node(s) next to a specified element
+        // appendChild() => Add/Insert node next to a last child of a parent
+
+        // Syntax
+
+        let list = document.querySelector("#list");
+
+        list.insertAdjacentHTML("beforebegin", "<h2>List of Front-end Technologies</h2>");
+        list.insertAdjacentHTML("afterbegin", "<li>HTML</li>");
+        list.insertAdjacentHTML("beforeend", "<li>JavaScript</li>");
+        list.insertAdjacentHTML("afterend", "<p>The above are some of the front-end technologies</p>");
+
+
+
+
+
+    </script>
+</body>
+
+</html>

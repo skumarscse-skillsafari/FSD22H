@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="General Adjacent Sibling">
+    <title>General Adjacent Sibling</title>
+    <style>
+        /* 
+            Applies the css properties to all the matched sibling, top to bottom
+            // Syntax
+            referenceSiblingElement ~ siblingElement {
+                propertyName: propertyValue;
+            }
+        */
+        h2~p {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>General Adjacent Sibling Selector</h2>
+    <div id="demo">
+        <h2>This is Heading.</h2>
+        <p id="para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, modi?</p>
+        <p id="para-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, enim?</p>
+    </div>
+</body>
+
+</html>

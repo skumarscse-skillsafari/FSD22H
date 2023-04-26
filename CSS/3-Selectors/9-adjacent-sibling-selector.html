@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Adjacent Sibling Selector">
+    <title>Adjacent Sibling Selector</title>
+    <style>
+        /* 
+        Applies the css properties to the immediate next sibling (Adjacent), top to bottom   
+        // Syntax
+            referenceSiblingElement + siblingElement {
+                properyName: propertyValue;
+            }
+        */
+        p+a {
+            color: red;
+        }
+
+        #demo h2+p {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Adjacent Sibling Selector</h2>
+    <!-- <div id="div-container">
+        <h2 class="head">This is Heading.</h2>
+        <p class="para-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, illo!</p>
+        <a href="#">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, repellat.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, id!</p>
+        </a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, assumenda.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, iure!</p>
+        <hr>
+        <div id="inner-div">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, harum.</p>
+            <a href="#">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, aliquam!</p>
+            </a>
+        </div>
+    </div> -->
+
+    <div id="demo">
+        <h2>This is Heading.</h2>
+        <p id="para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, modi?</p>
+        <p id="para-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, enim?</p>
+    </div>
+    <div id="demo-1">
+        <h2>This is Heading.</h2>
+        <p id="para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, modi?</p>
+        <p id="para-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, enim?</p>
+    </div>
+    <h2>Heading</h2>
+    <p>This is a paragraph</p>
+</body>
+
+</html>

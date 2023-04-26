@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Fetch API - POST Data">
+    <title>Fetch API - POST Data</title>
+</head>
+
+<body>
+    <h1>Fetch API - POST Data</h1>
+    <form action="#" id="form">
+        <p>
+            <input type="text" name="firstName" id="firstName" placeholder="Enter firstname">
+        </p>
+        <p>
+            <input type="text" name="lastName" id="lastName" placeholder="Enter Lastname">
+        </p>
+        <p>
+            <input type="email" name="email" id="email" placeholder="Enter email">
+        </p>
+        <p>
+            <input type="password" name="password" id="password" placeholder="Enter password">
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+
+    <script>
+        // Fetch API - POST Data
+        // CRUD operations => Create, Read, Update and Delete
+        // GET => Getting the data from the resource (server/database)
+        // POST => Posting/Sending the data to the resource (server/database)
+        // PUT => Updating the existing data in the resource (server/database)
+        // DELETE => Deleting the existing data in the resource (server/database)
+
+        // GET
+        /*
+            fetch(a, b);
+            a => resource url
+            b => header object (optional)
+            fetch(url, { method: "GET", "company": "skillsafari" });
+        */
+
+        // POST
+        /*
+            fetch(a, b);
+            a => resource url
+            b => header object
+            {
+                method: "POST",
+                body: new FormData(form)
+            }
+        */
+
+        // Fetch => POST
+        // fetch(url, headers)
+        // fetch(url, { method: "POST", body: formData })
+        // let formData = new FormData(form);
+
+        // let form = document.querySelector("#form");
+        // form.addEventListener("submit", (e) => {
+        //     e.preventDefault();
+        //     // let formData = new FormData(form);
+        //     // console.log([...formData.entries()]);
+        //     postData();
+        // })
+        // let postData = async () => {
+        //     try {
+        //         let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        //             method: "POST",
+        //             body: new FormData(form)
+        //         });
+        //         // console.log(await response.json());
+        //         let { id } = await response.json();
+        //         alert(`Data added successfully under the id: ${id} `);
+        //     } catch (error) {
+        //         console.log(`Something went wrong. Check here: ${error}`);
+        //     }
+        // }
+        let form = document.querySelector("#form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            postData();
+        })
+
+        let postData = async () => {
+            let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "POST",
+                body: new FormData(form),
+            });
+            let data = await response.json();
+            console.log(data.id);
+        }
+    </script>
+</body>
+
+</html>

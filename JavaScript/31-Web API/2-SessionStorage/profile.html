@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="User Profile Page">
+    <title>User Profile Page</title>
+</head>
+
+<body>
+    <h1>User Profile Page</h1>
+    <h2>Welcome, <span id="username"></span></h2>
+    <p>
+        <button id="btn">Logout</button>
+    </p>
+
+
+    <script>
+        // Logout
+        let btn = document.querySelector("#btn");
+        let span = document.querySelector("#username");
+        let username = Object.keys(sessionStorage)[1];
+        console.log(username);
+        span.textContent = username;
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            sessionStorage.removeItem(username);
+            window.location.href = "http://127.0.0.1:5500/JavaScript/31-Web%20API/2-SessionStorage/register.html";
+        })
+    </script>
+</body>
+
+</html>

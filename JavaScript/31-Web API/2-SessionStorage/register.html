@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Auth using sessionStorage">
+    <title>Auth using sessionStorage</title>
+</head>
+
+<body>
+    <h1>Auth using sessionStorage</h1>
+    <h2>Registration Form</h2>
+    <form action="#">
+        <p>
+            <label for="username">User name:</label>
+            <input type="text" name="username" id="username" placeholder="Enter username" required>
+        </p>
+        <p>
+            <label for="password">Enter Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password" required>
+        </p>
+        <p>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" name="confirmPassword" id="confirm-password" placeholder="Enter Password again"
+                required>
+        </p>
+        <p>
+            <label for="age">Enter Age:</label>
+            <input type="number" name="age" id="age" placeholder="Enter age" required>
+        </p>
+        <p>
+            <button id="register">Register</button>
+            <button id="cancel">Cancel</button>
+        </p>
+    </form>
+
+    <script>
+        let register = document.querySelector("#register");
+        let inputs = document.querySelectorAll("input");
+        let cancel = document.querySelector("#cancel");
+        console.log(inputs);
+        let userInfo = {};
+        register.addEventListener("click", (e) => {
+            e.preventDefault();
+            inputs.forEach((input) => {
+                let { name, value } = input;
+                console.log(name);
+                console.log(value);
+                userInfo[name] = value
+            })
+            console.log(userInfo);
+            let sessionStorageKeys = Object.keys(sessionStorage);
+            console.log(sessionStorageKeys);
+            let username = sessionStorageKeys.find((key) => key === userInfo.username);
+            console.log(username);
+            if (username) {
+                alert("Username already exists");
+            } else {
+                if (inputs[1].value === inputs[2].value) {
+                    sessionStorage.setItem(userInfo.username, JSON.stringify(userInfo));
+                    window.location.href = "http://127.0.0.1:5500/JavaScript/31-Web%20API/2-SessionStorage/signin.html"
+                } else {
+                    alert("Password and confirm password not match");
+                }
+            }
+        });
+
+        cancel.addEventListener("click", (e) => {
+            e.preventDefault();
+            inputs.forEach((input) => {
+                input.value = "";
+            })
+        })
+
+
+        // key => "john"
+        // value => { username: "john", password: "123", confirmPassword: "123", age: 25 }
+        // localStorage.setItem("john", )
+
+        // let data = { username: "SkillSafari", password: "12356", confirmPassword: "12356", age: 25 }
+        // localStorage.setItem(data.username, JSON.stringify(data));
+
+        // localStorage.getItem(username);
+        // { username: "SkillSafari", password: "12356", confirmPassword: "12356", age: 25 }
+
+
+    </script>
+</body>
+
+</html>

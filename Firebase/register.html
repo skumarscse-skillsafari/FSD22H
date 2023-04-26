@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Auth using localStorage">
+    <title>Auth using Firebase</title>
+</head>
+
+<body>
+    <h1>Auth using Firebase</h1>
+    <h2>Registration Form</h2>
+    <form action="#" id="form">
+        <table>
+            <tr>
+                <td><label for="username">User name:</label></td>
+                <td><input type="text" name="username" id="username" placeholder="Enter username" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail:</label></td>
+                <td><input type="email" name="email" id="email" placeholder="Enter email" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" name="password" id="password" placeholder="Enter Password" required></td>
+            </tr>
+        </table>
+        <p>
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+        </p>
+        <p>
+            Already Registered? <a href="./signin.html">Click here to sign-in</a>
+        </p>
+    </form>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB0WGbEsh-kKgXIuWLWrauXMxOpLDqc_H8",
+            authDomain: "fir-auth-fsd22h.firebaseapp.com",
+            projectId: "fir-auth-fsd22h",
+            storageBucket: "fir-auth-fsd22h.appspot.com",
+            messagingSenderId: "893331259678",
+            appId: "1:893331259678:web:7cff2b475f3ec6e417c90f"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        const auth = getAuth();
+
+        const db = getDatabase(app);
+
+        let form = document.querySelector("#form");
+        let inputs = document.querySelectorAll("input");
+        let cancel = document.querySelector("#cancel");
+        console.log(inputs);
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            console.log(inputs[1].value);
+            console.log(inputs[2].value);
+            let username = inputs[0].value;
+            let email = inputs[1].value;
+            let password = inputs[2].value;
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((res) => {
+                    console.log(res);
+                    let user = res.user;
+                    set(ref(db, "users/" + user.uid), {
+                        username: username,
+                        email: email,
+                    });
+                    alert("User created");
+                    // window.location.href = "./signin.html";
+                })
+                .catch((err) => {
+                    let { code, message } = err;
+                    console.log(`Something went wrong: ${code} => ${message}`);
+                })
+        });
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

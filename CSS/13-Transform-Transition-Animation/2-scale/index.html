@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Scale">
+    <title>CSS - Scale</title>
+    <style>
+        /* 
+            transform: translate(), scale(), rotate(), skew()
+
+            transform: scale() => 1 => 100%; 0.5 => 50%
+            // value will be applied on both the directions of x and y axis
+        */
+        div {
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+        }
+
+        .one {
+            background: green;
+            transform: scaleX(0.5);
+        }
+
+        .two {
+            margin-top: 150px;
+            background: red;
+            transform: scaleY(2.5);
+        }
+
+        .three {
+            background: blue;
+            transform: scale(1.2, 1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+</body>
+
+</html>

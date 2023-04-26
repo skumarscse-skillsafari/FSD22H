@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="replaceChild">
+    <title>replaceChild</title>
+</head>
+
+<body>
+    <h1>replaceChild</h1>
+    <ul class="nav">
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+    </ul>
+
+    <script>
+        // replaceChild
+        // Syntax
+        // parentNode.replaceChild(newChild, existingChild)
+
+        let nav = document.querySelector(".nav");
+        let newLi = document.createElement("li");
+        newLi.textContent = "Contact";
+        // nav.replaceChild(newLi, nav.lastElementChild); // replace the existing child
+        let home = document.createElement("li");
+        home.textContent = "Home";
+
+        nav.replaceChildren(newLi, home); // replace all the children
+
+
+    </script>
+</body>
+
+</html>

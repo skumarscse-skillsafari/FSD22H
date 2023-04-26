@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Form - Intro">
+    <title>Form - Intro</title>
+</head>
+
+<body>
+    <h2>Form - Intro</h2>
+    <form action="#" method="get">
+        <fieldset>
+            <legend>Basic Form Details:</legend>
+            <p>
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" id="firstName" placeholder="Enter first name" required>
+            </p>
+            <p>
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Enter last name">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter email">
+            </p>
+            <p>
+                <label for="tel">Telephone No.:</label>
+                <input type="tel" name="tel" id="tel" placeholder="Enter telephone number">
+            </p>
+            <p>
+                <label for="mobile">Mobile No.:</label>
+                <input type="number" name="mobile" id="mobile" placeholder="Enter mobile number">
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Enter password">
+            </p>
+            <p>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter password again">
+            </p>
+            <p>
+                <label for="dob">DOB:</label>
+                <input type="date" name="dob" id="dob">
+            </p>
+            <p>
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" id="male"><span>Male</span>
+                <input type="radio" name="gender" id="female"><span>Female</span>
+                <input type="radio" name="gender" id="other"><span>Other</span>
+            </p>
+            <p>
+                <label for="hobbies">Hobbies:</label>
+                <input type="checkbox" name="cricket" id="cricket"><span>Cricket</span>
+                <input type="checkbox" name="football" id="football"><span>Football</span>
+                <input type="checkbox" name="newspaper" id="newspaper"><span>Newspaper</span>
+                <input type="checkbox" name="other" id="other"><span>Other</span>
+            </p>
+            <p>
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" cols="30" rows="5"></textarea>
+            </p>
+            <p>
+                <label for="upload">Upload File:</label>
+                <input type="file" name="upload" id="upload">
+            </p>
+            <p>
+                <label for="subjects">Select the subject:</label>
+                <select name="subjects" id="subjects">
+                    <optgroup label="UG">
+                        <option value="English">English</option>
+                        <option value="Maths">Maths</option>
+                        <option value="Physics">Physics</option> <!-- Alt + Shift + Down Arrow -->
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Computer">Computer</option>
+                    </optgroup>
+                    <optgroup label="PG">
+                        <option value="English">English</option>
+                        <option value="Maths">Maths</option>
+                        <option value="Physics">Physics</option> <!-- Alt + Shift + Down Arrow -->
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Computer">Computer</option>
+                    </optgroup>
+
+                </select>
+            </p>
+            <p>
+                <label for="subjects">Select the subject(s):</label>
+                <select name="subjects" id="subjects" multiple>
+                    <option value="English">English</option>
+                    <option value="Maths">Maths</option>
+                    <option value="Physics">Physics</option> <!-- Alt + Shift + Down Arrow -->
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Computer">Computer</option>
+                </select>
+            </p>
+        </fieldset>
+        <!-- <input type="submit" value="Submit">
+        <input type="reset" value="Reset"> -->
+        <button type="submit">Submit</button>
+        <button type="reset" disabled>Reset</button>
+    </form>
+</body>
+
+</html>

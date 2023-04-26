@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="className Property">
+    <title>className Property</title>
+</head>
+
+<body>
+    <h1>ClassName Property</h1>
+    <p class="para align-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, labore.</p>
+
+    <script>
+        // className
+        // className => access all the classes as classList (space-separed) assigned to a element
+        let para = document.querySelector("p");
+        let classNames = para.className;
+        console.log(classNames); // "para align-center"
+        console.log(classNames.split(" "));
+
+
+
+    </script>
+</body>
+
+</html>

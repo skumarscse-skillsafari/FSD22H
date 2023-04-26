@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Examples - Spread operator and Rest variable">
+    <title>Examples - Spread operator and Rest variable</title>
+</head>
+
+<body>
+    <h1>Examples - Spread operator and Rest variable</h1>
+
+    <script>
+        // Spread operator
+        // 1. Copying array elements
+        // let arrOne = ["John", 25, "Tester", "Chennai"];
+        // console.log(arrOne);
+        // // let arrTwo = [];
+        // // for (let i = 0; i < arrOne.length; i++) {
+        // //     arrTwo.push(arrOne[i]);
+        // // }
+        // // arrTwo.push("India");
+        // // console.log(arrTwo);
+        // let arrTwo = [...arrOne];
+        // arrOne.push("Hello");
+        // console.log(arrOne);
+        // arrTwo.push("India");
+        // console.log(arrTwo);
+
+        // let numArrOne = [1, 2, 3];
+        // let numArrTwo = [4, 5, 6];
+        // let numArrThree = [7, 8, 9];
+        // let numArrNew = [...numArrOne, ...numArrTwo, ...numArrThree];
+        // console.log(numArrNew);
+
+        // 2. Copy Object properties
+        // let userOne = {
+        //     name: "John",
+        //     age: 25
+        // }
+        // // let userTwo = {};
+        // // Object.assign(userTwo, userOne);
+        // // console.log(userTwo);
+        // let userTwo = { ...userOne };
+        // userTwo.isAdmin = true;
+        // console.log(userTwo);
+        // console.log(userOne);
+        // let userName = { name: "John" };
+        // let userAge = { age: 25 };
+        // let userCity = { city: "Chennai" };
+        // let userDetails = { ...userName, ...userAge, ...userCity };
+        // userDetails.isAdmin = true;
+        // console.log(userDetails);
+        // console.log(userName);
+        // console.log(userAge);
+        // console.log(userCity);
+
+        // Find unique elements in the array
+        // let numArr = [1, 2, 3, 3, 2, 1, 4, 5];
+        // let uniqueArray = [...new Set(numArr)];
+        // console.log(uniqueArray);
+
+        // Passing array as parameter
+        // let numArr = [1, 2, 3];
+        // let addAll = (a, b, c) => {
+        //     return a + b + c;
+        // }
+        // console.log(addAll(...numArr));
+
+        // Splitting string into characters
+        // let str = "Hello World";
+        // console.log(str.split(""));
+        // console.log([...str]);
+
+        // Rest Variable
+        // let [a, ...b] = [1, 2, 3, 4, 5];
+        // console.log(a);
+        // console.log(b);
+        let multiplyArray = (a, ...b) => { // [ 6, 8, 10, 12 ]
+            return b.map((ele) => a * ele).reduce((acc, eleOne) => {
+                return acc + eleOne
+            }, 0)
+        }
+        console.log(multiplyArray(2, 3, 4, 5, 6));
+
+        // [2, 4, 8, 10] => [2, 2, 4, 5]
+        let divArray = (a, ...b) => {
+            let newArray = [a, ...b];
+            return newArray.map((ele) => ele / a).reduce((acc, eleNew) => {
+                return acc * eleNew // 1 * 2 * 4 * 5 => 40
+            }, 1);
+        }
+        console.log(divArray(2, 4, 8, 10))
+
+    </script>
+</body>
+
+</html>

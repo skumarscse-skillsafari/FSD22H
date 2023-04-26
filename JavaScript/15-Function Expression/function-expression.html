@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Function Expression">
+    <title>Function Expression</title>
+</head>
+
+<body>
+    <h1>Function Expression</h1>
+
+
+    <script>
+
+        // function displayName(name) {
+        //     console.log(name);
+        // }
+        // displayName("John");
+
+        // Function Expression
+        /*
+        Syntax
+        let varName = function (par-1, par-2, ..., par-N) {
+            // function body
+        }
+        */
+        // let displayName = function (name) {
+        //     console.log(name);
+        // }
+        // displayName("John");
+
+        // let userDetails = function (firstName, lastName, age) {
+        //     return firstName + lastName + age;
+        // }
+        // let user = userDetails("John ", "Jack ", 25);
+        // console.log(user);
+
+
+        // Function Declaration Vs. Function Expression
+        // Function Declaration
+        displayName("John"); // invoking the function
+        function displayName(name) {
+            console.log(name);
+        }
+
+
+        // Function Expression
+        getUserDetails("John ", "Jack ", 25); // invoking the function
+        let getUserDetails = function (firstName, lastName, age) {
+            console.log(firstName, lastName, age);
+        };
+
+    </script>
+</body>
+
+</html>

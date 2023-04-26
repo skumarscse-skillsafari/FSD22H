@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Loops">
+    <title>JavaScript - Loops</title>
+</head>
+
+<body>
+    <h1>JavaScript - Loops</h1>
+
+
+
+    <script>
+        // JavaScript - Loops
+        /*
+            1. while loop
+            2. do...while loop
+            3. for loop
+            Repeat the certain statements of the block of the code, until some conditions meet.
+        */
+        // while loop => initialization, condition, increment/decrement
+        // entry check loop
+        /*
+         Syntax
+         initialization;
+         while(condition) {
+             // loop body
+            statements;
+
+            increment/decrement;
+         }
+        */
+        // Print numbers from 1 to 10
+        // Sequence of numbers from 1 to 10
+        // initialization => let initNum = 1
+        // increment/decrement => initNum = initNum + 1
+        // condition => initNum >= 10
+        // console.log("Without Loop");
+        // console.log(1);
+        // console.log(2);
+        // console.log(3);
+        // console.log(4);
+        // console.log(5);
+        // console.log(6);
+        // console.log(7);
+        // console.log(8);
+        // console.log(9);
+        // console.log(10);
+        // console.log("---------------------------------");
+        // console.log("With Loop");
+        // let initNum = 1;
+        // while (initNum <= 10) { // 1 <= 10 // 2 <= 10 // 3 <= 10 ... 9 <= 10 // 10 <= 10 // 11 <= 10
+        //     console.log(initNum); // 1 2 3 4 5 6 7 8 9 10
+        //     // initNum = initNum + 1;
+        //     initNum++; // 1 + 1 => 2 // 2 + 1 => 3 // 3 + 1 => 4 ....//8 + 1 => 9 // 9 + 1 = 10 // 10 + 1 => 11
+        // }
+
+        // do...while
+        // exit check loop
+        /*
+        Syntax
+        initialization;
+        do {
+            // loop body
+            // statements
+
+        } while (condition)
+        */
+        // Print the numbers 5 4 3 2 1 0 using do...while loop
+        // initialization => let initNum = 5
+        // decrement => initNum-- => initNum = initNum - 1
+        // condition => initNum < 0
+        // let initNum = 5;
+        // do {
+        //     console.log(initNum); // 5 // 4 // 3 // 2 // 1 // 0
+        //     initNum--; // 4 // 3 // 2 // 1 // 0 // -1
+        // } while (initNum >= 0); // 4 >= 0 => 4 // 3 >= 0 => 3 // 2 >= 0 => 2 // 1 >= 0 => 1 // 0 >= 0 // -1 >= 0
+
+        // Print Even numbers from 1 to 10 => 2 4 6 8 10
+        // Method - 1
+        // let initNum = 2;
+        // do {
+        //     console.log(initNum); // 2 4 6 8 10
+        //     initNum = initNum + 2;
+        // } while (initNum <= 10); // 2 <= 10
+
+        // Method - 2
+        // let initNum = 1;
+        // do {
+        //     if (initNum % 2 == 0) { // 2 % 2 == 0 // 3 % 2 == 1 // 4 % 2 == 0
+        //         console.log(initNum); // 2 // 4
+        //     }
+        //     initNum = initNum + 1; // 3 // 4 // 5
+        // } while (initNum <= 10); // 5 <= 10
+
+        // for loop => initialization, condition, increment/decrement
+        /*
+        Syntax
+        for (initialization; condition; increment/decrement) {
+            // loop body
+            // statements
+        }
+        */
+        // Print ODD numbers from 1 to 10 => 1 3 5 7 9
+        // for (let initNum = 1; initNum <= 10; initNum++) { // 1; 1 <= 10; 2 // 2; 2 <= 10; 3 
+        //     if (initNum % 2 != 0) { // 1 % 2 => 1 != 0 // 2 % 2 == 0
+        //         console.log(initNum); // 1 3 5 7 9
+        //     }
+        // }
+
+        // Skips in for loop
+        // initialization
+        // let initNum = 1;
+        // for (; initNum <= 10; initNum++) {
+        //     if (initNum % 2 != 0) {
+        //         console.log(initNum)
+        //     }
+        // }
+
+        // increment/decrement
+        // let initNum = 1;
+        // for (; initNum <= 10;) {
+        //     if (initNum % 2 != 0) {
+        //         console.log(initNum);
+        //     }
+        //     initNum++;
+        // }
+
+        // break; => Exit from the loop after the certain condition reached
+        // Break the loop after printing first 5 numbers
+        // let number = 1;
+        // while (number <= 10) { // 4 <= 10
+        //     console.log(number); // 1 2 3 4 5
+        //     if (number == 5)  // 5 == 5
+        //         break;
+        //     number++;
+        // }
+
+
+        // continue; => Skip the statements comes below the "continue" keyword in the loop based on condition
+        // Print EVEN numbers 1 to 10 => 2 4 6 8 10
+        // for (let start = 1; start <= 10; start++) {
+        //     if (start % 2) continue;
+        //     console.log(start); // 2 4 6 8 10 
+        // }
+
+        // Nested loops
+        // Loop inside a loop
+        for (let i = 1; i <= 5; i++) { // Outer Loop (if, outer loop does one iteration)
+            for (let j = 1; j <= i; j++) { // Inner Loop (needs to complete the entire iteration)
+                document.write(j + " ");
+            }
+            document.write("<br>");
+        }
+
+        // 1 2 3 4 5 
+        // 1 2 3 4 5
+        // 1 2 3 4 5
+        // 1 2 3 4 5
+        // 1 2 3 4 5  
+
+
+
+
+    </script>
+</body>
+
+</html>

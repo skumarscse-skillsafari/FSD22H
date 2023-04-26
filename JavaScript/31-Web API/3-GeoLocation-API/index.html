@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Geo-location API">
+    <title>Geo Location API</title>
+</head>
+
+<body>
+    <h1>Geo Location API</h1>
+    <button id="btn">Get Location</button>
+    <hr>
+    <p id="result"></p>
+    <script>
+        // Geo Location API
+        // Access geolocation Object
+        // navigator.geolocation
+        console.log(navigator.geolocation);
+        // Access getCurrentPosition Object
+        // console.log(navigator.geolocation.getCurrentPosition());
+
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            let result = document.querySelector("#result");
+            // Success
+            function onSuccess(position) {
+                console.log(position.coords);
+                const { latitude, longitude } = position.coords;
+                result.textContent = `The latitude position is: ${latitude} and the longitude position is: ${longitude}`
+                console.log(`The latitude position is: ${latitude} and the longitude position is: ${longitude}`)
+            }
+
+            // Error
+            function onError() {
+                result.textContent = `Required user concent to display the location. Allow access.`
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DOM - Attribute Methods">
+    <title>DOM - Attribute Methods</title>
+    <style>
+        #para {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            word-spacing: 1rem;
+            line-height: 2rem;
+            background: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM - Attribute Methods</h1>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ducimus.</p>
+    <button id="btn">Add</button>
+
+    <h2 class="sub-head">Sub Heading</h2>
+    <!-- <p>
+        <button id="demo">Demo</button>
+    </p>
+    <p>
+        <button id="disable">Disable</button>
+    </p> -->
+
+    <p>
+        <button id="remove">Remove</button>
+    </p>
+    <script>
+        // DOM - Attribute Methods
+        // setAttribute() => Set/Add/update attribute to a element
+        // getAttribute() => get the attribute set to the element
+        // removeAttribute() => remove the attribute set to the element
+        // hasAttribute() => Check the presence of the attribute in the element
+
+        let para = document.querySelector(".para");
+        let btn = document.querySelector("#btn");
+        btn.onclick = function () {
+            para.setAttribute("id", "para");
+        }
+
+        // let demo = document.querySelector("#demo");
+        // let disable = document.querySelector("#disable");
+        // disable.onclick = function () {
+        //     demo.setAttribute("disabled", "");
+        //     demo.setAttribute("class", "demo");
+        // }
+
+        let remove = document.querySelector("#remove");
+        remove.onclick = function () {
+            para.removeAttribute("id");
+        }
+
+        // Modify the attribute value
+        let subHead = document.querySelector(".sub-head");
+        subHead.setAttribute("class", "new-head");
+
+        console.log(para.hasAttribute("class"));
+    </script>
+</body>
+
+</html>

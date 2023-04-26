@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Interaction Methods">
+    <title>JavaScript - Interaction Methods</title>
+</head>
+
+<body>
+    <h2>JavaScript - Interaction Methods</h2>
+
+
+    <script>
+        // JavaScript - Interaction Methods
+        // 1. alert()
+        // 2. prompt()
+        // 3. confirm()
+
+        // alert()
+        // Syntax
+        // alert("message")
+        // display the "message" as pop-up with "OK" button and can be closed only by clicking on the "OK" button
+        // alert() method usually call by itself whenever the page loads
+        // alert("This is from alert method");
+
+        // prompt()
+        // Get some input from the user with a pop-up
+        // 1. Input Field => Used to get the input from the user
+        // 2. OK button => Input enterd by the user in the "Input field" can be accessed inside the browser
+        // 3. Cancel button => Input entered by the user in the "Input field" can not be accessed inside the browser.
+        // Both OK and Cancel button closes the prompt() method pop-up
+        // prompt() method usually call by itself whenever the page loads
+        // The return type of prompt() method is string
+        // Ex: 50 => "50"
+        // numberOne => "50" and numberTwo => "50"
+        // Converting numeric string
+        // 1. Number()
+        // 2. unary "+"
+        // Syntax
+        // prompt(a, b);
+        // a => Message to be displayed in the prompt() pop-up
+        // b => (optional), default value in the input field
+        // let numberOne = prompt("Enter the First number", 20);
+        // let numberTwo = prompt("Enter the Second number", 20);
+        // console.log(`The user entered values are: ${numberOne}, ${numberTwo}`);
+        // Using Number()
+        // console.log(`The summation of user entered numbers are: ${Number(numberOne) + Number(numberTwo)}`);
+        // Using unary "+"
+        // console.log(`The summation of user entered numbers are: ${+numberOne + +numberTwo}`);
+
+
+        // confirm()
+        // This is mainly used to get yes or no response from the user
+        // confirm(a);
+        // a => some question
+        // Like a pop-up with OK and Cancel button
+        // Ok => true and Cancel => false
+        let isAdmin = confirm("Are u a admin?");
+        console.log(isAdmin); // Ok => true and Cancel => false
+    </script>
+</body>
+
+</html>

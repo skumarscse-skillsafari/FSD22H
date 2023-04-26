@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Profile Page">
+    <title>Profile Page</title>
+</head>
+
+<body>
+    <h1>Profile Page</h1>
+    <div style="display: flex; justify-content: space-between;">
+        <p><strong>Welcome,</strong> <span id="username"></span></p>
+        <p>
+            <button id="logout">Logout</button>
+        </p>
+    </div>
+    <hr>
+    <p>Username: <input type="text" name="displayname" id="displayname">
+        <input type="button" value="Edit" id="edit">
+        <input type="button" value="Delete" id="delete">
+    </p>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, deleteUser } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+        import { getDatabase, set, ref, onValue, update } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB0WGbEsh-kKgXIuWLWrauXMxOpLDqc_H8",
+            authDomain: "fir-auth-fsd22h.firebaseapp.com",
+            projectId: "fir-auth-fsd22h",
+            storageBucket: "fir-auth-fsd22h.appspot.com",
+            messagingSenderId: "893331259678",
+            appId: "1:893331259678:web:7cff2b475f3ec6e417c90f"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        const auth = getAuth();
+
+        const db = getDatabase(app);
+
+        let username = document.querySelector("#username");
+        let logout = document.querySelector("#logout");
+        let displayName = document.querySelector("#displayname");
+        let edit = document.querySelector("#edit");
+        let deleteuser = document.querySelector("#delete");
+        let urlParams = new URLSearchParams(location.search);
+        console.log(urlParams); // { username: "John"}
+        let [id] = urlParams.values();
+        console.log(id);
+
+
+
+
+        const userDetailsRef = ref(db, "users/" + id);
+        onValue(userDetailsRef, (snapshot) => {
+            const data = snapshot?.val();
+            console.log(data); // { uid:... , username: ...}
+            username.textContent = data?.username;
+            displayName.value = data?.username;
+        })
+
+
+
+        logout.addEventListener("click", (e) => {
+            e.preventDefault();
+            signOut(auth).then(() => {
+                sessionStorage.removeItem(id);
+                window.location.href = "./signin.html";
+            }).catch(err => {
+                let { code, message } = err;
+                console.log(`Something went wrong. ${code} => ${message}`);
+            })
+        })
+
+        edit.addEventListener("click", (e) => {
+            e.preventDefault();
+            let newData = {
+                uid: id,
+                username: displayName.value
+            }
+            if (confirm("Are you sure to update the details?")) {
+                const updates = {};
+                updates["/users/" + id] = newData;
+                update(ref(db), updates);
+            }
+        })
+
+        deleteuser.addEventListener("click", (e) => {
+            e.preventDefault();
+            let newData = null;
+            if (confirm("Are you sure to delete the user?")) {
+                const updates = {};
+                updates["/users/" + id] = newData;
+                update(ref(db), updates);
+
+                onAuthStateChanged(auth, (user) => {
+                    let currentuser = user?.auth?.currentUser;
+                    console.log(currentuser);
+                    deleteUser(currentuser).then(() => alert("User deleted successfully"));
+                    sessionStorage.removeItem(id);
+                })
+                window.location.href = "./signin.html";
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

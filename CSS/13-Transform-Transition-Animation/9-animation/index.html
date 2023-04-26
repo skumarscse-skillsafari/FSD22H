@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Animnation">
+    <title>CSS - Animnation</title>
+    <style>
+        /* 
+            Transition Vs Animation
+            Transition => 0-th phase (beginning or actual apperance of an element) and 
+            100-th phase (end or element after transition)
+
+            Animation (multiple transitions over an element)
+            Animation usually applies whenever the page loads
+            0%, 25%, 50%, 75% and 100%
+            animation-name
+            animation-duration
+            animation-iteration-count
+
+            animation: animation-name animation-duration animation-iteration-count
+        */
+        div {
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            color: white;
+        }
+
+        .transition {
+            background: red;
+            transition: all 2s ease;
+        }
+
+        .transition:hover {
+            background: yellow;
+            transform: translateX(100px);
+            font-size: 30px;
+            text-transform: uppercase;
+            text-decoration: line-through;
+        }
+
+        .animation {
+            background: green;
+            /* animation-name: move;
+            animation-duration: 10s;
+            animation-iteration-count: 3; */
+            animation: move 5s 3;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(20px);
+            }
+
+            25% {
+                transform: translateY(20px);
+                background: red;
+            }
+
+            /* 50% {
+                transform: rotate(45deg);
+                background: yellow;
+            }
+
+            75% {
+                transform: scale(1.5);
+                background: crimson;
+            } */
+
+            100% {
+                transform: translateX(50px);
+                background: green;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="transition">
+        Transition
+    </div>
+    <div class="animation">
+        Animation
+    </div>
+</body>
+
+</html>

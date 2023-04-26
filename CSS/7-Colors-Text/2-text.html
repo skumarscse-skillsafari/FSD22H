@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Text Properties">
+    <title>CSS - Text Properties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Text Properties */
+        * {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(27, 152, 79, 0.8127626050420168) 44%, rgba(23, 118, 138, 1) 100%);
+        }
+
+        h2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        p {
+            /* font-family: Georgia, 'Times New Roman', Times, serif; */
+            /* Apply the specific font type to the content */
+            font-family: 'Roboto Slab', serif;
+            /* Font-Size and Font-Weight */
+            font-weight: lighter;
+            font-size: 20px;
+            /* Add space between each and every line */
+            line-height: 40px;
+            /* Add space between each and every word */
+            word-spacing: 20px;
+            /* Add space between each and every character/letter */
+            letter-spacing: 5px;
+            /* Align the text/content */
+            /* text-align: center | right | left | justify */
+            text-align: justify;
+            /* Change font  styles */
+            font-style: italic;
+            /* Tranform the text to different types */
+            text-transform: capitalize;
+            /* Add indention in the paragraph */
+            text-indent: 250px;
+            /* Add underline, line-through, overline */
+            text-decoration: underline;
+            /* Add shadow to the text - x-axis, y-axis, z-axis */
+            text-shadow: 1px 1px 1px red;
+        }
+
+        p::first-letter {
+            font-size: 50px;
+        }
+
+        p::first-line {
+            text-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS - Text Properties</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias inventore, est reprehenderit veniam deleniti
+        eaque aliquam neque numquam, unde in aspernatur quis nobis, nemo tempore ratione nulla ducimus eligendi atque
+        aut quas! Cupiditate tenetur aspernatur ratione, dicta iure id, obcaecati, omnis voluptatum ipsa dolor quod nisi
+        eligendi impedit possimus repellat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        inventore, est reprehenderit veniam deleniti
+        eaque aliquam neque numquam, unde in aspernatur quis nobis, nemo tempore ratione nulla ducimus eligendi atque
+        aut quas! Cupiditate tenetur aspernatur ratione, dicta iure id, obcaecati, omnis voluptatum ipsa dolor quod nisi
+        eligendi impedit possimus repellat.</p>
+</body>
+
+</html>

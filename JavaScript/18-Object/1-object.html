@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Objects">
+    <title>JavaScript - Objects</title>
+</head>
+
+<body>
+    <h1>JavaScript - Objects</h1>
+
+
+    <script>
+        // JavaScript - Objects
+        // Datatype => Non-Primitive => More the one value to a variable
+        // Object is a collection of properties (key: value pair or propertyName: propertyValue pair)
+        // Syntax
+        /*
+            let objectName = {
+                key-1: value-1,
+                key-2: value-2,
+            }
+        */
+
+        // let user = {
+        //     firstName: "SkillSafari", // property => key: value => propertyName : propertyValue
+        //     lastName: "EduKeys",
+        //     age: 30
+        // }
+
+        // Declaring an Object
+        // 1. let objectName = new Object() // constructor
+        // 2. let objectName = { } // object literals
+
+        // Ex:
+        // new Object() constructor
+        // let objectName = new Object()
+        // let user = new Object();
+        // console.log(typeof user) // object
+
+        // object literals
+        // let objectName = { };
+        // let user = {};
+        // console.log(typeof user); // object
+
+        // Creating an object
+        // let userDetails = {
+        //     firstName: "SkillSafari",
+        //     lastName: "EduKeys",
+        //     age: 25,
+        //     designation: "Full-stack developer",
+        // };
+
+        // Accessing the object properties
+        // Method - 1
+        // . (dot) operator
+        // Syntax
+        // objectName.key or objectName.propertyName
+        // console.log(userDetails.firstName) // SkillSafari
+        // console.log(userDetails.designation); // Full-stack developer
+
+        // Method - 2
+        // Square bracket method
+        // Syntax
+        // objectName["key"] or objectName["propertyName"]
+        // console.log(userDetails["lastName"]); // EduKeys
+        // console.log(userDetails["age"]); // 25
+        // console.log(userDetails["isAdmin"]); // undefined
+
+        // Add new property or modifying existing property value
+        // Add new properties
+        // Syntax
+        // objectName.newPropertyName = value
+        // userDetails.isAdmin = true;
+        // console.log(userDetails.isAdmin); // true
+        // console.log(userDetails);
+        // document.write(userDetails);
+
+        // Modify/Update the value of existing propertyName or key
+        // Syntax
+        // objectName.existingPropertyName = newValue
+        // userDetails.isAdmin = false;
+        // console.log(userDetails);
+
+        // delete an existing property
+        // Syntax
+        // delete objectName.propertyName
+        // delete userDetails.isAdmin;
+        // console.log(userDetails);
+
+        // Multi-word propertyNames
+        // firstName : "SkillSafari"
+        // first name : "SkillSafari"
+        // "first name" : "SkillSafari"
+        // let userName = {
+        //     "first name": "SkillSafari",
+        // }
+        // console.log(userName);
+
+        // Objects in Functions
+
+        // let propOne = "SkillSafari";
+        // let propTwo = "EduKeys";
+        // let propThree = 25;
+        // let objUser = {
+        //     firstName: propOne, // "SkillSafari"
+        //     lastName: propTwo, // "EduKeys"
+        //     age: propThree, // 25
+        // }
+        // console.log(objUser);
+        // function userDetails(firstName, lastName, age) { // let firstName = "SkillSafari"
+        //     return {
+        //         firstName: firstName,
+        //         lastName: lastName,
+        //         age: age,
+        //     }
+        // }
+        // let user = userDetails("SkillSafari", "EduKeys", 25);
+        // console.log(user);
+
+        // Object Short-hand property
+        // if, propertyName and propertyValue are same => propertyName
+        // function userDetails(firstName, lastName, age, isAdmin) { // let firstName = "SkillSafari"
+        //     return {
+        //         firstName,
+        //         lastName,
+        //         age,
+        //         adminOrNot: isAdmin,
+        //     }
+        // }
+        // let user = userDetails("SkillSafari", "EduKeys", 25, true);
+        // console.log(user);
+
+
+        // PropretyName Limitations
+        // Declaring a variable => for, if, else
+        // No restrictions in naming a propertyName, We even use JS reserved words
+        // let demo = {
+        //     for: 123,
+        //     if: "Hello",
+        //     else: "World"
+        // }
+        // console.log(demo);
+
+        // Checking existance of the property in the object by using "in" keyword
+        // Syntax
+        // "propertyName" in objectName // true => if prop exists else false
+        // console.log("for" in demo); // true
+        // console.log("hello" in demo); // false
+
+        // for...in loop
+        // Iterate the Object keys
+        /*
+        for (let key in objectName) {
+            console.log(key)
+        }
+        */
+        let userDetails = {
+            firstName: "SkillSafari",
+            lastName: "EduKeys",
+            age: 25,
+            designation: "Full-stack developer",
+        };
+        for (let propName in userDetails) {
+            // let propName = "firstName"
+            console.log(userDetails[propName]); // firstName // lastName // age // designation
+        }
+
+    </script>
+</body>
+
+</html>

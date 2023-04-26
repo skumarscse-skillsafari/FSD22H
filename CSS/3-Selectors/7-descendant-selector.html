@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Desccription" content="Descendant Selector">
+    <title>Descendant Selector</title>
+    <style>
+        /* 
+            // Select the single element
+            1. Universal
+            2. Type/Element
+            3. Class
+            4. ID 
+
+            // Combinators
+            // Select the group of elements
+            5. Descendant
+            6. Child
+            7. Adjacent Sibling
+            8. General Adjacent Sibling
+
+            <h1>Heading</h1>
+            <p>Paragraph</p>
+
+            // Container type Elements
+            <div> => parent
+                <p>...</p> => child-1
+                <p>...</p> => child-2
+                <p>...</p> => child-3
+            </div>
+            Semantic Tags: header, nav, aside, section, footer
+
+            // Syntax
+            selector {
+                propertyName: propertyValue;
+            }
+
+            // Descendant Selector
+            parentElementSelector childElementSelector {
+                propertyName: propertyValue;
+            }
+        */
+        /* 
+            Descendent Selector based on Type/Element 
+            Apply the css properties not only to the direct child, but also child of childs too.
+            All the <p> (child) comes under <div> (parent) has "color: red" property
+        */
+        /* div p {
+            color: red;
+        }
+
+        section article {
+            color: blue;
+        } */
+
+        /* Descendent Selector as id and class */
+        /* #div-container p {
+            color: red;
+        } */
+
+        /* #div-container .ele-3 {
+            color: blue;
+        } */
+
+        #section-container header {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Descendant Selector</h2>
+    <div id="div-container">
+        <h2 class="ele-1">This is a heading</h2>
+        <p class="ele-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, quos qui amet ipsam officia sit
+            rem dicta
+            ullam nemo repellat.</p>
+        <ul class="ele-3">
+            <li>Home</li>
+            <li>About</li>
+            <li>Projects</li>
+        </ul>
+        <hr>
+        <p class="ele-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, veniam. Lorem ipsum dolor sit
+            amet.</p>
+    </div>
+    <hr>
+    <section id="section-container">
+        <article>
+            <header>This is Article - 1</header>
+            <p>This is article Paragraph</p>
+            <footer><i>#End of Article - 1</i></footer>
+        </article>
+    </section>
+</body>
+
+</html>

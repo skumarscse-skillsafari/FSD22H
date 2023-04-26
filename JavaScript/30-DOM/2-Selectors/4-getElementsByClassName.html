@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="getElementsByClassName">
+    <title>getElementsByClassName</title>
+</head>
+
+<body>
+    <ul id="nav">
+        <li class="nav-item">Home</li>
+        <li class="nav-item">About</li>
+        <li class="nav-item">Projects</li>
+        <li class="nav-item">Contact</li>
+    </ul>
+
+    <script>
+        // getElementsByName() => NodeList
+        // getElementsByClassName() => HTML Collection
+        // getElementsByTagName() => HTML Collection
+
+        // getElementsByClassName => return HTML Collection of Elements
+        let navItems = document.getElementsByClassName("nav-item");
+        console.log(navItems);
+        // Array.from(navItems).forEach((nav) => {
+        //     console.log(nav.textContent);
+        // })
+        console.log(Array.from(navItems).map(nav => nav.textContent));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="after method">
+    <title>after method</title>
+</head>
+
+<body>
+    <h1>After Method</h1>
+    <ul>
+        <li id="one">Home</li>
+        <li id="two">About</li>
+        <!-- <li id="three">Projects</li> -->
+        <li id="five">Contact</li>
+    </ul>
+
+    <script>
+        // after()
+        // Insert a node after an element
+        let about = document.querySelector("ul").firstElementChild.nextElementSibling;
+        console.log(about);
+        let projects = document.createElement("li");
+        projects.textContent = "Projects";
+        projects.id = "three";
+        let portfolio = document.createElement("li");
+        portfolio.textContent = "Portfolio";
+        portfolio.id = "four";
+        about.after(projects, portfolio);
+    </script>
+</body>
+
+</html>

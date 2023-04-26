@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="API - Call">
+    <title>API - Call</title>
+</head>
+
+<body>
+    <h1>API - Call</h1>
+    <form action="#">
+        <p><input type="text" name="city" id="city" placeholder="Enter city"></p>
+        <p><input type="submit" value="Submit" id="btn"></p>
+    </form>
+    <hr>
+    <div class="output">
+
+    </div>
+
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let output = document.querySelector(".output");
+        let cityValue = document.querySelector("#city");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let city = cityValue.value;
+            console.log(city);
+            fetchData(city);
+        })
+
+        // API - Call
+        let fetchData = async (city) => {
+            console.log(city);
+            let result = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&APPID=9701e05bdc450703a5af1448835dd149`);
+            let data = await result.json();
+            console.log(data);
+            output.innerHTML = `
+                <div>
+                    <h1>Country: <i>${data.sys.country}</i></h1>
+                    <h2>City: <i>${data.name}</i></h2>
+                    <hr>
+                    <h2><u>Weather Details:</u></h2>
+                    <p><strong>Temperature:</strong> ${(data.main.temp - 273.15).toFixed(2)} C</p>
+                    <p><strong>Maximum Temperature:</strong> ${(data.main.temp_max - 273.15).toFixed(2)} C</p>
+                    <p><strong>Minimun Temperature:</strong> ${(data.main.temp_min - 273.15).toFixed(2)} C</p>
+                    <p><strong>Humidity:</strong> ${data.main.humidity} %</p>
+                    <p><strong>Weather Description:</strong> ${data.weather[0].description}</p>
+                    <p><strong>Wind Speed:</strong> ${data.wind.speed} kmph</p>
+                    <p><strong>Wind Deg:</strong> ${data.wind.deg} deg</p>
+                    <hr>
+                </div>
+            `
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="classList">
+    <title>classList</title>
+    <style>
+        .para {
+            background: green;
+            font-size: 22px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+            line-height: 3rem;
+            word-spacing: 15px;
+            /* transform: translateY(40px); */
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ClassList</h1>
+    <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab nihil corrupti veniam. Id
+        perspiciatis excepturi commodi placeat doloremque? Suscipit error optio in eaque iusto, non ut aliquam? A, iusto
+        dignissimos!</p>
+    <button id="btn-add">Add Property</button>
+    <button id="btn-remove">Remove Property</button>
+    <button id="btn-toggle">Toggle Property</button>
+    <button id="replace-styles">Replace Styles</button>
+    <script>
+        // classList
+        // classList => manipulate classes of an element
+        // add()
+        // remove()
+        // replace()
+        // toggle()
+
+        let classListProp = document.querySelector("p");
+        console.log(classListProp.classList);
+        let btnAdd = document.querySelector("#btn-add");
+        btnAdd.onclick = function () {
+            classListProp.classList.add("para");
+        }
+
+        let btnRemove = document.querySelector("#btn-remove");
+        btnRemove.onclick = function () {
+            classListProp.classList.remove("para");
+        }
+
+        let btnToggle = document.querySelector("#btn-toggle");
+        btnToggle.onclick = function () {
+            classListProp.classList.toggle("para");
+        }
+
+        let replaceStyles = document.querySelector("#replace-styles");
+        replaceStyles.onclick = function () {
+            classListProp.classList.replace("center", "right");
+        }
+    </script>
+</body>
+
+</html>

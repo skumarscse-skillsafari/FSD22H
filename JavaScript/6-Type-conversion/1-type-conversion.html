@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Type Conversions">
+    <title>JavaScript - Type Conversions</title>
+</head>
+
+<body>
+    <h2>JavaScript - Type Conversions</h2>
+
+
+    <script>
+        // JavaScript - Type Conversions
+        /*
+            1. Number
+            2. String
+            3. BigInt
+            4. Boolean
+            5. Null
+            6. Undefined
+        */
+
+        // String Conversion
+        // 1. Alphabet words Ex: "Hello World"
+        // 2. Numbers as string Ex: "1", '2', `123`
+
+        // String(a)
+        // a => value which we need to convert into a string
+
+        let isAdmin = true;
+        console.log(typeof isAdmin); // boolean
+
+        let isAdminString = String(isAdmin); // "true"
+        console.log(typeof isAdminString); // string
+
+        // false => "false", null => "null"
+
+        // Numeric Conversion
+        // Number(a);
+        // a => value of other datatypes
+        // Using expressions => "-", "*" and "/"
+        // Ex: "10" and "5" => "10" / "5" => 2 
+        let numberOne = "10";
+        let numberTwo = "5";
+        console.log(typeof numberOne); // string
+        console.log(typeof numberTwo); // string
+        let result = numberOne / numberTwo;
+        console.log(typeof result); // number
+
+        let numType = Number(numberOne);
+        console.log(typeof numType);// number
+
+        // By passing "alphabetical words" as parameter in "Number()" returns "NaN"
+        // "String" => NaN
+        // true => 1
+        // false => 0
+        // null => 0
+
+
+        // Boolean Conversion
+        // true and false
+        // Boolean(a)
+        // a => value of other datatype
+        // Rule:
+        // 1. values such as 0, empty string, null, undefined, NaN => false
+        // 2. Otherthan above mentioned value => true
+        // Boolean(123) => true and Boolean("Hello") => true
+        console.log(Boolean(0)); // false
+        console.log(Boolean("Hello")); // true
+        console.log(Boolean(123456)); // true
+        console.log(Boolean("")); // false
+        console.log(Boolean(" ")); // true
+        console.log(Boolean(null)); // false
+
+    </script>
+</body>
+
+</html>

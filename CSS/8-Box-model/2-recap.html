@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Box Model - Recap">
+    <title>CSS - Box Model - Recap</title>
+    <style>
+        #box {
+            height: 150px;
+            width: 150px;
+            border: 10px solid red;
+            margin: 0 auto;
+            /*   width of the screen: 500px - 155px => 345px */
+            /* margin: 0 auto; */
+            padding: 10px;
+            background-color: brown;
+            background-clip: content-box;
+
+            /* Box Model */
+            /* Content + Padding + border + Margin */
+            /* 150px + 10px + 10px + 20px */
+            /* 160px (content: 150px + border: 10px) => width occupied by the element  */
+            box-sizing: border-box;
+        }
+
+        .box-demo-1,
+        .box-demo-2 {
+            height: 150px;
+            width: 150px;
+            background-color: brown;
+            margin: 10px;
+        }
+
+        .box-demo-2 {
+            margin-top: -20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS - Box Model - Recap</h2>
+    <div id="box">
+        <p>Box</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, nemo.</p>
+
+
+    <div class="box-demo-1"></div>
+    <div class="box-demo-2"></div>
+
+</body>
+
+</html>

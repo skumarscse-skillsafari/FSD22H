@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Opacity and Visibility">
+    <title>CSS - Opacity and Visibility</title>
+    <style>
+        div {
+            background: #f15025;
+            margin: 10px;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .none {
+            /* display: block | inline | inline-block | none */
+            display: none;
+            /* Remove the element from the dom tree */
+        }
+
+        .opacity-1 {
+            /* reduce the tranparency of the element. Range: 0 to 1 */
+            /* default opacity of all the elements are 1 */
+            opacity: 1;
+        }
+
+        .opacity-5 {
+            opacity: 0.50;
+        }
+
+        .opacity-0 {
+            /* hide the element but the position remains the same */
+            opacity: 0;
+        }
+
+        .visibility {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="none">
+        <p>None</p>
+    </div>
+    <div class="opacity-1">
+        <p>Opacity - 1</p>
+    </div>
+    <div class="opacity-5">
+        <p>Opacity - 5</p>
+    </div>
+    <div class="opacity-0">
+        <p>Opacity - 0</p>
+    </div>
+    <div class="visibility">
+        <p>Visibility</p>
+    </div>
+</body>
+
+</html>

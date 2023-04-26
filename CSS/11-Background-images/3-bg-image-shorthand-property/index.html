@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Bg-image shorthand property">
+    <title>CSS - Bg-image shorthand property</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            min-height: 100vh;
+            border: 2px solid red;
+            color: red;
+            font-size: 2rem;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-1 {
+            /* background: url("../images/image-one.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; */
+            /* background: urlFun bg-position/bg-size bg-repeat bg-attachment */
+            background: url("../images/image-one.jpg") center/cover no-repeat fixed;
+        }
+
+        .img-2 {
+            /* background: linear-gradient(153deg, rgba(2, 0, 36, 1) 0%, rgba(27, 152, 79, 0.8127626050420168) 44%, rgba(23, 118, 138, 1) 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; */
+
+            background: linear-gradient(153deg, rgba(2, 0, 36, 1) 0%, rgba(27, 152, 79, 0.8127626050420168) 44%, rgba(23, 118, 138, 1) 100%) center/cover no-repeat fixed;
+        }
+
+        .img-3 {
+            background: radial-gradient(circle, rgba(34, 193, 195, 1) 10%, rgba(0, 0, 0, 0.2189250700280112) 100%) center/cover no-repeat fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-1">
+        <h1>Image - 1</h1>
+    </div>
+    <div class="img-2">
+        <h1>Image - 2</h1>
+    </div>
+    <div class="img-3">
+        <h1>Image - 3</h1>
+    </div>
+</body>
+
+</html>

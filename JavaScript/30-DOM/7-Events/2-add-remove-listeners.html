@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Add Remove Event Listeners">
+    <title>Add / Remove Event Listeners</title>
+    <style>
+        .para {
+            background: green;
+            font-size: 22px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+            line-height: 3rem;
+            word-spacing: 15px;
+            /* transform: translateY(40px); */
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add / Remove Event Listeners</h1>
+    <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab nihil corrupti veniam. Id
+        perspiciatis excepturi commodi placeat doloremque? Suscipit error optio in eaque iusto, non ut aliquam? A, iusto
+        dignissimos!</p>
+    <button id="btn-add">Add Event</button>
+    <button id="btn-remove">Remove Event</button>
+
+    <script>
+        let para = document.querySelector("p");
+        let btnAdd = document.querySelector("#btn-add");
+        console.log(btnAdd);
+        // Method-1
+        // btnAdd.addEventListener("click", function () {
+        //     para.classList.add("para");
+        // });
+        // Method - 2
+        // btnAdd.addEventListener("click", () => {
+        //     para.classList.add("para");
+        // });
+        // Method -3 
+        let addParaProps = function (e) {
+            console.log(e);
+            para.classList.add("para");
+        }
+        btnAdd.addEventListener("click", addParaProps);
+
+        // Remove a EventListener
+        // element.removeEventListener("type", "listenerFunctionName")
+        let btnRemove = document.querySelector("#btn-remove");
+        console.log(btnRemove);
+        btnRemove.addEventListener("click", function () {
+            btnAdd.removeEventListener("click", addParaProps);
+        });
+
+
+
+    </script>
+</body>
+
+</html>

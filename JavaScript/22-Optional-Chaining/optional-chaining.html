@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Optional Chaining">
+    <title>Optional Chaining</title>
+</head>
+
+<body>
+    <h1>Optional Chaining</h1>
+
+    <script>
+        // Optional Chaining (?.)
+        // Over => Non-existing property problem
+
+        // let user = {
+        //     name: {
+        //         firstName: "SkillSafari"
+        //     },
+        //     age: 20,
+        //     address: {
+        //         country: {
+        //             state: "TN"
+        //         }
+        //     }
+        // }
+
+        // console.log(user?.name);
+        // console.log(user?.address?.country?.city);
+        // console.log(user?.state?.city);
+
+
+        // Short circuiting
+        // a?.b => If "a" is defined the print "a" else "b"
+        // let name = null;
+        // let age = 0
+        // name?.showMessage(++age);
+        // console.log(age); // 0
+
+        // let user = {
+        //     name: "SkillSafari"
+        // }
+        // console.log(user?.name?.firstName?.age); // SkillSafari
+
+        // let a = 20;
+        // let b = 10;
+        // console.log(a?.b); // 10
+
+        let user = {
+            name: "SkillSafari",
+            age: 20,
+            showUserDetails() {
+                console.log(this.name, this.age);
+            }
+        }
+        console.log(user?.["name"]);
+        user?.showUserDetails?.();
+        user?.showDetails?.();
+
+
+    </script>
+</body>
+
+</html>

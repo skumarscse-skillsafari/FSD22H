@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Constructor function">
+    <title>Constructor function</title>
+</head>
+
+<body>
+    <h1>Constructor function</h1>
+
+
+    <script>
+        // Constructor function
+        // Create Multiple similar objects with the single function
+        // Constructor is also a function but its name must be starts with "Capital" letter
+        // Normal Function => function userDetails()
+        // Constructor Function => function UserDetails()
+
+        // Use "new" keyword for calling the constructor function
+        // E-commerce website
+        // fullName, age, email, password, confirmpassword, city
+        // let john = {
+        //     fullName: "John",
+        //     age: 25,
+        //     email: "john@skillsafari.in",
+        //     password: "123456",
+        //     confirmPassword: "123456",
+        //     city: "Chennai"
+        // }
+
+        // Declaring a constructor function
+        function User(fullName, age, password, confirmPassword, city) {
+            // let this = {}
+            this.fullName = fullName;
+            this.age = age;
+            this.password = password;
+            this.confirmPassword = confirmPassword;
+            this.city = city;
+            this.showUserDetails = () => {
+                console.log(this.fullName, this.age);
+            }
+            // let this = { fullName: ..., age: ..., password:... }
+            // return this;
+        }
+
+        // Invoke the constructor function
+        // let varName = new functionName()
+        let john = new User("John, Jack", 20, "123456", "123456", "Chennai");
+        console.log(john);
+        john.showUserDetails(); // John, Jack , 20
+        let jack = new User("Jack, John", 25, "123456789", "123456789", "Bangalore");
+        console.log(jack);
+
+
+    </script>
+</body>
+
+</html>

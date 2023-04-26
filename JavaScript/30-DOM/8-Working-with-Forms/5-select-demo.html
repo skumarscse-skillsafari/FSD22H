@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Select - Demo">
+    <title>Select - Demo</title>
+</head>
+
+<body>
+    <h1>Select - Demo</h1>
+    <input type="text" name="option" id="option" placeholder="Enter value for option">
+    <p><button id="btn-add">Add</button></p>
+    <hr>
+    <h2>Select Subjects</h2>
+    <select name="subjects" id="subjects" multiple>
+
+    </select>
+    <p><button id="btn-remove">Remove</button></p>
+
+
+    <script>
+
+        // 1. Options constructor => creating new option elements
+        // 2. selectElement.options => HTMLOptionElements (in the form of Array)
+        // 3. selectElement.options[index] => Option element in the corresponding index
+        // 4. selectElement.options[index].selected => Check the option is selected or not
+        // 5. selectElement.remove(index) => Remove the option element based on index
+
+        // Select Demo
+        let option = document.querySelector("#option");
+        let btnAdd = document.querySelector("#btn-add");
+        let subjects = document.querySelector("#subjects");
+        let btnRemove = document.querySelector("#btn-remove");
+        console.log(subjects);
+
+        // Creating option elements
+        // createElement
+        // new Option("option text", option value);
+
+        btnAdd.addEventListener("click", (e) => {
+            e.preventDefault();
+            let newOption = new Option(option.value, option.value);
+            subjects.append(newOption);
+            option.value = "";
+            option.focus();
+        });
+        // let newOption = new Option("English", "English");
+        // console.log(newOption);
+
+
+        // Removing selected element
+        btnRemove.addEventListener("click", (e) => {
+            e.preventDefault();
+            let selected = [];
+            for (let i = 0; i < subjects.options.length; i++) {
+                selected[i] = subjects.options[i].selected;
+            }
+            console.log(selected); // [false, true, false, false, false]
+
+            // remove operation
+            let index = subjects.options.length; // 5
+            while (index--) { // 1
+                if (selected[index]) { // 
+                    subjects.remove(index);
+                }
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

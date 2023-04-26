@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Position : absolute">
+    <title>CSS - Position : absolute</title>
+    <style>
+        /* 
+        Take control over the child elements by giving position: absolute with
+        top, left, bottom, right
+        */
+        div {
+            border: 3px solid red;
+            background: yellow;
+            margin-top: 40px;
+            text-align: right;
+            width: 500px;
+        }
+
+        .one {
+            background: blue;
+            color: white;
+            text-align: left;
+
+        }
+
+        .two {
+            background: green;
+            color: white;
+            position: relative;
+        }
+
+        span {
+            background: pink;
+            font-size: 20px;
+            color: #222;
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p class="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam mollitia eaque exercitationem ut
+            tenetur minus aliquam culpa, ducimus doloribus in obcaecati facere enim aliquid deleniti?</p>
+        <p class="two">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quam temporibus similique, at,
+            error autem placeat atque corporis consectetur ipsum esse unde facilis corrupti accusantium.
+            <span class="span">This is span tag content</span>
+        </p>
+    </div>
+</body>
+
+</html>

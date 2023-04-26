@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Strings">
+    <title>JavaScript - Strings</title>
+</head>
+
+<body>
+    <h1>JavaScript - Strings</h1>
+
+
+    <script>
+        // JavaScript Strings
+        // 1. Single quote
+        // let name = 'SkillSafari';
+        // // 2. Double quote
+        // let firstName = "EduKeys"
+        // // 3. Backticks
+        // let age = 25;
+        // let userAge = `The User age is: ${age}`;
+        // console.log(userAge);
+
+        // length
+        // Syntax
+        // String.length => size of the String
+        // let fullName = "SkillSafari EduKeys";
+        // console.log(fullName.length); // 19
+
+        // Accessing the characters
+        // "abc" => a b c
+        // index => each and every character in a string have a unique value named index, starts from '0'
+        // "ab c" => a-b-c
+        // a => 0
+        // b => 1
+        //   => 2
+        // c => 3
+
+        // "Hello" => H-e-l-l-o
+        // H => 0
+        // e => 1
+        // l => 2
+        // l => 3
+        // o => 4
+
+        // 1. String pos => String[index]
+        // 2. String.charAt(index)
+
+        // let designation = "Full-stack developer";
+        // // String pos => String[0]
+        // designation[0] // F
+        // designation[4] // -
+        // designation[7] // a
+        // for (let i = 0; i < designation.length; i++) {
+        //     console.log(`The Char in index ${i} : ${designation[i]}`);
+        // }
+
+        // let address = "Chennai";
+        // // Print last char
+        // console.log(address[address.length - 1]); // i
+
+        // let string = prompt("Enter a String");
+        // console.log(`The entered string is: ${string}`);
+        // console.log(`The last char in ${string} is: ${string[string.length - 1]}`);
+
+
+        // Usage of "at" in string
+        // "abc" => a-b-c
+        // left to right
+        // a - 0
+        // b - 1
+        // c - 2
+
+        // right to left
+        // c => -1
+        // b => -2
+        // a => -3
+
+        // let string = "EduKeys"
+        // console.log(string[string.length - 1]); // s
+        // console.log(string.at(-3)); // e
+
+        // // for...of loop
+        // // Iterating the char's in the string
+        // for (let char of string) {
+        //     console.log(char);
+        // }
+
+        // let fruits = "Apple, Orange";
+        // for (let fruit of fruits) {
+        //     console.log(fruit);
+        // }
+
+
+        // Strings are immutable
+        // immutable => unchangeable
+        // let string = "Hello";
+        // string[2] = "a";
+        // console.log(string[2]); // l
+
+        // charAt(pos)
+        // String.charAt(index)
+        // let city = "Chennai";
+        // console.log(city.charAt(2)); // e
+        // console.log(city.charAt(city.length - 1)); // i
+
+        // How a search for a substring (part of the string) in a string
+        // "SkillSafari" => "Skill", "Safari", "kill", "fari"
+        // str.indexOf("substring", "starting_pos") => return the  starting "pos" of the "substring"
+        // let string = "Hello, I am working in SkillSafari";
+        // // "SkillSafari"
+        // console.log(string.indexOf("SkillSafari")); // 23
+        // console.log("Hello".indexOf("el")); // 1
+
+        // str.indexOf(a, b);
+        // a => substring
+        // b (optional) => from which index the "searching" operation begins
+        // if, "b" is not provided, the search operation starts from "0" index
+        // let fullName = "SkillSafari, EduKeys";
+        // console.log(fullName.indexOf("Safari")); // 5
+        // console.log(fullName.indexOf("hello")); // -1
+        // console.log(fullName.indexOf("Edu", 14)); // -1
+        // console.log(fullName.indexOf("a")); // 6
+
+        // Find all the occerances (pos) of the "substring" in the given "string"
+        // let string = prompt("Enter any String"); // "SkillSafari EduKeys"
+        // let subString = prompt("Enter substring to search"); // "a"
+        // console.log(`The entered string is: ${string}`);
+        // console.log(`The searching substring is: ${subString}`);
+        // let pos = 0;
+        // while (true) {
+        //     let foundPos = string.indexOf(subString, pos); // -1
+        //     if (foundPos == -1) break;
+        //     console.log(`The substring ${subString} found at pos: ${foundPos}`); // 6 // 8
+        //     pos = foundPos + 1; // 9
+        // }
+
+        // String.indexOf("substring", pos) => returns index of first occerance of the "substring"
+        // // String.lastIndexOf("substring", pos) => returns index of last occurance of the "substring"
+        // console.log("SkillSafari".indexOf("a")); // 6
+        // console.log("SkillSafari".lastIndexOf("a")); // 8
+
+        // // Search for the substring => boolean as return type
+        // // String.includes("substring", pos)
+        // // String.startsWith("substring", pos)
+        // // String.endsWith("substring", pos)
+
+        // let message = "Welcome to SkillSafari";
+        // // Substring => "Skill"
+        // console.log(message.includes("Skill")); // true => Check the occurance of the "substring" in a string/paragraph
+        // console.log(message.startsWith("Welcome")); // true => Checking the occurance of the "substing" in a "word"
+        // console.log(message.endsWith("ari")); // true => Checking the occurance of the "substing" in a "word"
+
+        // Get the "Substring" from the "String" using start and end index
+        // String.slice()
+        // String.substring()
+        // String.substr()
+
+        // String.slice(a, b)
+        // a => start index
+        // b => end index (not included)
+        // let message = "Welcome to SkillSafari";
+        // console.log(message.slice(0, 7)); // Welcome => substring with start index and last index - 1
+        // console.log(message.slice(11)); // SkillSafari => substring with start index to last index of the given string
+
+        // // Slice with negative index
+        // console.log(message.slice(-11)); // SkillSafari
+
+        // String.substring(a, b)
+        // a => start index
+        // b => end index (not included)
+        // Not support negative parameter
+        // let message = "I am a Full-stack web application developer";
+        // console.log(message.substring(7, 17)); // Full-stack
+        // console.log(message.substring(17, 7)); // Full-stack
+        // console.log(message.slice(17, 7)); // ""
+
+        // String.substr(a, b)
+        // a => start index
+        // b => length
+        // let designation = "Associate Software Enginner";
+        // console.log(designation.substr(0, 9)); // Associate
+        // console.log(designation.substr(19)); // Engineer
+
+        // // First argument can be negative
+        // console.log(designation.substr(-17, 8)); // Software
+
+        // String.codePointAt(pos) => return the ASCII value of the "Char"
+        // console.log("Hello".codePointAt(0)); // H => 72
+
+        // // String.fromCodePoint(char)
+        // console.log(String.fromCodePoint(72)); // 72 => "H"
+
+        // for (let i = 65; i <= 90; i++) {
+        //     console.log(String.fromCodePoint(i));
+        // }
+
+        // // upperCaseString(string) => return in uppercase
+        // function upperCaseString(string) {
+        //     return string.toUpperCase()
+        // }
+        // console.log(upperCaseString(prompt("Enter Any String")));
+
+        // checkSubstring(string) => return true, if the argument is "Skill"
+        // function checkSubstring(string) {
+        //     return string.toLowerCase().includes("skill");
+        // }
+        // console.log(checkSubstring(prompt("Enter a string")));
+
+        for (let i = 1; i <= 5; i++) {
+            // Outer loop => Creates row (runs once in every iteration)
+            let str = "";
+            for (let j = 1; j <= i; j++) {
+                // Inner loop => Creates column (runs till the condition failed)
+                if (i == 1 && j == 1) {
+                    str = str + "A";
+                } else if (i == 2 && j <= 2) {
+                    str = str + "B";
+                } else if (i == 3 && j <= 3) {
+                    str = str + "C";
+                } else if (i == 4 && j <= 4) {
+                    str = str + "D";
+                } else if (i == 5 && j <= 5) {
+                    str = str + "E";
+                }
+            }
+            console.log(str);
+        }
+
+        for (var i = 1; i <= 7; i++) {
+            var str = "";
+            for (var j = 1; j <= 7; j++) {
+                if (
+                    (i == 1 && j >= 1) ||
+                    (i == 7 && j >= 1) ||
+                    (j == 1 && i >= 1) ||
+                    (j == 7 && i >= 1)
+                ) {
+                    str = str + "4" + " ";
+                } else if (
+                    (i == 2 && j >= 2 && j < 7) ||
+                    (i == 6 && j >= 2 && j < 7) ||
+                    (j == 2 && i >= 2 && i < 7) ||
+                    (j == 6 && i >= 2 && i < 7)
+                ) {
+                    str = str + "3" + " ";
+                } else if (
+                    (i == 3 && j >= 3 && j < 6) ||
+                    (i == 5 && j >= 3 && j < 6) ||
+                    (j == 3 && i >= 3 && i < 6) ||
+                    (j == 5 && i >= 3 && i < 6)
+                ) {
+                    str = str + "2" + " ";
+                } else if (i == 4 && j == 4) {
+                    str = str + "1" + " ";
+                }
+            }
+            str = str + "\n";
+            console.log(str);
+        }
+
+
+    </script>
+</body>
+
+</html>

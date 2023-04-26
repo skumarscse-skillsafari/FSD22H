@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - calc()">
+    <title>CSS - calc()</title>
+    <style>
+        /* 
+            calc() => it is a function, which is used to perform maths operations, mix and match values
+        */
+        * {
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: blue;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+        }
+
+        .banner {
+            background-color: red;
+            height: calc(100vh - 50px);
+            /* 85vh */
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navbar">
+        <li>simple link</li>
+    </ul>
+    <div class="banner"></div>
+</body>
+
+</html>

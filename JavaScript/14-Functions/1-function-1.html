@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Functions">
+    <title>Functions</title>
+</head>
+
+<body>
+    <h1>JavaScript - Functions</h1>
+
+
+    <script>
+        // JavaScript - Functions
+        // Functions => Building block of a program
+        // It takes some input as parameters and process the parameter values and output the processed result
+        // ATM => Card => Process => Cash
+        /*
+        // 1. Function Declaration => Creating and writing the logic for the function
+        // 2. Invoking the function => Calling the function
+
+
+        // Function Declaration
+        function functionName(par-1, par-2, ..., par-N) {
+            // function body
+            // arg-1, arg-2, ..., arg-N => processed
+            // return some result as output
+        }
+
+        // Call the Function (Invoking the function)
+        functionName(arg-1, arg-2, ..., arg-N)
+        */
+
+        // Function to find the given number is odd or even
+        // Function Declaration
+        // function oddOrEven(num) {
+        //     if (num % 2) {
+        //         console.log("ODD number");
+        //     } else {
+        //         console.log("EVEN number")
+        //     }
+        // }
+        // let number = +prompt("Enter a number");
+        // // Invoking the function
+        // oddOrEven(number);
+
+        // Ex: 2
+        // function greeting(msg) {
+        //     console.log("Hello, " + msg);
+        // }
+        // greeting("SkillSafari");
+        // greeting("EduKeys");
+        // greeting("John");
+        // greeting("Jack");
+
+        // function displayName(name) {
+        //     console.log("Hello, I am " + name);
+        // }
+        // displayName("SkillSafari");
+
+        // function displayName() {
+        //     console.log("I am SkillSafari");
+        // }
+        // displayName();
+
+        // Local variable Vs Outer variable (Global)
+
+        // Local Variable => cannot be accessed outside the block
+        // Scope of the local variable resides inside the block
+        // function userDetails() {
+        //     let firstName = "SkillSafari";
+        //     let lastName = "EduKeys";
+        //     console.log(`The FullName is: ${firstName}, ${lastName}`);
+        // }
+        // console.log(firstName); // Error: firstName not defined
+        // userDetails();
+
+        // Outer Variable
+        // Scope of the outer variable is throughout the program
+        // let companyName = "SkillSafari";
+        // function userDetails() {
+        //     let firstName = "John";
+        //     let lastName = "Jack";
+        //     console.log("First Name: " + firstName); // Local var
+        //     console.log("Last Name: " + lastName); // Local var
+        //     console.log("Organization: " + companyName); // Outer var
+        // }
+        // console.log(companyName);
+        // userDetails();
+
+        // Facts
+        // We can modify the outer var value inside the block
+        // We can also have a variable of same name inside and ouside the block. Both are considered as independant var
+        // let age = 25;
+        // function userDetails() {
+        //     let firstName = "John";
+        //     let lastName = "Jack";
+        //     let age = 30;
+        //     console.log(firstName, lastName, age); //
+        // }
+        // console.log(age);
+        // userDetails();
+
+        // Parameters and Arguments
+        // function userDetails(firstName, lastName, age, organization) {
+        //     console.log(`The Person named ${firstName}, ${lastName} age of ${age} working in ${organization}`)
+        // }
+        // userDetails("John", "Jack", 21, "SkillSafari");
+        // userDetails("Robert", "Jack", 25, "EduKeys");
+
+        // Default Values
+        // function userDetails(firstName, lastName, organization = "SkillSafari") { // let firstName = "John"
+        //     console.log(firstName, lastName, organization);
+        // }
+        // userDetails("John", "Jack", "EduKeys");
+
+        // Return value
+        function add(a, b) {
+            let c = a + b;
+            return c; // added and return back to function invokation
+        }
+        let result = add(2, 3);
+        console.log(result); // 5
+
+        function userDetails(firstName, lastName, age, organization) {
+            let userDetails = firstName + lastName + age + organization;
+            return userDetails;
+        }
+        let user = userDetails("SkillSafari ", "EduKeys ", 25, " Google");
+        console.log(user);
+
+        // "return" always present at the end of the function body
+        // Only one "return" must be used inside the function body
+        // Not other statements must be added below the "return" inside the function body because it will not be executed
+
+        function demo() {
+            return "SkillSafari";
+            console.log("------------");
+            return "EduKeys";
+        }
+        let output = demo();
+        console.log(output);
+    </script>
+</body>
+
+</html>

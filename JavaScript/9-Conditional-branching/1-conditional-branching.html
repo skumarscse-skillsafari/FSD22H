@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Conditional branching">
+    <title>JavaScript - Conditional branching</title>
+</head>
+
+<body>
+    <h2>JavaScript - Conditional branching</h2>
+
+
+    <script>
+        // JavaScript - Conditional branching
+        // Interprets => top to bottom
+        // let numberOne = 20;
+        // let numberTwo = 10;
+        // let result = numberOne > numberTwo; // 20 > 10 => true
+        // console.log(result); // true
+
+        // Conditionl branching
+        // Blocks
+        // Div => { statements... }
+
+        // Ex: 1
+        // "if" statement
+        // Syntax
+        /*
+            if(condition) {
+                // statement -1;
+                // statement - 2;
+
+                // statement - N;
+            }
+        */
+        // console.log("Before the if statement"); // Normal statement
+        // if (12 > 6) {
+        //     // Block statments
+        //     console.log("Number 12 is greater than the Number 6");
+        //     console.log("Hello");
+        //     let a = 10;
+        //     let b = 20;
+        //     let c = a + b;
+        //     console.log(c); // 30
+        // }
+        // console.log("After the if statement"); // Normal statement
+
+        // Boolean Conditions
+        // true or false / 1 or 0
+        // console.log("Before the if statement");
+        // if (1) {
+        //     // Block statments
+        //     console.log("Number 12 is greater than the Number 6");
+        //     console.log("Hello");
+        //     let a = 10;
+        //     let b = 20;
+        //     let c = a + b;
+        //     console.log(c); // 30
+        // }
+        // console.log("After the if statement"); // Normal statement
+
+        // "else" clause
+        /*
+            if(condition) {
+                // true statements
+                // statements
+            } else {
+                // false statements
+                // statements
+            }
+        */
+
+        // Check the given number is odd or even
+        // Ex: 22 => 22 % 2 => 0
+        // Ex: 11 => 11 % 2 => 1
+        // Ex: 121 => 121 % 2 => 1
+        // Ex: 122 => 122 % 2 => 0
+        // let input = +prompt("Enter a number..."); // 2 => "2"
+        // console.log(input); // 31
+        // console.log(`The user entered value is: ${input}`);
+        // if (input % 2) { // 31 % 2 => 1 == 1 => true == true => true
+        //     console.log("Entered number is ODD");
+        // } else {
+        //     console.log("Entered number is EVEN");
+        // }
+
+        // Multiple conditions - else if
+        /*
+            Syntax:
+            if (condition - 1) {
+                // if condition true => execute the block and exit
+                // if condition false => check the next condition
+                // statements
+            } else if (condition - 2) {
+                // if condition true => execute the block and exit
+                // if condition false => check the next condition
+                // statements
+            } else if (condition - N) {
+                // if condition true => execute the block and exit
+                // if condition false => Execute the else block
+                // statements
+            } else {
+                // statements
+            }
+        */
+
+        // Write a program to find the person eligible to donate blood
+        // Age > 18
+        // Weight > 60
+        // Diseases == "no"
+        // Blood Group == "same"
+        // No drugs
+        // let age = +prompt("Enter Age");
+        // let weight = +prompt("Enter Weight");
+        // let diseases = prompt("Is prone to any disease? (true/false)");
+        // // console.log(diseases);
+        // let bloodGroup = prompt("Is bloodgroup same? (true/false)");
+        // let drugsIntake = prompt("Is taken any drugs? (true/false)");
+        // console.log("User details are:");
+        // console.log("--------------------------------");
+        // console.log(`Age: ${age}`);
+        // console.log(`Weight: ${weight}`);
+        // console.log(`Diseases: ${diseases}`);
+        // console.log(`Blood Group: ${bloodGroup}`);
+        // console.log(`Drugs Intaken: ${drugsIntake}`);
+        // console.log("----------- RESULT IS -----------");
+        // if (age < 18) {
+        //     console.log("Not Eligible to donate the blood");
+        // } else if (weight < 60) {
+        //     console.log("Not Eligible to donate the blood");
+        // } else if (diseases == true) { // false == true => false
+        //     console.log("Not Eligible to donate the blood");
+        // } else if (bloodGroup != true) { // true != true => false
+        //     console.log("Not Eligible to donate the blood");
+        // } else if (drugsIntake == true) { // false == true => false
+        //     console.log("Not Eligible to donate the blood");
+        // } else {
+        //     console.log("Eligible to donate the blood");
+        // }
+
+        // Short hand of if... else clause
+        // Conditional Operator => ? and :
+        // Syntax
+        // (condition) ? "true-statement" : "false-statement"
+        // let a = 10;
+        // let b = 20;
+        // (a > b) ? console.log("A is bigger") : console.log("B is bigger");
+        // let number = +prompt("Enter a number");
+        // console.log(`The number is: ${number}`);
+        // console.log("The Entered number is: ");
+        // (number % 2) ? console.log("ODD") : console.log("EVEN");
+
+
+        // 1. Conditions => Checks for the condition, if the condition turns true, execute if statement, otherwise else clause
+        // 2. Values => if any value present in the place of condition, turns true, otherwise turn false
+        if (-1) {
+            console.log("I am from if statement");
+        } else {
+            console.log("I am from else clause");
+        }
+    </script>
+</body>
+
+</html>

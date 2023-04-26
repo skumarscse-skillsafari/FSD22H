@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Web API - Intro">
+    <title>Web API - Intro</title>
+</head>
+
+<body>
+    <h1>Web API</h1>
+    <!-- 
+        1. localStorage => Use it for storing user info. in the browser. 
+        2. sessionStorage => 
+        3. Geolocation API => Get track the latitude and longitute of the current location
+        4. fetch API => Get the data from third party application as well we can create our own data and use it in other application
+        
+
+        // localStorage
+     -->
+
+    <script>
+        // localStorage
+        // Access the localStorage
+        // window.localStorage => Storage
+        // localStorage  => Storage
+
+        // setItem()
+        // getItem()
+        // removeItem()
+        // clear()
+        // key
+        // length
+
+        // 5MB of data in the browser
+
+        // Access the localStorage
+        let obj = window.localStorage; // Storage
+        // console.log(obj); // 
+
+        // Adding key: value pair
+        // Syntax
+        // localStorage.setItem(key, value);
+        // key => string
+        // value => string
+        obj.setItem("id", 1);
+        obj.setItem("name", "John");
+        obj.setItem("age", 20);
+        // console.log(obj);
+
+        // Access "value" using "key"
+        // Syntax
+        // localStorage.getItem("key") => return value
+        console.log(obj.getItem("name")); // John
+        console.log(obj.getItem("age")); // 20
+
+        // length
+        console.log(obj.length); // 3
+
+        // Remove the item
+        // Syntax
+        // localStorage.removeItem("key");
+        obj.removeItem("age");
+
+        // Iterate the localStorage items using Object.keys()
+        console.log(Object.keys(obj));
+        Object.keys(obj).forEach((key) => {
+            console.log(obj.getItem(key));
+        })
+
+        for (const key of Object.keys(localStorage)) {
+            console.log(localStorage.getItem(key));
+        }
+
+        // value as Object
+        let john = {
+            id: 1,
+            name: "John",
+            age: 25,
+            city: "Chennai"
+        }
+        localStorage.setItem("user", JSON.stringify(john));
+
+        console.log(JSON.parse(localStorage.getItem("user")));
+
+        // clear()
+        localStorage.clear();
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Array Methods - Usecase">
+    <title>Array Methods - Usecase</title>
+</head>
+
+<body>
+    <h1>Array Methods - Usecase</h1>
+
+    <script>
+        // Array Methods - Usecase
+        // find(), filter(), map(), reduce(), every() and some()
+
+        let students = [
+            { id: 1, name: "John", dept: "CSE", age: 18, isSelected: true },
+            { id: 2, name: "Jack", dept: "ECE", age: 20, isSelected: false },
+            { id: 3, name: "Mary", dept: "EEE", age: 19, isSelected: false },
+            { id: 4, name: "Robert", dept: "IT", age: 21, isSelected: true }
+        ];
+
+        // Filter the students based on isSelected = true
+        // [ { id: 1, name: "John", dept: "CSE", age: 18, isSelected: true },
+        //  { id: 4, name: "Robert", dept: "IT", age: 21, isSelected: true }
+        // ]
+        // let selectedStudents = [];
+        // for (let item = 0; item < students.length; item++) {
+        //     if (students[item].isSelected) {
+        //         selectedStudents.push(students[item]); //
+        //     }
+        // }
+        // console.log(selectedStudents);
+        // let selectedStudents = students.filter((student) => student.isSelected);
+        // console.log(selectedStudents);
+
+        // // Filter the students dept = "CSE"
+        // let cseStudents = students.filter((student) => student.dept == "CSE");
+        // console.log(cseStudents);
+        // // Filter the students dept = "CSE" and "IT"
+        // let cseItStudents = students.filter((student) => student.dept == "CSE" || student.dept == "IT");
+        // console.log(cseItStudents);
+
+        // Find()
+        // Find the student id = 3;
+        // let studentID = students.find((student) => student.id == 3);
+        // console.log(studentID);
+
+        // Map()
+        // Add new property => college = "SkillSafari"
+        // let newArray = students.map((student) => {
+        //     return {
+        //         ...student,
+        //         college: "SkillSafari"
+        //     }
+        // })
+        // console.log(newArray);
+
+        // reduce()
+        // Find the average age of all the students
+        // let averageAge = students.reduce((acc, student) => {
+        //     return acc + student.age;
+        // }, 0);
+        // console.log(averageAge / students.length);
+
+        // let students = [
+        //     { id: 1, name: "John", dept: "CSE", age: 18, isSelected: true },
+        //     { id: 2, name: "Jack", dept: "ECE", age: 20, isSelected: false },
+        //     { id: 3, name: "Mary", dept: "EEE", age: 19, isSelected: false },
+        //     { id: 4, name: "Robert", dept: "IT", age: 21, isSelected: true }
+        // ];
+
+        // Find the student with height age
+        // let heighestAge = students.reduce((acc, student) => {
+        //     // acc => { id: 4, name: "Robert", dept: "IT", age: 21, isSelected: true }
+        //     // student => { id: 4, name: "Robert", dept: "IT", age: 21, isSelected: true }
+        //     return (acc.age || 0) > student.age ? acc : student;
+        // }, {}); // initial => { id: 4, name: "Robert", dept: "IT", age: 21, isSelected: true }
+        // console.log(heighestAge); // { id: 4, name: "Robert", dept: "IT", age: 21, isSelected: true }
+
+        // every()
+        // all the students dept = "CSE"
+        // let studentsDept = students.every((student) => student.dept == "CSE");
+        // console.log(studentsDept);
+
+        // some()
+        // any student dept = "CSE"
+        // let studentsDept = students.some((student) => student.dept == "CSE");
+        // console.log(studentsDept);
+
+        // let students = [
+        //     { id: 1, name: "John", dept: "CSE", age: 18, isSelected: true },
+        //     { id: 2, name: "Jack", dept: "ECE", age: 20, isSelected: false },
+        //     { id: 3, name: "Mary", dept: "EEE", age: 19, isSelected: false },
+        //     { id: 4, name: "Robert", dept: "IT", age: 21, isSelected: true }
+        // ];
+
+        // Find the average age of selected students
+        // Chain the array methods
+        let totalAge = students.filter((student) => student.isSelected).reduce((acc, studentAge) => {
+            return acc + studentAge.age
+        }, 0);
+        // console.log(selectedStudents);
+        // let totalAge = selectedStudents.reduce((acc, studentAge) => {
+        //     return acc + studentAge.age;
+        // }, 0);
+        console.log(totalAge);
+
+
+    </script>
+</body>
+
+</html>

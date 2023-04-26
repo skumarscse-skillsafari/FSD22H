@@ -1,0 +1,36 @@
+header {
+  background: green;
+}
+
+nav {
+  background: cornflowerblue;
+}
+
+.about {
+  background: coral;
+}
+
+.projects {
+  background: goldenrod;
+}
+
+.contact {
+  background: rebeccapurple;
+}
+
+footer {
+  background: chocolate;
+}
+
+/* .user-info {
+  border: 2px solid red;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 150px;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+} */

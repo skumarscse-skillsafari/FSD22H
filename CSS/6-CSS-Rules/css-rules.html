@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Rules">
+    <title>CSS Rules</title>
+    <!-- External Styles -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* 
+            1. Inline style (not recommended) has more preference than internal and external css style
+            2. Id has more preference than class
+            3. "!important", we can over ride the default preference of the css properties
+            // Syntax
+            selector {
+                propertyName: propertyValue !important;
+            }
+        */
+        /* Inline Styles */
+        p {
+            color: green;
+        }
+
+        #span-id {
+            color: red;
+        }
+
+        .span-class {
+            color: green !important;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS Rules</h2>
+    <p style="color: blue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam corrupti, delectus
+        esse ab iste quos
+        commodi maiores. Sit error illo dolorum dolorem illum quia.</p>
+    <span id="span-id" class="span-class">I am from span</span>
+</body>
+
+</html>

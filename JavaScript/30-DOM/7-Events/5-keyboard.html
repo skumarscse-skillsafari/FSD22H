@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Keyboard Events">
+    <title>Keyboard Events</title>
+</head>
+
+<body>
+    <h1>Keyboard Events</h1>
+    <input type="text" name="text" id="text">
+
+    <script>
+        // Keyboard Events
+        // keydown
+        // keyup
+        // keypress
+        let text = document.querySelector("#text");
+        text.addEventListener("keydown", (e) => {
+            console.log(e);
+            console.log(`Key down is: ${e.key}`);
+        });
+
+        text.addEventListener("keyup", (e) => {
+            console.log(e);
+            console.log(`Key Up is: ${e.key}`);
+        });
+
+        text.addEventListener("keypress", (e) => {
+            console.log(e);
+            console.log(`Key Press is: ${e.key}`);
+        });
+    </script>
+</body>
+
+</html>

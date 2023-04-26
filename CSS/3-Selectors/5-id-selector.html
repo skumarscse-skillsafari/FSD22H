@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="ID Selector">
+    <title>ID Selector</title>
+    <style>
+        #nav-items {
+            color: red;
+        }
+
+        .nav-item {
+            text-decoration: underline;
+        }
+
+        #subjects {
+            color: green;
+        }
+
+        .subject {
+            text-decoration: line-through;
+        }
+
+        #para {
+            color: blue;
+        }
+
+        .para-class {
+            text-transform: uppercase;
+        }
+
+        #para-two.para-class {
+            text-transform: none;
+            color: red;
+        }
+
+        h3#head {
+            color: green;
+        }
+
+        #para-id {
+            color: green;
+        }
+
+        .para-demo {
+            color: red;
+        }
+
+
+
+        /* 
+        parent => para
+        child => para-class
+        
+        */
+
+
+        /* combination of tag/element selector and id selector */
+
+        /* combination of id and class selector */
+
+        /* 
+            1. Add "id" as an attribute (id="value") to the element on which we need to apply the css properties
+            2. "id" name must be unique between the elements. ("id" value of one element is not supposed to be used in another element)
+            3. "id" has more preference than "class"
+
+        */
+    </style>
+</head>
+
+<body>
+    <h2>ID Selector</h2>
+    <ul id="nav-items">
+        <li class="nav-item">Home</li>
+        <li class="nav-item">About</li>
+        <li class="nav-item">Projects</li>
+    </ul>
+
+    <ol id="subjects">
+        <li class="subject">English</li>
+        <li class="subject">Maths</li>
+        <li class="subject">Physics</li>
+        <li class="subject">Chemistry</li>
+    </ol>
+
+    <div id="para">
+        <h3 id="head">This is heading for para id</h3>
+        <p class="para-class">This is paragraph one</p>
+        <p class="para-class" id="para-two">This is paragraph two</p>
+        <p class="para-class">This is paragraph three</p>
+    </div>
+
+    <p class="para-demo" id="para-id">This is a paragraph with class and id</p>
+
+</body>
+
+</html>

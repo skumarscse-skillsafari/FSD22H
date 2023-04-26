@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Checkbox">
+    <title>CheckBox</title>
+</head>
+
+<body>
+    <h1>Checkbox</h1>
+    <form action="#">
+        <p>Select the Subjects</p>
+        <input type="checkbox" name="english" id="english" value="English">English
+        <input type="checkbox" name="maths" id="maths" value="Maths">Maths
+        <input type="checkbox" name="physics" id="physics" value="Physics">Physics
+        <input type="checkbox" name="chemistry" id="chemistry" value="Chemistry">Chemistry
+        <input type="checkbox" name="computer" id="computer" value="Computer">Computer
+        <p>
+            <button id="btn">Select Subject(s)</button>
+        </p>
+    </form>
+    <hr>
+    <p id="result"></p>
+    <script>
+        // Checkbox
+        let checkBoxes = document.querySelectorAll("[type='checkbox']");
+        console.log(checkBoxes);
+        let btn = document.querySelector("#btn");
+        let result = document.querySelector("#result");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let values = [];
+            checkBoxes.forEach((checkBox) => {
+                if (checkBox.checked) {
+                    values.push(checkBox.value);
+                }
+            })
+            result.textContent = `User Selected: ${values.join(", ")}`;
+        });
+    </script>
+</body>
+
+</html>

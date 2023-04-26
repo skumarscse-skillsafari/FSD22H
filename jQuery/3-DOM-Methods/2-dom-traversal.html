@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DOM - Traversal Methods">
+    <title>DOM - Traversal Methods</title>
+</head>
+
+<body>
+    <h1>DOM - Traversal Methods</h1>
+    <div>
+        <p>This is first paragraph</p>
+    </div>
+    <div id="outerDiv">
+        <p>This is second paragraph</p>
+        <div id="innerDiv">
+            <p>This is third paragraph</p>
+        </div>
+        <div>
+            <ul>
+                <li>First</li>
+                <li>Second</li>
+                <li>Third</li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <p>This is fourth paragraph</p>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // DOM - Traversal Methods
+        // children(), each(), find(), first(), next(), parent(), prev(), siblings()
+        // each()
+        // $("p").each(function (index, ele) {
+        //     console.log('The index: ' + index + " Text: " + $(this).text());
+        // })
+
+        // children()
+        // console.log($("ul").children());
+        // $("ul").children().each(function (index, ele) {
+        //     console.log($(this).text());
+        // })
+
+        // $("#outerDiv").children().each(function (i, e) {
+        //     console.log($(this).html());
+        // })
+
+        // $("#outerDiv").find("p").each(function (i, e) {
+        //     console.log($(this).text());
+        // })
+
+        // next()
+        // console.log($("#outerDiv").next().html())
+
+        // parent()
+        // console.log($("#innerDiv").parent().html())
+
+        // sibling()
+        // console.log($("#outerDiv").siblings());
+
+        // css()
+        // $("#outerDiv").siblings().css({ "color": "red", "background": "green", "marginTop": "40px" });
+
+        // addClass()
+        $("h1").addClass("addClass");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Object - Methods">
+    <title>Object - Methods</title>
+</head>
+
+<body>
+    <h1>Object - Methods and this</h1>
+
+
+    <script>
+        // Object - Methods
+        // let user = {
+        //     id: 10001,
+        //     name: "John",
+        //     age: 25,
+        //     designation: "Full-stack developer"
+        // }
+        // console.log(user.name); // John
+
+        // let userDetails = function (firstName, lastName) {
+        //     console.log("Hello"); // Hello
+        //     console.log(firstName, lastName); // Jack John
+        // }
+        // userDetails("Jack", "John");
+
+        // Syntax
+        // Add function as a property
+        // let userCity = function () {
+        //     console.log("Bangalore");
+        // }
+
+        // user.city = userCity;
+        // console.log(user);
+        // user.city();
+
+        // Shorthand function property
+        //     let user = {
+        //         name: "John",
+        //         age: 25,
+        //         city() {
+        //             console.log("Chennai");
+        //         }
+        //     }
+        //     console.log(user);
+        //     user.city(); // Chennai
+
+        //     let userOne = {
+        //         name: "Jack",
+        //         age() {
+        //             console.log(25);
+        //         }
+        //     }
+        //     userOne.age();
+
+
+        // this => used to refer the current object
+        // let userOne = {
+        //     name: "John",
+        //     age: 30,
+        //     userDetails() {
+        //         console.log(userOne.name); // John
+        //         console.log(userOne.age); // 30
+        //     }
+        // }
+        // userOne.userDetails();
+
+        // let userOne = {
+        //     name: "John",
+        //     age: 25,
+        //     userDetails() {
+        //         console.log(this.name); // userTwo
+        //         console.log(this.age);
+        //     }
+        // }
+        // userOne.userDetails(); // John 25
+        // let userTwo = userOne;
+        // userTwo.userDetails();
+
+        let john = { name: "John" };
+        let jack = { name: "Jack" };
+
+        let message = function () {
+            console.log(`Welcome, ${this.name}`);
+        }
+
+        john.displayMessage = message;
+        jack.displayMessage = message;
+
+        console.log(john);
+        console.log(jack);
+
+        john.displayMessage(); // Welcome, John
+        jack.displayMessage(); // Welcome, Jack
+
+
+
+    </script>
+</body>
+
+</html>

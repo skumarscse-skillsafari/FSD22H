@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Background-image attachment">
+    <title>CSS - Background-image attachment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            min-height: 100vh;
+            border: 2px solid red;
+            color: red;
+            font-size: 2rem;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .img-1 {
+            background: url("../images/image-one.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .img-2 {
+            background: url("../images/image-two.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .img-3 {
+            background: url("../images/image-three.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-1">
+        <h1>Image - 1</h1>
+    </div>
+    <div class="img-2">
+        <h1>Image - 2</h1>
+    </div>
+    <div class="img-3">
+        <h1>Image - 3</h1>
+    </div>
+</body>
+
+</html>

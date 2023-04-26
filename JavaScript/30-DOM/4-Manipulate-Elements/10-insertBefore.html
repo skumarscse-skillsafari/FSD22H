@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="insertBefore">
+    <title>insertBefore</title>
+</head>
+
+<body>
+    <ul class="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+    </ul>
+
+    <script>
+        // insertBefore
+        // parentNode.insertBefore(newNode, existingNode);
+        let menu = document.querySelector(".menu");
+        let li = document.createElement("li");
+        li.id = "new-element";
+        li.textContent = "Contact";
+
+        menu.insertBefore(li, menu.lastElementChild);
+
+    </script>
+</body>
+
+</html>

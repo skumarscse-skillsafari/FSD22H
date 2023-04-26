@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Class Selector">
+    <title>Class Selector</title>
+    <style>
+        /* 
+            1. Class Selector is used to apply the css properties for a group of elements
+            2. We can have more than one class names for a element
+
+            .className {
+                propertyName: propertyValue;
+            }
+
+            .className-1, .className-2, ..., .className-N {
+                propertyName: propertyValue;
+            }
+
+            // Combination of both type / element selector and class Selector => Specificity to the element
+            elementName.className {
+                properyName: propertyValue;
+            }
+
+        */
+        .subjects {
+            color: green;
+        }
+
+        .fruits {
+            color: red;
+        }
+
+        .subjects,
+        .fruits {
+            color: blue;
+        }
+
+        li.subjects {
+            color: darkmagenta;
+        }
+
+        .border {
+            border-style: dashed;
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Class Selector</h2>
+    <p>List of Programming Subjects:</p>
+    <ul>
+        <li class="subjects border">C</li>
+        <li class="subjects">HTML</li>
+        <li class="subjects border">CSS</li>
+        <li class="subjects">JavaScript</li>
+    </ul>
+
+    <p>List of Fruits</p>
+    <ul>
+        <li class="fruits">Apple</li>
+        <li class="fruits">Orange</li>
+        <li class="fruits">Banana</li>
+        <li class="fruits">Mango</li>
+    </ul>
+
+</body>
+
+</html>

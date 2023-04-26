@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Desccription" content="DOM - Prepend">
+    <title>DOM - Prepend</title>
+</head>
+
+<body>
+    <h1>DOM - Prepend</h1>
+
+    <ul>
+        <li>Projects</li>
+        <li>Contact</li>
+    </ul>
+
+
+    <input type="text" name="list" id="list" placeholder="Enter a list value">
+    <button id="btn">Add</button>
+
+    <hr>
+    <ul id="list-items">
+
+    </ul>
+
+    <script>
+        // DOM - Prepend
+        // Add node(s) before the first child of a parent
+        // Syntax
+        // parentElement.prepend(node(s));
+        let ulParent = document.querySelector("ul");
+        let liItems = ["Home", "About", "Services"];
+        let liElements = liItems.map((liElement) => {
+            let element = document.createElement("li");
+            element.textContent = liElement;
+            return element;
+        });
+        ulParent.prepend(...liElements);
+
+        let list = document.querySelector("#list");
+        console.log(list.value);
+        let btn = document.querySelector("#btn");
+        btn.onclick = function () {
+            console.log(list);
+            let liParent = document.querySelector("#list-items");
+            let li = document.createElement("li");
+            li.textContent = list.value;
+            liParent.appendChild(li);
+            list.value = "";
+        }
+
+        let listQuery = document.querySelectorAll("#list");
+        console.log(listQuery);
+    </script>
+</body>
+
+</html>

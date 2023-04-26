@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Units - em">
+    <title>CSS - Units - em</title>
+    <style>
+        /* 
+            em => Relative unit based on parent element or default value of the element
+        */
+        div {
+            font-size: 10px;
+        }
+
+        .absolute {
+            font-size: 16px;
+        }
+
+        .relative {
+            font-size: 2em;
+            /* (base value) x emUnit value  
+                10 * 2 => 20px
+                baseValue => parentElementValue/DefaultValueofElement : 10px
+                1em => baseValue * 1 => 10 * 1 => 10px
+                6em => baseValue * 6 => 10 * 6 => 60px
+            */
+        }
+
+        p {
+            font-size: 2em;
+            /* 16 * 2 => 32px */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS - Units - em</h2>
+    <div>
+        <!-- font-size: 10px -->
+        <h3 class="relative">Relative Text</h3> <!-- 10 x 2 => 20px -->
+    </div>
+    <div>
+        <!-- font-size: 10px -->
+        <h3 class="absolute">Absolute Text</h3>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, voluptas.</p>
+</body>
+
+</html>

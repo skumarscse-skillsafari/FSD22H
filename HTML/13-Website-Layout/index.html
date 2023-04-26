@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Website Layout">
+    <title>Website Layout</title>
+</head>
+
+<body>
+    <!-- 
+        Semantic Tags => Container => Block-level elements
+        <header>...</header>
+        <nav>...</nav>
+        <aside>...</aside>
+        <section>...</section>
+        <footer>...</footer>
+     -->
+    <header id="header">
+        <h2>Website Layout</h2>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <section>
+        <aside>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </aside>
+        <hr>
+        <section>
+            <section id="home">
+                <h2>Home Section</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi molestias modi debitis laudantium
+                    temporibus sint ullam corrupti nobis accusamus rem voluptate sunt dicta nemo nihil illo deleniti
+                    officia
+                    quae deserunt, dolore iste ab at blanditiis. Doloribus tempora sapiente excepturi placeat sequi quo
+                    facere laudantium rem harum numquam sit, accusamus exercitationem?</p>
+                <img src="./assets/images/image-two.jpg" alt="This is image-two" height="250px" width="300px">
+            </section>
+            <hr>
+            <section id="about">
+                <h2>About Section</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi molestias modi debitis laudantium
+                    temporibus sint ullam corrupti nobis accusamus rem voluptate sunt dicta nemo nihil illo deleniti
+                    officia
+                    quae deserunt, dolore iste ab at blanditiis. Doloribus tempora sapiente excepturi placeat sequi quo
+                    facere laudantium rem harum numquam sit, accusamus exercitationem?</p>
+                <video controls width="450px">
+                    <source src="./assets/videos/videoplayback.mp4" type="audio/mp4" />
+                </video>
+            </section>
+            <hr>
+            <section id="projects">
+                <h2>Projects Section</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam illum sed excepturi
+                    maxime
+                    facere sit? Tempore voluptate eius nemo explicabo pariatur beatae magnam nulla.</p>
+                <ul>
+                    <li>To-Do App</li>
+                    <li>PostTracker App</li>
+                    <li>MERN Full-stack App</li>
+                </ul>
+            </section>
+            <hr>
+            <section id="contact">
+                <h2>Contact Section</h2>
+                <p>Feel free to contact us:</p>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Contact Details:</legend>
+                        <p>
+                            <label for="name">Full Name:</label>
+                            <input type="text" name="name" id="name">
+                        </p>
+                        <p>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email">
+                        </p>
+                        <p>
+                            <label for="mobile">Contact No.</label>
+                            <input type="number" name="" id="">
+                        </p>
+                        <p>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </section>
+        </section>
+
+    </section>
+    <hr>
+    <footer>
+        <p><a href="#header">Scroll to top</a></p>
+        <p>All rights reserved. Copyright &#169; 2022. <a href="https://skillsafari.in/">SkillSafari.</a></p>
+    </footer>
+</body>
+
+</html>

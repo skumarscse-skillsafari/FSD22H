@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Map Constructor method">
+    <title>Map Constructor Method</title>
+</head>
+
+<body>
+    <h1>Map Constructor Method</h1>
+
+    <script>
+        // Map Constructor Method => Collection for storing the data
+        // Object => Used for storing keyed collection
+        // Array => Used for storing ordered collection
+
+        // Map => Constructor method
+        // Behaves as same as object => key: value;
+        // Object => key => string
+        // Map => key => can be of any type => string, number, boolean
+        // Many in-built methods for insert, delete and update the properties
+        // Syntax
+        // let map = new Map();
+
+        let map = new Map();
+
+        // map.set(key, value) => add entries/properties to the Map
+        // map.get(key) => get the value by referring the key
+        // map.has(key) => the presence of the property in the Map
+        // map.delete(key) => delete the property using the key
+        // map.clear() => delete all the properties in the Map
+        // map.size => number of properties in the Map
+
+        // Add new propety
+        // map.set(key, value)
+        map.set("firstName", "SkillSafari");
+        map.set("lastName", "EduKeys");
+        map.set("age", 25);
+        map.set(true, "hello");
+        // console.log(map);
+
+        // Chaining method
+        map.set("isAdmin", true).set("city", "Bangalore").set("state", "Karnataka");
+        // console.log(map);
+
+        // Access the property
+        // map.get(key)
+        // console.log(map.get(true)); // hello
+        // console.log(map.get("city")); // Bangalore
+        // console.log(map.get("designation")); // undefined
+
+        // Modify the existing property
+        map.set("isAdmin", false);
+        // console.log(map);
+
+        // Delete
+        // map.delete(key)
+        map.delete(true);
+        // console.log(map);
+
+        // Clear
+        map.clear();
+        // console.log(map);
+
+        // Method - 2
+        // new Map()
+        // let fruits = new Map([
+        //     ["Mango", 20],
+        //     ["Apple", 30],
+        //     ["Orange", 40],
+        //     ["Banana", 50]
+        // ]);
+        // console.log(fruits);
+
+        // Iterate the Keys and Values in the Map => for...of
+        // map.keys() => return the keys as iterables [Array Like]
+        // map.values() => return the values as iterables [Array Like]
+        // map.entries() => return key and value as iterables [Array Like]
+        // Accessing Keys
+        // let fruitsKeys = fruits.keys();
+        // console.log(fruitsKeys);
+        // for (const fruitKey of fruitsKeys) {
+        //     console.log(fruitKey);
+        // }
+
+        // Accessing Values
+        // let fruitsValues = fruits.values();
+        // console.log(fruitsValues);
+        // for (const fruitValue of fruitsValues) {
+        //     console.log(fruitValue);
+        // }
+
+        // Access Key: Value
+        // let keysValues = fruits.entries();
+        // console.log(keysValues)
+        // for (const [fruitKey, fruitValue] of keysValues) {
+        //     console.log(`${fruitKey} => ${fruitValue}`);
+        // }
+
+        // forEach
+        // map.forEach((value, key, map) => {
+        // logics
+        // })
+        // fruits.forEach((fruitValue, fruitKey) => {
+        //     console.log(`The Key: ${fruitKey} and The Value: ${fruitValue}`);
+        // })
+
+        // new Map(Object.entries(obj)) => returns Map
+        // Object to Map
+        // let fruits = {
+        //     mango: 20,
+        //     orange: 30,
+        //     apple: 45,
+        //     banana: 50
+        // }
+        // console.log(fruits);
+
+        // let fruitsMap = new Map(Object.entries(fruits));
+        // console.log(fruitsMap);
+
+        // Object.fromEntries(Map) => return Object
+        // Map to Object
+        // let marksMap = new Map([
+        //     ["English", 60],
+        //     ["Maths", 70],
+        //     ["Physics", 80],
+        //     ["Chemistry", 90]
+        // ]);
+        // console.log(marksMap);
+
+        // let marksObj = Object.fromEntries(marksMap);
+        // console.log(marksObj);
+
+        let subjectsMap = new Map();
+        subjectsMap.set("English", 20).set("Maths", 30).set("Physics", 40).set("Chemistry", 50);
+        // console.log(subjectsMap.get("Physics")); // 40
+        console.log(Object.fromEntries(subjectsMap).Physics);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Siginin Form">
+    <title>Signin Form</title>
+</head>
+
+<body>
+    <h1>Signin Form</h1>
+    <form action="#" method="post">
+        <p>
+            <label for="username">Enter Username:</label>
+            <input type="username" name="username" id="username" required placeholder="Enter Username">
+        </p>
+        <p>
+            <label for="password">Enter Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password" required>
+        </p>
+        <p>
+            <button id="signin">Signin</button>
+            <button id="cancel">Cancel</button>
+        </p>
+    </form>
+
+    <script>
+        let signin = document.querySelector("#signin");
+        let inputEle = document.querySelectorAll("input");
+        console.log(inputEle);
+        signin.addEventListener("click", (e) => {
+            e.preventDefault();
+            let username = inputEle[0].value;
+            let password = inputEle[1].value;
+            console.log(username);
+            console.log(password);
+            let userObj = JSON.parse(localStorage.getItem(username));
+            console.log(userObj);
+            if (!userObj) {
+                alert("No user with the entered username");
+            }
+            if (username === userObj.username && password === userObj.password) {
+                alert("Login Successfull");
+            } else {
+                alert("Username or Password wrong");
+            }
+        })
+    </script>
+</body>
+
+</html>

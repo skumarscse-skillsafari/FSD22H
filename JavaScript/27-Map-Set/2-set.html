@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Set">
+    <title>JavaScript - Set</title>
+</head>
+
+<body>
+    <h1>JavaScript - Set - Constructor Method</h1>
+
+    <script>
+        // Set Constructor method
+        // Set is a special type of collection - "set of value" (without keys)
+        // Each and the every value appers only once
+        // Set values are mostly an object
+        // new Set() // Create a iterable entries/values
+        // let set = new Set();
+        // console.log(set);
+        // set.add(value) => add value to the Set
+        // set.delete(value) => delete the value in the Set
+        // set.has(value) => occurance of the value in the Set, return true, if exists, else return false
+        // set.clear() => remove all the values in the Set
+        // set.size => number of values in the set
+
+        let userVisits = new Set();
+        // console.log(userVisits);
+
+        // Add value to the Set
+        // set.add(value)
+        let john = { name: "John" };
+        let jack = { name: "Jack" };
+        let mary = { name: "Mary" };
+        let robert = { name: "Robert" };
+        userVisits.add(john);
+        userVisits.add(jack);
+        userVisits.add(mary);
+        userVisits.add(robert);
+        userVisits.add(jack);
+        // console.log(userVisits);
+
+        // size
+        // console.log(userVisits.size);
+
+        // set.delete(value);
+        // userVisits.delete(robert);
+        // console.log(userVisits); // 3
+
+        // // set.has(value)
+        // console.log(userVisits.has(john)); // true
+
+        // // Iterate
+        // for (const value of userVisits) {
+        //     console.log(value);
+        // }
+
+
+        // forEach()
+        userVisits.forEach((value, valueAgain, set) => {
+            console.log(valueAgain);
+        })
+
+        // Also supports
+        // set.key()
+        // set.values()
+        // set.entries()
+
+    </script>
+</body>
+
+</html>

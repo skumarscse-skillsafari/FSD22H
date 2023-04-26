@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Callback Function">
+    <title>Callback Function</title>
+</head>
+
+<body>
+    <h1>Callback Function</h1>
+
+    <script>
+        // Callback Function => Passing a function as parameter to another function
+        // Function inside a function or a function has another function as parameter
+        // Function Expression
+        // let user = function () {
+        //     console.log("SkillSafari");
+        // };
+        // user();
+
+        // function userDetails(name, age) { // let name = "SkillSafari", let age = 25
+        //     console.log(name, age); // SkillSafari 25
+        // }
+        // userDetails("SkillSafari", 25);
+
+        // let details = function () {
+        //     console.log("User Details");
+        // }
+        // details();
+
+
+        function displayUserDetails(name, userInfo) { // let userInfo = userDetails
+            console.log(`The username is: ${name}`);
+            userInfo();
+        }
+
+        let userDetails = function () {
+            let age = 25;
+            let designation = "Full-stack developer";
+            let city = "Bangalore";
+            console.log(`Age: ${age}, Designation: ${designation}, City: ${city}`);
+        }
+
+        displayUserDetails("SkillSafari", userDetails);
+
+        // let varOne = "Hello";
+        // let varTwo = varOne;
+        // console.log(varOne, varTwo); // Hello Hello
+
+        // let funOne = function () {
+        //     console.log("Hello");
+        // }
+        // let funTwo = funOne;
+        // funOne(); // Hello
+        // funTwo(); // Hello
+
+        function productDetails(productName, productInfo) { // let productInfo = function () { let price = 25000; console.log(`The Price is: ${price}`) } 
+            console.log(`The Product Name: ${productName}`)
+            productInfo();
+        }
+
+        productDetails("Laptop", function () {
+            let price = 25000;
+            console.log(`The Price is: ${price}`)
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Events - Intro">
+    <title>Events - Intro</title>
+</head>
+
+<body>
+    <h1>Events - Intro</h1>
+    <form action="#">
+        <p>
+            <input type="text" name="fullName" id="fullName" placeholder="Enter your name">
+        </p>
+        <p>
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+        </p>
+        <p><button id="btn">Click</button></p>
+    </form>
+
+    <script>
+        // Events - Intro
+        // HTML Events
+        // Event Listeners
+        let btn = document.querySelector("#btn");
+        btn.onclick = function (e) {
+            e.preventDefault();
+            console.log(e);
+            console.log("Hello");
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Object Reference">
+    <title>Object Reference</title>
+</head>
+
+<body>
+    <h1>Object Reference</h1>
+
+
+    <script>
+        // Object Reference
+        // Primitive datatypes => String, Number, BigInt, Boolean, Null, Undefined
+        // Copy by value
+        // let firstName = "SkillSafari";
+        // console.log(firstName); // SkillSafari
+        // let lastName = firstName;
+        // console.log(lastName); // SkillSafari
+        // firstName = "EduKeys";
+        // console.log(firstName); // EduKeys
+        // console.log(lastName); // SkillSafari
+
+        // Copy by reference
+        // let userOne = {
+        //     firstName: "SkillSafari",
+        //     lastName: "EduKeys",
+        //     age: 25
+        // }
+        // // console.log(userOne);
+        // let userTwo = userOne;
+        // // console.log(userOne);
+        // // console.log(userTwo);
+        // userTwo.isAdmin = true;
+        // console.log(userOne);
+        // console.log(userTwo);
+
+        // // Comparing 'objects'
+        // console.log(userOne == userTwo); // true
+        // console.log(userOne === userTwo); // true
+
+        // let objOne = {};
+        // let objTwo = {};
+        // console.log(objOne);
+        // console.log(objTwo);
+        // console.log(objOne == objTwo); // false
+        // console.log(objOne === objTwo); // false
+
+        // properties of the "const" variable also be changed here
+        // const objOne = {
+        //     age: 20,
+        // }
+        // console.log(objOne.age); // 20
+        // objOne.age = 25;
+        // console.log(objOne.age); // 25
+
+        // Clone the Object Properties
+        // let userOne = {
+        //     firstName: "SkillSafari",
+        //     lastName: "EduKeys",
+        //     age: 25,
+        // }
+        // console.log(userOne); //
+        // let userTwo = {};
+        // // userTwo["isAdmin"] = true;
+        // // console.log(userTwo); // {}
+        // for (const key in userOne) {
+        //     console.log(key); // "lastName"
+        //     userTwo[key] = userOne[key]; // userTwo["firstName"] = userOne["firstName"] => "SkillSafari"
+        //     console.log(`${userTwo[key]} => ${userOne[key]}`);
+        // }
+        // // console.log(userTwo);
+        // userTwo.isAdmin = true;
+        // console.log(userOne);
+        // console.log(userTwo);
+
+        // let user = {
+        //     name: "skillsafari",
+        //     age: 25,
+        //     userFun: function () {
+        //         console.log("Hello");
+        //     }
+        // }
+        // user.userFun();
+
+        // let userDetails = {
+        //     address: {
+        //         street: "abc",
+        //         pincode: 123456,
+        //         city: "Bangalore"
+        //     }
+        // }
+        // console.log(userDetails.address.city)
+        // Merge the Object Properties
+        // Object.assign()
+        // Syntax (Copy)
+        // Object.assign(dest, source);
+        // Syntax (Merge)
+        // Object.assign(dest, source-1, source-2,..., source-N);
+
+        // let userDetails = {
+        //     name: {
+        //         firstName: "SkillSafari",
+        //         lastName: "EduKeys",
+        //     },
+        //     age: 25,
+        //     isAdmin: true,
+        // }
+        // let cloneUserDetails = {};
+        // console.log("-----Befor-----");
+        // console.log(userDetails);
+        // console.log(cloneUserDetails);
+        // Object.assign(cloneUserDetails, userDetails);
+        // console.log("-----After-----");
+        // console.log(userDetails);
+        // cloneUserDetails.age = 18;
+        // console.log(cloneUserDetails);
+
+        // // Merging
+        // let a = { name: "John" };
+        // let b = { age: 20 };
+        // let c = { isAdmin: true };
+        // let d = { name: "Jack" };
+        // Object.assign(d, a, b, c);
+        // console.log(d);
+        // console.log(Object.assign({ d: 4 }, { a: 1 }, { b: 2 }, { d: 3, b: 1 }))
+
+
+        // function demo(a, b) {
+        //     return a + b;
+        // }
+        // demo(2, 3);
+
+        let user = {
+            address: {
+                country: {
+                    state: "Tamil nadu"
+                }
+            }
+        }
+        // structuredClone() => deep cloning
+        let cloneUser = structuredClone(user);
+        console.log(user);
+        console.log(cloneUser);
+    </script>
+</body>
+
+</html>

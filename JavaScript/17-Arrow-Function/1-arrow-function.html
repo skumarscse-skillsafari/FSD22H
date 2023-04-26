@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Arrow Function">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <h1>Arrow Function</h1>
+
+    <script>
+        // Arrow Function
+        // Function Declaration
+        // function userDetails(name, age, designation) {
+        //     console.log(name, age, designation);
+        // }
+        // userDetails("SkillSafari", 25, "Full-stack Developer");
+
+        // Function Expression
+        // let userDetails = function (name, age, designation) {
+        //     console.log(name, age, designation);
+        // };
+        // userDetails("SkillSafari", 30, "Developer");
+
+        // Arrow Function
+        // let userDetails = (name, age, designation) => console.log(name, age, designation);
+        // userDetails("SKillSafari", 25, "Developer");
+
+        // Syntax
+        /*
+        let varName = () => {
+            statement
+        }
+        varName()
+        */
+        // Arrow Function with multiple statements
+        let userDetails = () => {
+            let name = "SkillSafari";
+            let age = 20;
+            let designation = "Developer";
+            console.log(name, age, designation);
+        }
+        userDetails();
+
+        // Arrow function with single statement
+        let add = (a, b) => console.log(a + b);
+        add(5, 10);
+
+        // Arrow function with one parameter
+        let number = num => console.log(num);
+        number(10);
+
+        // Arrow function without parameter
+        let result = () => console.log("Function without parameter");
+        result();
+
+        // Arrow function with return
+        let productName = (name) => {
+            let productNumber = 125879;
+            let productInfo = `The ProductName: ${name}, ProductNumber: ${productNumber}`;
+            return productInfo;
+        }
+        let productResult = productName("RealMe 9 Pro");
+        console.log(productResult);
+
+        // Arrow function, omit using return keyword incase of function body with single statement
+        let displayNumber = (dispNum) => dispNum;
+        console.log(displayNumber(50));
+
+        // 3! => 3 * 2 * 1 => 6
+        let factNum = +prompt("Enter a number"); // 3
+        let output = 1;
+        console.log(output); //1
+        for (let i = factNum; i >= 1; i--) { // i = 2;  2 >= 1; 2
+            output *= i;
+        }
+        console.log(output); // 6
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DOM - Append method">
+    <title>DOM - Append method</title>
+</head>
+
+<body>
+    <h1>DOM - Append method</h1>
+    <ul id="navbar">
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+    </ul>
+
+    <script>
+        // DOM - Append method
+        // Insert a node(s) after the last child node of a parent
+        // Syntax
+        // parentElement.append(node(s))
+
+        let navbar = document.querySelector("#navbar");
+        let navItems = ["Portfolio", "Products", "Services"];
+        let navElements = navItems.map((navElement) => {
+            let element = document.createElement("li");
+            element.textContent = navElement;
+            return element;
+        });
+        console.log(navElements);
+        navbar.append(...navElements);
+        console.log(...navElements)
+
+
+    </script>
+</body>
+
+</html>

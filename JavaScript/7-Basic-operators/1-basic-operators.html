@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Basic Operators">
+    <title>JavaScript - Basic Operators</title>
+</head>
+
+<body>
+    <h2>JavaScript - Basic Operators</h2>
+
+    <script>
+        // JavaScript - Basic Operators
+        // Basic Terms => "unary", "binary", "operator(s)", "operand(s)"
+        // unary => one or single. Ex: -10 => "-" unary operator => involves only one operand
+        // binary => two. Ex: 10 + 15 => "+" binary operator => involves two operands
+        // operator and operands => expression. Ex: 5 + 10 => 5 and 10 are operands. "+" => operator
+
+        // Basic Mathematical operations (binary)
+        // 1. Addition (+)
+        // 2. Subtraction (-)
+        // 3. Multiplication (*)
+        // 4. Division (/)
+        // 5. Modulo (Remainder) (%)
+        // 6. Exponentiation (**)
+
+        // Modulo (Reminder)
+        // let numberOne = 10;
+        // let numberTwo = 6;
+        // console.log(numberOne / numberTwo); //1.6666666666666667
+        // console.log(numberOne % numberTwo); // 4
+        // console.log(8 % 3); // 2
+
+        // // Exponentiation
+        // console.log(10 ** 2); // 10 * 10 => 100
+        // console.log(12 ** 2); // 12 * 12 => 144
+
+        // // String concatenation with "+" => binary
+        // // "opearnd-1" + "operand-2"
+        // console.log("Hello," + "World!!!");
+
+        // // If any one of the operand is "string", the other operand also convert into "string"
+        // console.log(1 + "123"); // 1123
+        // console.log("235" + 123); // 235123
+
+        // console.log(12 + 23 + "123"); // 35123
+
+        // console.log("123" + 12 + 23); // 1231223
+
+
+        // Operator Precedence
+        // BODMAS => 1 + (2 - 3) * 4 / 5
+        // Body, Division, Multiplication, Addition, Subtraction
+
+        // Assignment
+        // let name = "SkillSafari"
+        // console.log(name); // SkillSafari
+
+        // let numberOne = 10;
+        // let numberTwo = 20;
+
+        // let numberThree = 30 - (numberOne = numberTwo + 10);
+        // // numberThree = 30 - (30) => 0
+        // console.log(numberOne); // 30
+        // console.log(numberThree); // 0
+
+        // let numberOne, numberTwo, numberThree;
+        // numberOne = numberTwo = numberThree = 20 + 20;
+        // // numberOne = numberTwo = numberThree =  40
+        // console.log(numberOne, numberTwo, numberThree); // 40 40 40
+
+        // let numberOne = 20;
+        // // numberOne = numberOne + 10; // 20 + 10 => 30
+        // numberOne += 10 // numberOne = numberOne + 10
+        // // numberOne = numberOne * 20; // 30 * 20 => 600
+        // numberOne *= 20; // numberOne = numberOne * 20
+        // console.log(numberOne); // 600
+
+        // let numberTwo = 20;
+        // console.log(numberTwo /= 10); // numberTwo = numberTwo / 10 => 20 / 10 => 2
+        // console.log(numberTwo *= 20); // numberTwo = numberTwo * 20 => 2 * 20 => 40
+
+        // Increment and Decrement operator
+        let numberOne = 10;
+        // numberOne = numberOne + 1;
+        numberOne++; // numberOne = numberOne + 1
+        console.log(numberOne); // 11
+
+        let numberTwo = 20;
+        numberTwo--; // numberTwo = numberTwo - 1
+        console.log(numberTwo); // numberTwo = numberTwo - 1 => 19
+
+        // Pre-Increment and Pre-Decrement Ex: let a = 10; ++a and --a
+        // Post-Increment and Post-Decrement Ex: let a = 10; a++ and a--
+
+        // Pre-Increment/Decrement => Perform the operation(++ or --) then assign the value to the variable
+        // Post-Increment/Decrement => Assign the value to the variable then perform the operation (++ or --)
+
+        let counter = 20;
+        console.log(counter++); // counter = counter + 1 // 20 (before printing in the console)  => 21 (after printing in the console)
+        console.log(++counter); // counter = counter + 1 // 22
+
+        // Assignment (=)
+        // Comma (,)
+        let expression = (20 + 10, 40 - 30); // (30, 10)
+        console.log(expression);
+
+        let a = 10;
+        let b = 20;
+        let c = (a, b); // (10, 20)
+        console.log(c); // 20
+    </script>
+</body>
+
+</html>

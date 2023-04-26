@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="getElementsByName()">
+    <title>getElementsByName()</title>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" name="fname" id="fname" placeholder="Enter name">
+        <!-- {
+            type: "text",
+            name: "fname",
+            id: "fname",
+            placeholder: "Enter name"
+        } -->
+        <input type="email" name="email" id="email" placeholder="Enter email">
+        <!-- {
+            type: "email",
+            name: "email",
+            id: "email",
+            placeholder: "Enter email"
+        } -->
+
+        <input type="radio" name="subjects" id="english" value="English">
+        <!-- 
+            let subject = {
+                type: :radio,
+                tagName: "input",
+                name: :subjects,
+                id: "english",
+                value: "English"
+            }
+            let subjects = [{
+                type: :radio,
+                tagName: "input",
+                name: :subjects,
+                id: "english",
+                value: "English"
+            },{
+                type: :radio,
+                tagName: "input",
+                name: :subjects,
+                id: "maths",
+                value: "Maths"
+            }, {
+                type: :radio,
+                tagName: "input",
+                name: :subjects,
+                id: "physics",
+                value: "Physics"
+            }, {
+                type: :radio,
+                tagName: "input",
+                name: :subjects,
+                id: "chemistry",
+                value: "CHemistry"
+            }
+            ]
+         -->
+        <input type="radio" name="subjects" id="maths" value="Maths">
+        <input type="radio" name="subjects" id="physics" value="Physics">
+        <input type="radio" name="subjects" id="chemistry" value="Chemistry">
+    </form>
+
+    <script>
+        // document.getElementsByName("nameAttributeValue") => returns NodeList of HTML Elements
+        // let subjects = document.getElementsByName("subjects");
+        // console.log(subjects);
+        // let subjectsArray = Array.from(subjects).map((ele) => ele.id);
+        // console.log(subjectsArray);
+
+        let subjects = document.getElementsByName("subjects"); // NodeList of input elements
+        console.log(subjects);
+        console.log(Array.from(subjects).map((subject) => subject.id));
+        // [input#english, input#maths, input#physics, input#chemistry] => [english, maths, physics, chemistry]
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Table">
+    <title>Table</title>
+</head>
+
+<body>
+    <h2>Tables</h2>
+    <!-- 
+        Syntax
+        1. Table => row (horizontal) and column (vertical)
+        <table>
+            <tr> => table row (row)
+                <td>....</td> => table data (column)
+            </tr>
+        </table>
+     -->
+    <p>Student's Rank Table:</p>
+    <!-- <th> => Make the headings of the table in bold -->
+    <table border="1">
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Rank</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>AAAA</td>
+            <td>20</td>
+            <td>III</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>BBBB</td>
+            <td>25</td>
+            <td>I</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>CCCC</td>
+            <td>21</td>
+            <td>II</td>
+        </tr>
+    </table>
+
+    <hr>
+    <p>Table - 2</p>
+    <!-- 
+        Syntax
+        <table>
+            <caption></caption> => Add caption to the table
+            <thead></thead> => Include the first row of the table
+            <tbody></tbody> => Other rows expect first row need to be include inside tbody
+            <tfoot></tfoot> => End note to the table
+        </table>
+     -->
+    <table border="1">
+        <caption>Student's Rank Table</caption>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Rank</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>AAAA</td>
+                <td>20</td>
+                <td>III</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>BBBB</td>
+                <td>25</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>CCCC</td>
+                <td>21</td>
+                <td>II</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>End of the table</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

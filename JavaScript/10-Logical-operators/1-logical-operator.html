@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - Logical Operators">
+    <title>JavaScript - Logical Operators</title>
+</head>
+
+<body>
+    <h2>JavaScript - Logical Operators</h2>
+
+
+    <script>
+        // JavaScript - Logical Operators
+        // 1. Logical OR (||) => binary operator
+        // 2. Logical AND (&&) => binary operator
+        // 3. Logical NOT (!) => unary operator
+
+        // Logical conditions
+        // Logical OR
+        // Syntax
+        // (value/condition/expression) || (value/condition/expression)
+        // Operand as condition
+        // (10 > 5) || (20 > 6)
+        // true || true => true
+        // (10 > 5) || (6 > 20)
+        // true || false => true
+        // (5 > 10) || (20 > 6)
+        // false || true => true
+        // (5 > 10) || (6 > 20)
+        // false || false => false
+
+        // In Logical OR, if any one or both of the operand turns "true", then the result also be "true"
+        // Select the students eligible for attending the campus interview
+        // Eligible => HSC OR SSLC OR UG OR PG >= 70
+        // let name = prompt("Enter name");
+        // let dept = prompt("Enter dept.");
+        // let hsc = +prompt("Enter HSC mark");
+        // let sslc = +prompt("Enter SSLC mark");
+        // let ug = +prompt("Enter UG mark");
+        // let pg = +prompt("Enter PG mark");
+        // console.log(`Student name: ${name}`);
+        // console.log(`Department: ${dept}`);
+        // console.log(`The marks are: SSLC => ${sslc}, HSC => ${hsc}, UG => ${ug}, PG => ${pg}`);
+        // //  sslc => 80    hsc => 60    ug => 70    pg => 80
+        // //    80 >= 70 ||  60 >= 70 || 70 >= 70 || 80 >= 70
+        // //      true   ||    false  ||    true  ||  true
+        // //                                                  true
+        // if (sslc >= 70 || hsc >= 70 || ug >= 70 || pg >= 70) {
+        //     console.log("Eligible to attend the interview");
+        // } else {
+        //     console.log("Not Eligible");
+        // }
+
+        // Logical AND (&&) => binary operator
+        // (value/condition/expression) && (value/condition/expression)
+        // If any one or both the operand turns "false", then result also be "false"
+        // Only if both the operands are "true"
+        // true && true
+        // (10 > 5) && (5 > 1)
+        // true  &&  true => true (truthy)
+        // true && false
+        // (10 > 5)  && (5 < 1)
+        // true  &&  false => false
+        // false && true
+        // (10 < 5) && (5 > 1)
+        // false  &&  true => false (falsy)
+        // false && false
+        // (10 < 1)  &&  (5 > 20)
+        // false   &&   false => false
+
+        // Conditions
+        // HSC, SSLC, UG, PG >= 80 marks
+        // let name = prompt("Enter name");
+        // let dept = prompt("Enter dept.");
+        // let hsc = +prompt("Enter HSC mark");
+        // let sslc = +prompt("Enter SSLC mark");
+        // let ug = +prompt("Enter UG mark");
+        // let pg = +prompt("Enter PG mark");
+        // console.log(`Student name: ${name}`);
+        // console.log(`Department: ${dept}`);
+        // console.log(`The marks are: SSLC => ${sslc}, HSC => ${hsc}, UG => ${ug}, PG => ${pg}`);
+        // //  sslc => 80    hsc => 60    ug => 70    pg => 80
+        // //    80 >= 80 &&  60 >= 80 && 70 >= 80 && 80 >= 80
+        // //      true   &&    false  &&    false  &&  true
+        // //                   false  &&    false  &&  true
+        // //                                false  &&  true
+        // //                                        false
+        // if (sslc >= 80 && hsc >= 80 && ug >= 80 && pg >= 80) {
+        //     console.log("Eligible to attend the interview");
+        // } else {
+        //     console.log("Not Eligible");
+        // }
+
+
+        // Logical OR
+        // Finds the first "truty" value
+        // In the expression,
+        // If, anyone of the operand turns "true", the evaluation of the expession stops there and return the "value" in the operand.
+        // If, none of the operand in the expression turns "true", the "value" in the last operand must be returned
+        // 10 > 30 || 10 < 5 || 20 > 80 || "Hello"
+        // false   || false  || false   ||
+        // "Hello"
+
+        // Operand with "truthy" value
+        // let result = (20 < 10) || (30 < 15) || (10 > 5) || (50 > 20) || "Hello";
+        //             false   ||    false  ||   true
+        // console.log(result);
+        // let firstName = null;
+        // let lastName = "EduKeys";
+        // let userName = firstName || lastName || "Anonymous";
+        // //              false    || "EduKeys"
+        // console.log(userName); // EduKeys
+
+
+        // No operand with "truty" value
+        // let firstName = null;
+        // let lastName = null;
+        // let userName = firstName || lastName || "Anonymous";
+        // //              false    || false    || false
+        // console.log(userName); // Anonymous
+
+
+        // Logical AND
+        // Finds for first "falsy" value
+        // In a expression,
+        // If anyone of the operand turns "false", the evaluation of the expession stops there and return the "value" in the operand.
+        // If, none of the operand in the expression turns "false", the "value" in the last operand must be returned
+
+        // No "falsy" value in the expression
+        // let firstName = "SkillSafari";
+        // let lastName = "EduKeys";
+        // let userName = firstName && lastName && "Anonymous"
+        // //              true    &&   true    &&
+        // console.log(userName); // Anonymous
+
+        // Operand with "falsy" value in the expression
+        // let firstName = "SkillSafari";
+        // let lastName = null;
+        // let userName = firstName && lastName && "Anonymous"
+        // //                true   &&   false
+        // console.log(userName); // null
+
+
+        // Short-circuit evaluation
+        // ony with two operand
+        // OR
+        // Checks for first "truty" value
+        // If, first operand turns "true", return the first operand "value". Else, return second operand "value"
+        // let userName = undefined || "EduKeys";
+        // console.log(userName); // EduKeys
+
+
+        // AND
+        // Checks for first "falsy" value
+        // If, first operand turns "false", return the first operand "value". Else return seconf operand "value"
+        // let userName = "EduKeys" && "SkillSafari";
+        // console.log(userName); // SkillSafari
+
+        // Logical NOT (!) => unary operator
+        // true of false
+        // true => false
+        // false => true
+
+        let value = false;
+        console.log(!value); //true
+
+        console.log(!0); //true
+        console.log(!!0); //false
+
+
+    </script>
+</body>
+
+</html>

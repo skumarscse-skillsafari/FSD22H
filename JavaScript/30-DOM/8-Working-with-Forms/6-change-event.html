@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Change Event">
+    <title>Change Event</title>
+</head>
+
+<body>
+    <h1>Change Event</h1>
+    <label for="username">User Name:</label>
+    <input type="text" name="username" id="username">
+
+    <p class="result"></p>
+
+    <script>
+        // Change Event
+        // input => text, radio, checkbox and select element
+        // element.addEventListener("change", (e) => {
+        // logics
+        // e.preventDefault();
+        // })
+        let username = document.querySelector("#username");
+        let result = document.querySelector(".result");
+        username.addEventListener("change", function (e) {
+            e.preventDefault();
+            // console.log("Someone trying to enter something inside me...");
+            result.textContent = this.value;
+        })    
+    </script>
+</body>
+
+</html>

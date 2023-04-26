@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Student Table">
+    <title>Student Table</title>
+</head>
+
+<body>
+    <h2>Student Table</h2>
+    <p><strong><u>Basic Table</u></strong></p>
+    <table border="1">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>10001</td>
+            <td>AAAA</td>
+            <td>CSE</td>
+        </tr>
+        <tr>
+            <td>10002</td>
+            <td>BBBB</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>10003</td>
+            <td>CCCC</td>
+            <td>ECE</td>
+        </tr>
+    </table>
+    <hr>
+
+    <p><b><i><u>Table with cellspacing</u></i></b></p>
+    <table border="1" cellspacing="10px">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>10001</td>
+            <td>AAAA</td>
+            <td>CSE</td>
+        </tr>
+        <tr>
+            <td>10002</td>
+            <td>BBBB</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>10003</td>
+            <td>CCCC</td>
+            <td>ECE</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <p><b><em><u>Table with cellpadding</u></em></b></p>
+    <table border="1" cellpadding="10px">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>10001</td>
+            <td>AAAA</td>
+            <td>CSE</td>
+        </tr>
+        <tr>
+            <td>10002</td>
+            <td>BBBB</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>10003</td>
+            <td>CCCC</td>
+            <td>ECE</td>
+        </tr>
+    </table>
+
+    <hr>
+    <p><strong><i><u>Table with width</u></i></strong></p>
+    <table border="1" width="75%">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>10001</td>
+            <td>AAAA</td>
+            <td>CSE</td>
+        </tr>
+        <tr>
+            <td>10002</td>
+            <td>BBBB</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>10003</td>
+            <td>CCCC</td>
+            <td>ECE</td>
+        </tr>
+    </table>
+
+    <hr>
+    <p><b><em><u>Table with colspan (merge the columns)</u></em></b></p>
+    <!-- 
+        colspan => merge the columns
+     -->
+    <table border="1" width="50%">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>10001</td>
+            <td colspan="2">AAAA / CSE</td>
+            <!-- <td>CSE</td> -->
+        </tr>
+        <tr>
+            <td colspan="3">10002 / BBBB / IT</td>
+            <!-- <td>BBBB</td>
+            <td>IT</td> -->
+        </tr>
+        <tr>
+            <td>10003</td>
+            <td>CCCC</td>
+            <td>ECE</td>
+        </tr>
+    </table>
+
+    <hr>
+    <p><strong><i><u>Table with rowspan</u></i></strong></p>
+    <!-- 
+        rowspan => merge the rows
+     -->
+    <table border="1" width="75%">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>10001</td>
+            <td>AAAA</td>
+            <td>CSE</td>
+        </tr>
+        <tr>
+            <td>10002</td>
+            <td>BBBB</td>
+            <td rowspan="2">IT / ECE</td>
+        </tr>
+        <tr>
+            <td>10003</td>
+            <td>CCCC</td>
+            <!-- <td>ECE</td> -->
+        </tr>
+    </table>
+</body>
+
+</html>

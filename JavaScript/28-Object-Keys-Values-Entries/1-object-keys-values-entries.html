@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Object - Keys - Values - Entries">
+    <title>Object - Keys - Values - Entries</title>
+</head>
+
+<body>
+    <h1>Object - Keys - Values - Entries</h1>
+
+    <script>
+        // Object.keys() => array of object keys, 
+        // Object.values() => array of object values and
+        // Object.entries() => array of object key: value pair
+
+        // let userDetails = {
+        //     name: "John",
+        //     age: 25,
+        //     isAdmin: true,
+        //     designation: "Associate Tester",
+        //     company: "SkillSafari"
+        // }
+        // console.log(userDetails);
+
+        // Array of keys => Object.keys(object)
+        // console.log(Object.keys(userDetails));
+        // Object.keys(userDetails).forEach((userDetail) => console.log(userDetail));
+
+        // Array of values => Object.values(object)
+        // console.log(Object.values(userDetails));
+        // Object.values(userDetails).forEach((userValue) => {
+        //     console.log(userValue);
+        // })
+
+        // Array of key: value => Object.entries(object)
+        // console.log(Object.entries(userDetails));
+        // for (const [key, value] of Object.entries(userDetails)) {
+        //     console.log(`${key} : ${value}`);
+        // }
+
+        // Tranform the object properties
+        let fruitsPrice = {
+            apple: 20,
+            mango: 10,
+            orange: 30,
+            banana: 20
+        }
+        let fruitsPriceDouble = Object.fromEntries(Object.entries(fruitsPrice).map((fruits) => [fruits[0], fruits[1] * 2]));
+        console.log(fruitsPriceDouble);
+
+
+    </script>
+</body>
+
+</html>

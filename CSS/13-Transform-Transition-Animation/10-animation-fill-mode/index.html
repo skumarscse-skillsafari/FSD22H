@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Animation - Fill - Mode">
+    <title>CSS - Animation - Fill - Mode</title>
+    <style>
+        /* 
+            animation-fill-mode => what to be happen after animation completed
+            forwards and backwards (default)
+        */
+        div {
+            width: 200px;
+            height: 100px;
+            color: white;
+            margin: 10px;
+            opacity: 0;
+        }
+
+        .animation {
+            background: blue;
+            animation: move 5s 2;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes move {
+            0% {
+                opacity: 0.1;
+            }
+
+            25% {
+                opacity: 0.25;
+                transform: translateX(200px);
+            }
+
+            50% {
+                transform: translateY(50px);
+                opacity: 0.5;
+            }
+
+            75% {
+                transform: rotate(60deg);
+                opacity: 0.75;
+            }
+
+            100% {
+                margin: 50px;
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animation">
+        Animation
+    </div>
+</body>
+
+</html>

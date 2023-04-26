@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="getElementsByTagName()">
+    <title>getElementsByTagName</title>
+</head>
+
+<body>
+    <h1>Heading</h1>
+    <h2 id="head">Another heading</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, ipsam.</p>
+    <h2>Another heading - 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, rerum!</p>
+    <h2>Another heading - 3</h2>
+    <input type="button" value="Click" id="btn">
+
+    <script>
+        // getElementsByTagName() => return HTMLCollections
+        let elements = document.getElementsByTagName("h2");
+        console.log(elements);
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            Array.from(elements).forEach((ele) => {
+                ele.style.color = "red";
+                ele.style.fontSize = "32px";
+                ele.style.textTransform = "uppercase";
+            })
+        })
+    </script>
+</body>
+
+</html>

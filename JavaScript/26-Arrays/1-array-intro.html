@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Arrays - Intro">
+    <title>Arrays - Intro</title>
+</head>
+
+<body>
+    <h1>Arrays - Intro</h1>
+
+    <script>
+        // Arrays
+        // Objects => It is a collection used to store the key-value pairs
+        // Arrays => It is a collection, we can able to store the sequence of data
+
+        // Syntax
+        // let varName = [item-1, item-2, ..., item-N];
+
+        // Declare
+        // new keyword
+        // Syntax
+        // let arrayName = new Array();
+        // let fruits = new Array();
+        // console.log(typeof fruits);
+        // square bracket method
+        // let arrayName = [item-1, item-2,..., item-N];
+        // let fruits = ["Apple", "Orange", "Banana", "Mango"];
+        // console.log(fruits);
+
+        // // Access the array items
+        // // index => starts from "0"
+        // // 0 => Apple, 1 => Orange, 2 => Banana, 3 => Mango
+        // // Syntax
+        // // arrName[index];
+        // console.log(fruits[2]); // Banana
+        // for (let i = 0; i < fruits.length; i++) {
+        //     console.log(fruits[i]);
+        // }
+
+        // // Modify the array item value
+        // // Syntax
+        // // arrName[index] = newValue;
+        // // Guava
+        // fruits[3] = "Guava";
+        // console.log(fruits);
+
+        // // Add new item
+        // // Syntax
+        // // arrName[index] = value;
+        // fruits[6] = "Mango";
+        // console.log(fruits);
+
+        // Array
+        // C, C++, Java => Arrays are used for storing similar kind of data
+        // ["str", "str"], [num, num], [boolean, boolean]
+        // Arrays => Mix of datatypes
+        // String, number, boolean, null, undefined, bigint, object, array, function
+        // let mixArray = ["SkillSafari", 25, true, { name: "EduKeys" }, [1, 2, 3], function hello() { console.log("Hello") }];
+        // console.log(mixArray);
+
+        // console.log(mixArray.length);
+        // console.log(mixArray[mixArray.length - 1]); // function
+
+        // // Array.at(-1)
+        // console.log(mixArray.at(-1));
+
+        // Methods
+        // pop()/push()
+        // shift()/unshift()
+
+        // pop() and push()
+        // Array.pop() => remove the last element in the array
+        // Array.push("item") => add new element next to last index in the array
+        // let users = ["John", "Jack"];
+        // console.log(users);
+
+        // // Array.pop()
+        // console.log(users.pop()); // Jack
+        // console.log(users);
+
+        // // Array.push("item")
+        // users.push("Jack", "Mary", "David");
+        // console.log(users);
+
+        // Array.shift() => remove the first (zero-index) element in the array
+        // Array.unshift("item") => add new element before the first (zero-index) element in the array
+        // let users = ["John", "Jack"];
+        // console.log(users);
+        // console.log(users.shift()); // John
+        // console.log(users);
+
+        // console.log(users.unshift("Mary", "John", "David"));
+        // console.log(users);
+
+        // let fruits = ["Apple"];
+        // let arr = fruits;
+        // console.log(arr);
+        // console.log(fruits);
+        // arr.push("Mango", "Orange");
+        // console.log(arr);
+        // console.log(fruits);
+
+        // let numArray = [];
+        // numArray[100] = 45;
+        // console.log(numArray[95]); // undefined
+        // console.log(numArray.length); // 101
+
+        // for...of
+        let subjects = ["English", "Maths", "Physics", "Chemistry"];
+        for (let subject of subjects) {
+            console.log(subject);
+        }
+
+        // length
+        let arr = [1, 2, 3, 4, 5];
+        console.log(arr.length); // 5
+        arr.length = 2;
+        console.log(arr);
+        arr.length = 5;
+        console.log(arr);
+
+        // Multi-dimentional array
+        // Array inside an array
+        let arrMatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        console.log(arrMatrix[0]); // [1, 2, 3]
+        console.log(arrMatrix[1]); // [4, 5, 6]
+        console.log(arrMatrix[2]); // [7, 8, 9]
+        console.log(arrMatrix[1][1]); // 5
+    </script>
+</body>
+
+</html>

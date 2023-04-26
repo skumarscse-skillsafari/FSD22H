@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DOM - Select">
+    <title>DOM - Select</title>
+</head>
+
+<body>
+    <h1>DOM - Select</h1>
+    <form action="#">
+        <p>Select the subject(s)</p>
+        <select name="subjects" id="subjects" multiple>
+            <option value="English">English</option>
+            <option value="Maths">Maths</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+        </select>
+        <p>
+            <button id="btn">Select Subject(s)</button>
+        </p>
+    </form>
+    <hr>
+    <p class="result"></p>
+
+    <script>
+        // DOM - Select
+        let subjectsOptions = document.querySelectorAll("option");
+        console.log(subjectsOptions);
+        let result = document.querySelector(".result");
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let optionValues = [];
+            for (const subjectOption of subjectsOptions) {
+                if (subjectOption.selected) {
+                    optionValues.push(subjectOption.value);
+                }
+            }
+            result.textContent = `User Selected: ${optionValues.join(", ")}`;
+        })
+    </script>
+</body>
+
+</html>

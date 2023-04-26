@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Switch Statement">
+    <title>Switch Statement</title>
+</head>
+
+<body>
+    <h1>Switch Statement</h1>
+
+
+
+    <script>
+        // Switch Statement
+        // Alternative for "multiple if-else"
+        /*
+        Syntax
+        switch(x) {
+            case "1":
+                // statement;
+                // break;
+            case "2":
+                // statement;
+                // break;
+            case "N":
+                // statement;
+                // break;
+            
+            default:
+                // statement;
+                // break;
+        }
+        */
+
+        // let number = prompt("Enter a numbers from 1 to 4"); // 1
+        // switch (number) { // "1"
+        //     case "1": // "1" === "1"
+        //         console.log("You entered number-1");
+        //         break;
+        //     case "2":
+        //         console.log("You entered number-2");
+        //         break;
+        //     case "3":
+        //         console.log("You entered number-3");
+        //         break;
+        //     case "4":
+        //         console.log("You entered number-4");
+        //         break;
+        //     default:
+        //         console.log("Enter the numbers only between 1 and 4");
+        //         break;
+        // }
+
+        // Switch values are case-sensitive
+        // apple, orange, banana, mango
+        // let fruit = prompt("Enter any fruit name");
+        // switch (fruit) {
+        //     case "apple":
+        //         console.log("Apple");
+        //         break;
+        //     case "orange":
+        //         console.log("Orange");
+        //         break;
+        //     case "banana":
+        //         console.log("Banana");
+        //         break;
+        //     case "mango":
+        //         console.log("Mango");
+        //         break;
+
+        //     default:
+        //         console.log("No fruits matched or enter only apple, orange, banana, mango");
+        //         break;
+        // }
+
+        // Expressions in switch cases
+        // let number = +prompt("Enter a number");
+        // switch (number % 2) { // 1 % 2 => 1
+        //     case 1:
+        //         console.log("The number is ODD number");
+        //         break;
+        //     case 0:
+        //         console.log("The number is EVEN number");
+        //         break;
+        //     default:
+        //         console.log("Enter a number not string");
+        //         break;
+        // }
+
+        // let number = 7;
+        // switch (number) {
+        //     case 2 + 3:
+        //         console.log("Value is : 5");
+        //         break;
+        //     case 2 + 4:
+        //         console.log("Value is : 6");
+        //         break;
+        //     default:
+        //         console.log("Value should be 5 or 6");
+        //         break;
+        // }
+
+        // Grouping of cases
+        // let number = +prompt("Enter a number from 1 to 5");
+        // switch (number) {
+        //     case 1:
+        //     case 3:
+        //     case 5:
+        //         console.log("Odd Number");
+        //         break;
+        //     case 2:
+        //     case 4:
+        //         console.log("Even Number");
+        //         break;
+        //     default:
+        //         console.log("Enter numbers between 1 and 5");
+        //         break;
+        // }
+
+        // Skipping break keyword:
+        // Switch values are case-sensitive
+        // apple, orange, banana, mango
+        let fruit = prompt("Enter any fruit name");
+        switch (fruit) {
+            case "apple":
+                console.log("Apple");
+
+            case "orange":
+                console.log("Orange");
+
+            case "banana":
+                console.log("Banana");
+
+            case "mango":
+                console.log("Mango");
+                break;
+
+            default:
+                console.log("No fruits matched or enter only apple, orange, banana, mango");
+                break;
+        }
+
+    </script>
+</body>
+
+</html>

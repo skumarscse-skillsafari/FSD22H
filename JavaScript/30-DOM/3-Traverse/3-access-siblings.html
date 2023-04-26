@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Access Siblings">
+    <title>Access Siblings</title>
+</head>
+
+<body>
+    <h1>Access Siblings</h1>
+    <ul class="parent">
+        <li class="nav-item">Home</li>
+        <li class="nav-item">About</li>
+        <li class="nav-item">Projects</li>
+        <li class="nav-item">Contact</li>
+    </ul>
+
+    <script>
+        // Access Siblings
+        let siblingOne = document.querySelector(".parent").firstElementChild;
+        console.log(siblingOne.nextElementSibling);
+
+        let siblingAll = document.querySelectorAll(".nav-item");
+        console.log(siblingAll);
+
+        // Previous Element Sibling
+        let siblingLast = document.querySelector(".parent").lastElementChild;
+        console.log(siblingLast.previousElementSibling);
+
+        while (siblingOne !== null) {
+            console.log(siblingOne);
+            siblingOne = siblingOne.nextElementSibling;
+        }
+    </script>
+</body>
+
+</html>

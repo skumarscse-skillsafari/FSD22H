@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Nullish Coalescing operator">
+    <title>Nullish Coalescing operator</title>
+</head>
+
+<body>
+    <h1>Nullish Coalescing operator</h1>
+
+    <script>
+        // Nullish Coalescing operator (??) => binary operator
+        // Checks for the "values" defined for a "variable"
+        // firstName = "SkillSafari"
+        // lastName = "EduKeys"
+        // firstName ?? lastName
+        // Check for the "value" defined for the "operands", and return "value" of the operand whose "value" is first defined
+        // considering "null" as not a value
+        // Operands defined with "value"
+        // Ex: 1
+        // let firstName = "SkillSafari";
+        // let lastName = "EduKeys";
+        // let userName = firstName ?? lastName;
+        // // Checks for first defined "value" and return the same. if none of the operand not defined with any "value", returns last operand "value"
+        // console.log(userName); // SkillSafri
+
+        // Ex: 2
+        // let firstName;
+        // let lastName;
+        // let userName = firstName ?? lastName ?? "Anonymous";
+        // // Checks for first defined "value" and return the same. if none of the operand not defined with any "value", returns last operand "value"
+        // console.log(userName); // Anonymous
+
+        // Comparision with OR
+        console.log(null || undefined || false); // false
+        console.log(null ?? undefined ?? false); // false
+
+        let firstName = null;
+        let lastName = "EduKeys";
+        let nickName = "John";
+        let age = 20;
+        // let userName = firstName || lastName || nickName || age;
+        let userName = firstName ?? lastName ?? nickName ?? age;
+        console.log(userName); // EduKeys
+
+        let number = 0;
+        console.log(number || 20); // 20
+        console.log(number ?? 20); // 0
+
+
+    </script>
+</body>
+
+</html>

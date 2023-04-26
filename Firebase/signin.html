@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Siginin Form">
+    <title>Signin Form</title>
+</head>
+
+<body>
+    <h1>Signin Form</h1>
+    <form action="#" method="post" id="form">
+        <table>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" name="email" id="username" required placeholder="Enter Email"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Enter Password:</label></td>
+                <td><input type="password" name="password" id="password" placeholder="Enter Password" required></td>
+            </tr>
+        </table>
+        <p>
+            <input type="submit" value="Sign-In">
+            <input type="reset" value="Clear">
+        </p>
+        <p>
+            Not yet registered? <a href="./register.html">Click here to register</a>
+        </p>
+    </form>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+        import { getDatabase, set, ref, onValue } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB0WGbEsh-kKgXIuWLWrauXMxOpLDqc_H8",
+            authDomain: "fir-auth-fsd22h.firebaseapp.com",
+            projectId: "fir-auth-fsd22h",
+            storageBucket: "fir-auth-fsd22h.appspot.com",
+            messagingSenderId: "893331259678",
+            appId: "1:893331259678:web:7cff2b475f3ec6e417c90f"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        const auth = getAuth();
+
+        const db = getDatabase(app);
+
+        let form = document.querySelector("#form");
+        let inputEle = document.querySelectorAll("input");
+        console.log(inputEle);
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let email = inputEle[0].value;
+            let password = inputEle[1].value;
+            console.log(username);
+            console.log(password);
+            signInWithEmailAndPassword(auth, email, password)
+                .then((res) => {
+                    console.log(res);
+                    // const user = auth?.currentUser;
+                    // console.log(user);
+                    let uid = res?.user?.uid;
+                    const userDetailsRef = ref(db, "users/" + uid);
+                    onValue(userDetailsRef, (snapshot) => {
+                        const data = snapshot?.val();
+                        console.log(data);
+                        alert("User logged-in successfull");
+                        sessionStorage.setItem(res?.user?.uid, res?.user?.uid);
+                        // URL queries
+                        window.location.href = `./profile.html?id=${res?.user?.uid}`
+                    })
+                })
+                .catch(err => {
+                    let { code, message } = err;
+                    console.log(`Something went wrong. ${code} => ${message}`);
+                })
+        })
+
+
+    </script>
+</body>
+
+</html>

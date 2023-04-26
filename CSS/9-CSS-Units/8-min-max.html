@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Min and Max">
+    <title>CSS - Min and Max</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .navbar {
+            background: blue;
+            color: white;
+            height: 6rem;
+            font-size: 3rem;
+            /* 16px x 3 => 48px */
+        }
+
+        .banner {
+            background: red;
+            /* height: calc(100vh - 6rem); */
+            min-height: calc(100vh - 6rem);
+            max-height: 90vh;
+            /* overflow: hidden; */
+            overflow: scroll;
+        }
+
+        .example {
+            background: green;
+            width: 10rem;
+            height: 25rem;
+            overflow: scroll;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navbar">
+        <li>simple link</li>
+    </ul>
+    <div class="banner">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laborum molestiae. Excepturi
+        at ipsam sunt quam modi doloremque corrupti nisi quod dicta odit! Sint impedit accusantium quidem cumque
+        deleniti velit vitae quia, quis magni ipsum repellat natus quo sapiente laudantium, earum tenetur hic dicta.
+        Nostrum unde nesciunt, magnam doloribus saepe dolor aspernatur tempora, sequi, quas quos consequuntur
+        cupiditate. Animi, necessitatibus illum. Debitis animi incidunt, pariatur ipsa omnis repudiandae veniam soluta
+        molestiae temporibus deserunt suscipit doloremque excepturi consectetur eligendi quasi saepe beatae ut
+        distinctio maxime blanditiis quia cupiditate quam! Nesciunt debitis itaque aperiam fugiat enim rem ipsa
+        quibusdam aliquam saepe inventore.</div>
+    <div class="example">
+        <p>Hello World</p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus explicabo debitis itaque odit numquam eius
+        dolorum nemo sed, perspiciatis quasi consectetur, eaque qui assumenda fugiat. Nulla, numquam quo illo mollitia
+        error asperiores exercitationem, laudantium totam minima accusamus ea et. Facilis earum, doloremque, placeat
+        quas dolorem vel magnam, voluptate doloribus aspernatur voluptas assumenda neque. Error repellendus vitae
+        explicabo laboriosam quos tempora sint adipisci non aut dignissimos cupiditate obcaecati, quae deserunt unde
+        voluptas qui architecto totam fuga, nulla deleniti. Tempore mollitia qui facilis voluptatum obcaecati rerum
+        excepturi laudantium, cumque placeat inventore nemo repellendus voluptas dicta exercitationem quo? Ea ducimus
+        vel voluptates iusto.
+        <p>Hello World</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="cloneNode">
+    <title>cloneNode</title>
+</head>
+
+<body>
+    <h1>cloneNode</h1>
+    <ul class="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+
+    <script>
+        // cloneNode
+        // Syntax
+        // originalNode.cloneNode(true/false);
+        // true, original node and all of its descendents are cloned
+        // false (default), only the original node cloned
+
+        let menu = document.querySelector(".menu");
+        // let clonedMenu = menu.cloneNode(); // false => default, if not mentioned
+        let clonedMenu = menu.cloneNode(true); // true => clone all the descendent and parent
+        console.log(clonedMenu);
+        clonedMenu.id = "cloned-menu";
+        document.body.appendChild(clonedMenu);
+    </script>
+</body>
+
+</html>

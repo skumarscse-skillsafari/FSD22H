@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Radio - Change">
+    <title>Radio - Change</title>
+</head>
+
+<body>
+    <h1>Radio - Change</h1>
+    <h2>Select anyone</h2>
+    <p>
+        <input type="radio" name="subject" id="english" value="English">
+        <label for="english">English</label>
+    </p>
+    <p>
+        <input type="radio" name="subject" id="maths" value="Maths">
+        <label for="maths">Maths</label>
+    </p>
+    <p>
+        <input type="radio" name="subject" id="physics" value="Physics">
+        <label for="physics">Physics</label>
+    </p>
+    <p>
+        <input type="radio" name="subject" id="chemistry" value="Chemistry">
+        <label for="chemistry">Chemistry</label>
+    </p>
+    <p class="result"></p>
+
+    <script>
+        // Radio - Change event
+        let result = document.querySelector(".result");
+        document.body.addEventListener("change", function (e) {
+            console.log(e);
+            console.log(e.target);
+            let { type, name, id, value } = e.target; // <input type="radio" name="subject" id="physics" value="Physics">
+            /*
+            {
+                type: "radio",
+                name: "subject",
+                id: "physics",
+                value: "Physics"
+            }
+            */
+            // console.log(type);
+            // console.log(id);
+            // console.log(name);
+            // console.log(value);
+            result.textContent = value;
+        })
+    </script>
+</body>
+
+</html>

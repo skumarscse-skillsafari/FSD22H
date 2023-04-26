@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Draw Box">
+    <title>Draw Box</title>
+    <style>
+        /* 
+            Each and every element can be considered as box. Block-level element: Margin + border + padding + content
+        */
+
+        #box {
+            height: 150px;
+            width: 150px;
+            /* border-width: 1px;
+            border-style: dashed | dotted | double | solid;
+            border-color: red; */
+            border: 5px solid red;
+            background-color: brown;
+            background-clip: content-box;
+            padding: 10px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Draw Box</h2>
+    <div id="box"></div>
+</body>
+
+</html>

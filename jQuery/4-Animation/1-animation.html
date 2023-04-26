@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Animation">
+    <title>Animation</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            background: crimson;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animation</h1>
+
+    <div id="animate" class="box"></div>
+    <p id="msg">Hello</p>
+    <input type="button" value="Click" id="btn">
+    <input type="button" value="Submit">
+    <input type="button" value="Clear">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // Animation
+        // animate(), queue(), stop(), fadeIn(), fadeOut(), fadeTo(), show(), hide(), toggle()
+        $(document).ready(function () {
+            // $("#animate").animate({
+            //     height: "200px",
+            //     width: "200px"
+            // }, 5000, "swing", function () {
+            //     $("#msg").append("Animation Completed");
+            // });
+            // $("#animate").toggle(500);
+            // $("#animate").fadeOut(500);
+            // $("#animate").fadeIn(500);
+            // $("#animate").slideDown(500);
+            // $("#msg").append('The animation functions in the queue: ' + $("#animate").queue().length);
+            // $("#animate").fadeIn(5000);
+            // $("#animate").fadeOut(5000);
+
+            // hide()
+            // show()
+            // $("#animate").hide(5000, function () {
+            //     $("p").append("Animation completed");
+            // });
+
+            // let para = $("p");
+            // console.log(para[0]);
+
+            // $("#animate").show(5000, function () {
+            //     $("p").append("Animation completed")
+            // });
+
+            $("#btn").click(function (e) { // Access the properties on the clicking element
+                console.log(e.currentTarget);
+                $("#animate").toggle(5000);
+            })
+
+            // this
+            // $("#btn").click(function () { // Access the properties on the clicking element
+            //     console.log(this.value);
+            //     $("#animate").toggle(5000);
+            // })
+
+            // $("[type='button']").click(function () {
+            //     console.log(this.value)
+            // })
+
+            // onclick => click
+            // onmouseover => mouseover
+            // $("[type='button']").mouseover(function () {
+            //     console.log(this.value)
+            // })
+
+            // css()
+            $("p").mouseover(function () {
+                $(this).css({ "backgroundColor": "green", "fontSize": "45px" });
+            })
+        })
+    </script>
+</body>
+
+</html>

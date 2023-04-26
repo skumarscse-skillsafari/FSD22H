@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Async operations">
+    <title>Async operations</title>
+</head>
+
+<body>
+    <h1>Async operations</h1>
+    <div class="result">
+
+    </div>
+
+    <script>
+        // Async operations
+        // Async/ Asynchronous operations
+        // Synchronous Vs. Asynchronous
+        // Synchronous => Multiple task => one by one
+        // Asynchronous => Multiple task => can be performed parallely
+
+        // function one() {
+        //     console.log("One");
+        // }
+
+        // function two() {
+        //     console.log("Two");
+        // }
+
+        // function three() {
+        //     console.log("Three");
+        // }
+
+        // one();
+        // two();
+        // three();
+
+        // Async/Asynchronous way of writing the code
+        // 1. callbacks
+        // 2. async/await method
+        // 3. Promises
+
+        // fetch() => GET the data / POST the data
+        // GET
+        // fetch("url", "headers");
+        // POST
+        // fetch("url", {
+        //      method: "POST",
+        //      body: 
+        // })
+        // asynchronous
+        // async/await
+        // Syntax
+        // let data = fetch("https://fakestoreapi.com/products");
+        // console.log(data);
+
+        // Promise:
+        // 1. pending (initial stage => before sending the request)
+        // 2. fulfiled (success)
+        // 3. rejected (failure)
+
+        // Any request => server
+        // success response => fulfiled => response (data)
+        // error response => rejected => response (error)
+
+        // Promise
+        // fetch("https://fakestoreapi.com/products")
+        //     .then(res => res.json())  // success
+        //     .then(data => console.log(data)) // success
+        //     .catch(err => console.log(err)) // error
+        // 1. Pass the url using fetch(url)
+        // 2. then() => getting the response and convert in to json()
+        // 3. then() => access the converted json() data
+        // 4. catch() => used to display the error if anything went wrong
+
+        // Return types
+        // 1. json()
+        // 2. text
+        // 3. buffer
+        // 4. blob
+        // 5. formData
+
+        // Async/await
+        // Using function => send the request => response
+        // async / await
+        // try / catch
+        /*
+            try {
+                // success logics/success statements
+            } catch {
+                // error statements
+            }
+        */
+        let result = document.querySelector(".result");
+        async function fetchData(url) {
+            try {
+                let res = await fetch(url);
+                let products = await res.json();
+                console.log(products);
+                let displayProducts = products.map((product) => {
+                    return `
+                    <div>
+                        <h1>Product ID: ${product.id}</h1>
+                        <h2>Product Title: ${product.title}</h2>
+                        <p><strong>Description: </strong>${product.description}</p>
+                        <p><img src="${product.image}" alt="${product.category}" height = 200px width = 200px></p>
+                        <p><strong>Category : </strong>${product.category}</p>
+                        <hr>
+                    </div>
+                `
+                })
+                result.innerHTML = displayProducts.join(" ");
+            } catch (err) {
+                result.innerHTML = "<h1>Something went wrong...</h1>";
+                console.log(`Something went wrong. Check here: ${err}`);
+            }
+        }
+        fetchData("https://fakestoreapi.com/products")
+    </script>
+</body>
+
+</html>

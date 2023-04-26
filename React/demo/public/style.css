@@ -1,0 +1,23 @@
+header {
+  background: green;
+}
+
+nav {
+  background: cornflowerblue;
+}
+
+.about {
+  background: coral;
+}
+
+.projects {
+  background: goldenrod;
+}
+
+.contact {
+  background: rebeccapurple;
+}
+
+footer {
+  background: chocolate;
+}

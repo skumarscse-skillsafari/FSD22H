@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Pseudo Element">
+    <title>Pseudo Element</title>
+    <style>
+        /* 
+            selector::pseudoElement {
+                propertyName : propertyValue;
+            }
+
+            pseudoElements:
+            1. ::after
+            2. ::before
+            3. ::first-letter
+            4. ::first-line
+        */
+
+        h2::before {
+            content: "";
+            height: 10px;
+            width: 200px;
+            background-color: red;
+            display: block;
+        }
+
+        h2::after {
+            content: "";
+            height: 10px;
+            width: 200px;
+            background-color: red;
+            display: block;
+        }
+
+        p::first-letter {
+            font-size: 50px;
+            background-color: green;
+        }
+
+        p {
+            background-color: rgba(26, 191, 196, 0.926);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Pseudo Element</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab molestiae excepturi, eius maxime alias consequatur
+        laudantium adipisci sequi provident fugiat.</p>
+</body>
+
+</html>
