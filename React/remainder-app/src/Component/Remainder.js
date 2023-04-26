@@ -1,4 +1,43 @@
+import { useState, useEffect } from "react";
+import {
+  collection,
+  addDoc,
+  serverTimestamp,
+  getDocs,
+} from "firebase/firestore";
+import { db } from "../Config/firebase.config";
+import EditRemainder from "./EditRemainder";
+
 let Remainder = () => {
+  const collectionRef = collection(db, "remainder");
+  // console.log(collectionRef);
+  const [createRemainder, setCreateRemainder] = useState("");
+  const [remainders, setRemainders] = useState([]);
+
+  useEffect(() => {
+    const getRemainders = async () => {
+      await getDocs(collectionRef).then((remainder) => {
+        console.log(remainder.docs);
+      });
+    };
+    getRemainders();
+  }, []);
+
+  const submitRemainder = async (e) => {
+    e.preventDefault();
+    // console.log("Submit");
+    try {
+      await addDoc(collectionRef, {
+        remainder: createRemainder,
+        isChecked: false,
+        timestamp: serverTimestamp(),
+      });
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       {/* Modal Trigger Button */}
@@ -17,22 +56,29 @@ let Remainder = () => {
                 >
                   Add Remainder
                 </button>
+                <div className="remainder-list">
+                  <div className="remainder-item">
+                    <hr />
+                    <span>
+                      <div className="checker">
+                        <span className="">
+                          <input type="checkbox" />
+                        </span>
+                      </div>{" "}
+                      Do React Assignments <br />
+                      <i>26/04/2023</i>
+                    </span>
+                    <span className="float-end mx-3">
+                      <EditRemainder />
+                    </span>
+                    <button type="button" className="btn btn-danger">
+                      Delete
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="remainder-list">
-        <div className="remainder-item">
-          <hr />
-          <span>
-            <div className="checker">
-              <span className="">
-                <input type="checkbox" />
-              </span>
-            </div>
-          </span>
         </div>
       </div>
 
@@ -64,6 +110,7 @@ let Remainder = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add Remainder"
+                onChange={(e) => setCreateRemainder(e.target.value)}
               />
             </div>
             <div className="modal-footer">
@@ -74,7 +121,11 @@ let Remainder = () => {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={submitRemainder}
+              >
                 Create Remainder
               </button>
             </div>
