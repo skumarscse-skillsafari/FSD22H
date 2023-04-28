@@ -4,6 +4,8 @@ import {
   addDoc,
   serverTimestamp,
   getDocs,
+  doc,
+  deleteDoc,
 } from "firebase/firestore";
 import { db } from "../Config/firebase.config";
 import EditRemainder from "./EditRemainder";
@@ -17,11 +19,19 @@ let Remainder = () => {
   useEffect(() => {
     const getRemainders = async () => {
       await getDocs(collectionRef).then((remainder) => {
-        console.log(remainder.docs);
+        let remainderData = remainder.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        // console.log(remainder.docs);
+        console.log(remainderData);
+        setRemainders(remainderData);
       });
     };
     getRemainders();
   }, []);
+
+  console.log(remainders);
 
   const submitRemainder = async (e) => {
     e.preventDefault();
@@ -33,6 +43,18 @@ let Remainder = () => {
         timestamp: serverTimestamp(),
       });
       window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  let deleteRemainder = async (id) => {
+    try {
+      if (window.confirm("Are you sure to delete the remainder?")) {
+        const documentRef = doc(db, "remainder", id);
+        await deleteDoc(documentRef);
+        window.location.reload();
+      }
     } catch (error) {
       console.log(error);
     }
@@ -56,26 +78,37 @@ let Remainder = () => {
                 >
                   Add Remainder
                 </button>
-                <div className="remainder-list">
-                  <div className="remainder-item">
-                    <hr />
-                    <span>
-                      <div className="checker">
-                        <span className="">
-                          <input type="checkbox" />
-                        </span>
-                      </div>{" "}
-                      Do React Assignments <br />
-                      <i>26/04/2023</i>
-                    </span>
-                    <span className="float-end mx-3">
-                      <EditRemainder />
-                    </span>
-                    <button type="button" className="btn btn-danger">
-                      Delete
-                    </button>
+                {/* Remainder to Display as List */}
+                {remainders.map(({ id, remainder, isChecked, timestamp }) => (
+                  <div className="remainder-list" key={id}>
+                    <div className="remainer-item">
+                      <hr />
+                      <span className={`${isChecked === true ? "done" : ""}`}>
+                        <div className="cheaker">
+                          <span className="">
+                            <input type="checkbox" />
+                          </span>
+                        </div>
+                        {remainder} <br />
+                        <i>
+                          {new Date(timestamp.seconds * 1000).toLocaleString()}
+                        </i>
+                      </span>
+                      <span className="float-end mx-3">
+                        <EditRemainder editRemainder={remainder} id={id} />
+                      </span>
+                      <button
+                        type="button"
+                        className="btn btn-danger float-end"
+                        onClick={() => {
+                          deleteRemainder(id);
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
