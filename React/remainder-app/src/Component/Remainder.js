@@ -6,6 +6,7 @@ import {
   getDocs,
   doc,
   deleteDoc,
+  runTransaction,
 } from "firebase/firestore";
 import { db } from "../Config/firebase.config";
 import EditRemainder from "./EditRemainder";
@@ -15,6 +16,7 @@ let Remainder = () => {
   // console.log(collectionRef);
   const [createRemainder, setCreateRemainder] = useState("");
   const [remainders, setRemainders] = useState([]);
+  const [checked, setChecked] = useState([]);
 
   useEffect(() => {
     const getRemainders = async () => {
@@ -26,6 +28,7 @@ let Remainder = () => {
         // console.log(remainder.docs);
         console.log(remainderData);
         setRemainders(remainderData);
+        setChecked(remainderData);
       });
     };
     getRemainders();
@@ -60,6 +63,41 @@ let Remainder = () => {
     }
   };
 
+  let changeHandler = async (e, remainder) => {
+    // state = [{ id: , remainder: , isChecked: , timestamp: }, {}]
+    setChecked((state) => {
+      const indexToUpdate = state.findIndex(
+        (checkBox) => checkBox.remainder === remainder
+      );
+      console.log(indexToUpdate);
+      console.log(state);
+      let newState = [...state]; // [ {id: }, {id: }]
+      // console.log(newState);
+      newState.splice(indexToUpdate, 1, {
+        ...state[indexToUpdate],
+        isChecked: !state[indexToUpdate].isChecked,
+      });
+      console.log(newState);
+      setRemainders(newState);
+      return newState;
+    });
+
+    try {
+      const docRef = doc(db, "remainder", e.target.name);
+      await runTransaction(db, async (transaction) => {
+        const remainderDoc = await transaction.get(docRef);
+        if (!remainderDoc.exists()) {
+          throw "Document not exists";
+        }
+        const newValue = !remainderDoc.data().isChecked;
+        transaction.update(docRef, { isChecked: newValue });
+      });
+      console.log("Transaction / Updation performed successfully");
+    } catch (error) {
+      console.log(`Transaction / Updation failed: ${error}`);
+    }
+  };
+
   return (
     <>
       {/* Modal Trigger Button */}
@@ -84,11 +122,16 @@ let Remainder = () => {
                     <div className="remainer-item">
                       <hr />
                       <span className={`${isChecked === true ? "done" : ""}`}>
-                        <div className="cheaker">
+                        <div className="checker">
                           <span className="">
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              checked={isChecked}
+                              name={id}
+                              onChange={(e) => changeHandler(e, remainder)}
+                            />
                           </span>
-                        </div>
+                        </div>{" "}
                         {remainder} <br />
                         <i>
                           {new Date(timestamp.seconds * 1000).toLocaleString()}
