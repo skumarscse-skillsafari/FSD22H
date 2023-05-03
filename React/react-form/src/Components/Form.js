@@ -11,14 +11,24 @@ const Form = () => {
     gender: false,
   });
   const handleForm = (e) => {
-    let value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    setForm((form) => {
-      return {
-        ...form,
-        [e.target.name]: value,
-      };
-    });
+    let { value } = e.target; // target = { name: "", value: ""}
+    if (e.target.type === "checkbox") {
+      let data = form.addons;
+      data.push(value);
+      setForm((form) => {
+        return {
+          ...form,
+          addons: data,
+        };
+      });
+    } else {
+      setForm((form) => {
+        return {
+          ...form,
+          [e.target.name]: value,
+        };
+      });
+    }
     // console.log(form);
   };
 
@@ -97,24 +107,10 @@ const Form = () => {
         </p>
         <p>
           <label>Avail Adons:</label>
-          <input
-            type="checkbox"
-            onChange={handleForm}
-            name="bus"
-            // checked={form.addons}
-          />
-          <input
-            type="checkbox"
-            onChange={handleForm}
-            name="hostel"
-            // checked={form.addons}
-          />
-          <input
-            type="checkbox"
-            onChange={handleForm}
-            name="food"
-            // checked={form.addons}
-          />
+          <input type="checkbox" onChange={handleForm} value="Bus" />
+          Bus
+          <input type="checkbox" onChange={handleForm} value="Hostel" /> Hostel
+          <input type="checkbox" onChange={handleForm} value="Food" /> Food
         </p>
         <p>
           <label>Male</label>
@@ -122,7 +118,7 @@ const Form = () => {
             type="radio"
             name="gender"
             value="Male"
-            // checked={form.gender === "Male"}
+            checked={form.gender === "Male"}
             onChange={handleForm}
           />
           <label>Female</label>
@@ -130,7 +126,7 @@ const Form = () => {
             type="radio"
             name="gender"
             value="Female"
-            // checked={form.gender === "Female"}
+            checked={form.gender === "Female"}
             onChange={handleForm}
           />
         </p>
