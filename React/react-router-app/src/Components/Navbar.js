@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 const Navbar = () => {
+  let style = {
+    display: "flex",
+    justifyContent: "space-around",
+    alignItem: "center",
+  };
   return (
     <div>
-      <ul>
+      <ul style={style}>
         <li>
           <Link to="/">Home</Link>
         </li>
