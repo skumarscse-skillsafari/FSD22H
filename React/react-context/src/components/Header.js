@@ -1,4 +1,4 @@
-// import { CartState } from "../context/Context";
+import { CartState } from "../context/Context";
 import { Link } from "react-router-dom";
 import {
   Navbar,
@@ -13,40 +13,12 @@ import { FaShoppingCart } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import "./style.css";
 const Header = () => {
-  // const {
-  //   state: { cart },
-  //   dispatch,
-  //   productDispatch,
-  // } = CartState();
-  const cart = [
-    {
-      id: "1a9ea31b-34b2-43b3-9198-7fc76cad5812",
-      image: "https://loremflickr.com/640/480/abstract?lock=69608",
-      inStock: 6,
-      name: "Practical Bronze Chicken",
-      price: "733",
-      quickDelivery: false,
-      ratings: 3,
-    },
-    {
-      id: "5847168d-762a-4d0f-9830-9267bf3df39e",
-      image: "https://loremflickr.com/640/480/abstract?lock=24621",
-      inStock: 6,
-      name: "Refined Wooden Keyboard",
-      price: "233",
-      quickDelivery: false,
-      ratings: 3,
-    },
-    {
-      id: "98a806d4-c2ff-440a-8a98-82d49fbfab5a",
-      image: "https://loremflickr.com/640/480/abstract?lock=12914",
-      inStock: 0,
-      name: "Rustic Fresh Table",
-      price: "265",
-      quickDelivery: true,
-      ratings: 1,
-    },
-  ];
+  const {
+    state: { cart },
+    dispatch,
+    productDispatch,
+  } = CartState();
+
   return (
     <>
       <Navbar bg="primary" variant="dark" style={{ height: 80 }}>
@@ -71,10 +43,10 @@ const Header = () => {
             />
           </Navbar.Text>
           <Nav>
-            <Dropdown>
+            <Dropdown alignright="true">
               <Dropdown.Toggle variant="success">
                 <FaShoppingCart color="white" fontSize="25px" />
-                <Badge>{5}</Badge>
+                <Badge>{cart.length}</Badge>
               </Dropdown.Toggle>
               <Dropdown.Menu style={{ minWidth: 370 }}>
                 {cart.map((prod) => (

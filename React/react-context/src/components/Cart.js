@@ -1,56 +1,72 @@
-import { ListGroup, Row, Col, Image } from "react-bootstrap";
+import { ListGroup, Row, Col, Image, Form, Button } from "react-bootstrap";
+import { AiFillDelete } from "react-icons/ai";
+import { CartState } from "../context/Context";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
-  const cart = [
-    {
-      id: "1a9ea31b-34b2-43b3-9198-7fc76cad5812",
-      image: "https://loremflickr.com/640/480/abstract?lock=69608",
-      inStock: 6,
-      name: "Practical Bronze Chicken",
-      price: "733",
-      quickDelivery: false,
-      ratings: 3,
-    },
-    {
-      id: "5847168d-762a-4d0f-9830-9267bf3df39e",
-      image: "https://loremflickr.com/640/480/abstract?lock=24621",
-      inStock: 6,
-      name: "Refined Wooden Keyboard",
-      price: "233",
-      quickDelivery: false,
-      ratings: 3,
-    },
-    {
-      id: "98a806d4-c2ff-440a-8a98-82d49fbfab5a",
-      image: "https://loremflickr.com/640/480/abstract?lock=12914",
-      inStock: 0,
-      name: "Rustic Fresh Table",
-      price: "265",
-      quickDelivery: true,
-      ratings: 1,
-    },
-  ];
+  const {
+    state: { cart },
+    dispatch,
+  } = CartState();
+  console.log(cart);
+  const [total, setTotal] = useState();
+  useEffect(() => {
+    setTotal(
+      cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+    );
+  }, [cart]);
   return (
     <div className="home">
       <div className="productContainer">
-        {cart.map((prod) => (
-          <ListGroup.Item key={prod.id}>
-            <Row>
-              <Col md={2}>
-                <Image src={prod.image} alt={prod.name} fluid rounded />
-              </Col>
-              <Col md={2}>
-                <span>{prod.name}</span>
-              </Col>
-              <Col>
-                <span>Rs. {prod.price}</span>
-              </Col>
-              <Col>
-                <span>{prod.ratings}</span>
-              </Col>
-            </Row>
-          </ListGroup.Item>
-        ))}
+        <ListGroup>
+          {cart.map((prod) => (
+            <ListGroup.Item key={prod.id}>
+              <Row>
+                <Col md={2}>
+                  <Image src={prod.image} alt={prod.name} fluid rounded />
+                </Col>
+                <Col md={2}>
+                  <span>{prod.name}</span>
+                </Col>
+                <Col>
+                  <span>Rs. {prod.price}</span>
+                </Col>
+                <Col>
+                  <span>{prod.ratings}</span>
+                </Col>
+                <Col>
+                  <Form.Select
+                    value={prod.qty}
+                    onChange={(e) =>
+                      dispatch({
+                        type: "CHANGE_CART_QTY",
+                        payload: {
+                          id: prod.id,
+                          qty: e.target.value,
+                        },
+                      })
+                    }
+                  >
+                    {console.log([...Array(prod.inStock).keys()])}
+                    {[...Array(prod.inStock).keys()].map((val) => (
+                      <option key={val + 1}>{val + 1}</option>
+                    ))}
+                  </Form.Select>
+                </Col>
+                <Col md={2}>
+                  <Button>
+                    <AiFillDelete fontSize="20px" />
+                  </Button>
+                </Col>
+              </Row>
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+      </div>
+      <div className="filters summary">
+        <span className="title">Subtotal {cart.length} items</span>
+        <span>Total: Rs. {total}</span>
+        <Button type="button">Proceed to Checkout</Button>
       </div>
     </div>
   );
