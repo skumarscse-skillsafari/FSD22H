@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { CartState } from "../context/Context";
+import Rating from "./Rating";
 
 const Filter = () => {
   const {
@@ -71,7 +72,19 @@ const Filter = () => {
           checked={byQuickDelivery}
         />
       </span>
-      <span>Filter by Rating</span>
+      <span style={{ paddingRight: 10 }}>
+        <label>Ratings: </label>
+        <Rating
+          rating={byRating}
+          onClick={(i) =>
+            productDispatch({
+              type: "FILTER_BY_RATING",
+              payload: i + 1,
+            })
+          }
+          style={{ cursor: "pointer" }}
+        />
+      </span>
       <Button
         variant="primary"
         onClick={() => productDispatch({ type: "CLEAR_FILTERS" })}

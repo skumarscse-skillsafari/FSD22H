@@ -42,6 +42,7 @@ export const productReducer = (state, action) => {
       return { ...state, byQuickDelivery: !state.byQuickDelivery };
       break;
     case "FILTER_BY_RATING":
+      return { ...state, byRating: action.payload };
       break;
     case "FILTER_BY_SEARCH":
       // console.log(state);
